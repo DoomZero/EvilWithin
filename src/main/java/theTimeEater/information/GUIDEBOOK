@@ -1,0 +1,11 @@
+Attention DOWNFALL modders: Here's the instructions.
+
+Setup guide:
+1. Rename the enclosing mod folder. (the folder just under Java, initially named theTimeEater.)
+2. Set your modID in the main Mod file. (initially TodoMod).
+3. Rename the main mod file. (the class initially named TodoMod, not in a folder.)
+4. Rename the mod's Resources folder. (the folder under the "resources" folder, initially named todomodResources. The change needs to match your mod ID, plus "Resources". IE: if your modid is "blah", "blahResources".)
+5. Rename the modded character file. (the class initially named TheTodo, not in a folder.)
+6. In the modded character file, go to the Enums section at the bottom and change the PlayerClass and CardColor enums. They're also annotated with TODOs.
+7. You'll need to go into downfallMod and refactor->Rename the package name of the todo-character. There's a TODO marked there.
+8+. Finally, go into the strings files and find-and-replace todomod with your new mod ID. From there, it's just making the mod of your dreams!

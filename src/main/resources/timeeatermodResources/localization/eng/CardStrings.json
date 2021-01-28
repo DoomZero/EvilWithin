@@ -1,0 +1,48 @@
+{
+  "timeeatermod:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "timeeatermod:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "timeeatermod:Hiccup": {
+    "NAME": "Hiccup",
+    "DESCRIPTION": "Apply 1 Time Lock. Deal !D! damage."
+  },
+  "timeeatermod:TemporaryPowerDemo": {
+    "NAME": "Auto-Generated Temporary Power",
+    "DESCRIPTION": "Whenever you Scry this turn, gain !M! Block."
+  },
+  "timeeatermod:InlinePowerDemo": {
+    "NAME": "Inline Power",
+    "DESCRIPTION": "Strikes deal !M! more damage. NL At the end of your turn, gain !M! Block."
+  },
+  "timeeatermod:SelectCardsPlusCardMods": {
+    "NAME": "Card Parsing, Card Selection, Card Mods",
+    "DESCRIPTION": "Choose from 1 of 3 cost 0 cards from any class. NL Add it into your hand. NL It gains Ethereal and Exhaust."
+  },
+  "timeeatermod:InlineCardModDemo": {
+    "NAME": "Inline Card Mods",
+    "DESCRIPTION": "Add a random Strike of any color to your hand. NL Enchant it with \"Kills Spikers.\""
+  },
+  "timeeatermod:NextTurnPowerDemo": {
+    "NAME": "Auto-Generated Next Turn Power",
+    "DESCRIPTION": "Next turn, gain !M! Thorns."
+  },
+  "timeeatermod:MultiPreviewDemoCard": {
+    "NAME": "Multiple Previews - One Card",
+    "DESCRIPTION": "Ethereal. NL Add a random *Stinky *Watcher *Buddy into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Add a random Upgraded *Stinky *Watcher *Buddy into your hand. NL Exhaust."
+  },
+  "timeeatermod:EasyXCostDemo": {
+    "NAME": "Easy X Cost",
+    "DESCRIPTION": "Deal !D! damage X times. NL Gain X Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage X+1 times. NL Gain X+1 Strength. NL Exhaust."
+  },
+  "timeeatermod:TimeEaterModalChoiceDemo": {
+    "NAME": "Easy Modal Choice",
+    "DESCRIPTION": "Choose 1: Draw !M! cards or gain !timeeatermod:si! Strength."
+  }
+}
