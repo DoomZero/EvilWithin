@@ -13,13 +13,9 @@ import automaton.EasyInfoDisplayPanel;
 import automaton.SuperTip;
 import automaton.cardmods.EncodeMod;
 import automaton.cards.Defend;
-import automaton.cards.SpaghettiCode;
 import automaton.cards.Strike;
-import automaton.powers.LibraryModPower;
-import automaton.relics.BronzeIdol;
-import automaton.relics.DecasWashers;
-import automaton.relics.DonusWashers;
-import automaton.relics.MakeshiftBattery;
+import automaton.relics.*;
+import automaton.util.*;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -70,11 +66,18 @@ import com.megacrit.cardcrawl.events.city.*;
 import com.megacrit.cardcrawl.events.exordium.*;
 import com.megacrit.cardcrawl.events.shrines.FaceTrader;
 import com.megacrit.cardcrawl.events.shrines.*;
-import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.relics.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.GoldenIdol;
+import com.megacrit.cardcrawl.relics.MedicalKit;
+import com.megacrit.cardcrawl.relics.VelvetChoker;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.AbstractUnlock;
@@ -95,13 +98,13 @@ import downfall.events.shrines_evil.UpgradeShrineEvil;
 import downfall.monsters.*;
 import downfall.patches.DailyModeEvilPatch;
 import downfall.patches.EvilModeCharacterSelect;
+import downfall.patches.RewardItemTypeEnumPatch;
 import downfall.patches.ui.campfire.AddBustKeyButtonPatches;
 import downfall.patches.ui.topPanel.GoldToSoulPatches;
 import downfall.potions.CursedFountainPotion;
 import downfall.relics.KnowingSkull;
 import downfall.relics.*;
-import downfall.util.LocalizeHelper;
-import downfall.util.ReplaceData;
+import downfall.util.*;
 import expansioncontent.expansionContentMod;
 import expansioncontent.patches.CenterGridCardSelectScreen;
 import guardian.GuardianMod;
@@ -110,8 +113,11 @@ import guardian.relics.PickAxe;
 import slimebound.SlimeboundMod;
 import sneckomod.SneckoMod;
 import sneckomod.cards.unknowns.*;
+import sneckomod.util.ColorfulCardReward;
+import sneckomod.util.UpgradedUnknownReward;
 import theHexaghost.HexaMod;
 import theHexaghost.TheHexaghost;
+import theHexaghost.util.SealSealReward;
 import theTimeEater.TimeEaterMod;
 
 import java.io.IOException;
@@ -471,6 +477,37 @@ public class downfallMod implements
             }
         }
 
+
+        //Init save stuff for custom rewards.
+        //Automaton
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.DAZINGPULSE, (rewardSave) -> new DazingPulseReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.DECABEAM, (rewardSave) -> new DecaBeamReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.DONUBEAM, (rewardSave) -> new DonuBeamReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.EXPLODE, (rewardSave) -> new ExplodeReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.SPIKE, (rewardSave) -> new SpikeReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        //Downfall
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.BOSSCARD, (rewardSave) -> new BossCardReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.JAXCARD, (rewardSave) -> new JaxReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.REMOVECARD, (rewardSave) -> new RemoveCardReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.TRANSFORMCARD, (rewardSave) -> new TransformCardReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.UPGRADECARD, (rewardSave) -> new UpgradeCardReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        //Snecko
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.COLORFULCARD, (rewardSave) -> new ColorfulCardReward(AbstractCard.CardColor.valueOf(rewardSave.id)), (customReward) -> new RewardSave(customReward.type.toString(), customReward instanceof ColorfulCardReward ? ((ColorfulCardReward) customReward).myColor.toString() : "COLORLESS"));
+
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.UPGRADEDUNKNOWNCARD, (rewardSave) -> new UpgradedUnknownReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
+
+        //Hexaghost
+        BaseMod.registerCustomReward(RewardItemTypeEnumPatch.SEALCARD, (rewardSave) -> new SealSealReward(), (customReward) -> new RewardSave(customReward.type.toString(), null));
     }
 
     private void initializeConfig() {
@@ -1141,9 +1178,6 @@ public class downfallMod implements
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
         }
-
-        //Snecko mod run start choosing stuff
-        SneckoMod.importantStuff();
     }
 
     private void resetBossList() {
@@ -1217,7 +1251,6 @@ public class downfallMod implements
         l.add(new CustomMod(Improvised.ID, "g", true));
         l.add(new CustomMod(EvilRun.ID, "b", false));
         l.add(new CustomMod(ExchangeController.ID, "r", true));
-        l.add(new CustomMod(Lament.ID, "g", false));
         l.add(new CustomMod(Analytical.ID, "g", true));
         l.add(new CustomMod(StatusAbuse.ID, "r", true));
     }
@@ -1261,11 +1294,6 @@ public class downfallMod implements
 
         }
 
-        if ((CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(Lament.ID)) || ModHelper.isModEnabled(Lament.ID)) {
-            RelicLibrary.getRelic(NeowsLament.ID).makeCopy().instantObtain();
-
-        }
-
         if ((CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(StatusAbuse.ID)) || ModHelper.isModEnabled(StatusAbuse.ID)) {
             RelicLibrary.getRelic(MakeshiftBattery.ID).makeCopy().instantObtain();
             RelicLibrary.getRelic(MedicalKit.ID).makeCopy().instantObtain();
@@ -1282,6 +1310,7 @@ public class downfallMod implements
         }
 
         if ((CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(Analytical.ID)) || ModHelper.isModEnabled(Analytical.ID)) {
+            RelicLibrary.getRelic(AnalyticalCore.ID).makeCopy().instantObtain();
 
             ArrayList<AbstractCard> cardsToRemove = new ArrayList<>();
             ArrayList<AbstractCard> strikes = new ArrayList<>();
@@ -1431,16 +1460,6 @@ public class downfallMod implements
             for (AbstractMonster m : abstractRoom.monsters.monsters)
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new LastStandModPower(m, AbstractDungeon.actNum * 2), AbstractDungeon.actNum * 2));
         }
-
-        if ((CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(Analytical.ID)) || ModHelper.isModEnabled(Analytical.ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LibraryModPower(1), 1));
-            AbstractCard qCardGet = SpaghettiCode.getRandomEncode();
-            //qCardGet.modifyCostForCombat(-99);
-            CardModifierManager.addModifier(qCardGet, new EtherealMod());
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(qCardGet, true));
-
-        }
-
 
     }
 
