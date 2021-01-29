@@ -47,12 +47,14 @@ public class AwakenedOneChar extends CustomPlayer {
 
 
     public AwakenedOneChar(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures, "awakenedResources/images/char/mainChar/orb/vfx.png", (String) null, (String) null);
+        super(name, setClass, new CustomEnergyOrb(orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null), new SpriterAnimation(
+                modID + "Resources/images/char/mainChar/static.scml"));
         initializeClass(null,
                 SHOULDER1,
                 SHOULDER2,
                 CORPSE,
                 getLoadout(), 20.0F, -10.0F, 166.0F, 327.0F, new EnergyManager(3));
+
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
