@@ -25,7 +25,6 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.Pair;
 import basemod.abstracts.CustomUnlockBundle;
-import basemod.devcommands.unlock.Unlock;
 import basemod.eventUtil.AddEventParams;
 import basemod.eventUtil.EventUtils;
 import basemod.helpers.CardModifierManager;
@@ -95,7 +94,6 @@ import downfall.events.shrines_evil.TransmogrifierEvil;
 import downfall.events.shrines_evil.UpgradeShrineEvil;
 import downfall.monsters.*;
 import downfall.patches.DailyModeEvilPatch;
-import downfall.patches.EndingDoubleFightPatch;
 import downfall.patches.EvilModeCharacterSelect;
 import downfall.patches.ui.campfire.AddBustKeyButtonPatches;
 import downfall.patches.ui.topPanel.GoldToSoulPatches;
@@ -114,10 +112,9 @@ import sneckomod.SneckoMod;
 import sneckomod.cards.unknowns.*;
 import theHexaghost.HexaMod;
 import theHexaghost.TheHexaghost;
-import theTodo.TodoMod;
+import awakenedOne.AwakenedOneMod;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
@@ -261,8 +258,8 @@ public class downfallMod implements
                 return "champResources/" + path;
             case PACKAGE_AUTOMATON:
                 return "bronzeResources/" + path;
-            case PACKAGE_TODO:
-                return TodoMod.modID + "Resources/" + path;
+            case PACKAGE_AWAKENED_ONE:
+                return AwakenedOneMod.modID + "Resources/" + path;
         }
         return "downfallResources/" + path;
     }
@@ -345,7 +342,7 @@ public class downfallMod implements
         //SlimeboundMod.logger.info("loading loc:" + language + " PACKAGE_AUTOMATON" + stringType);
         BaseMod.loadCustomStringsFile(stringType, makeLocalizationPath(language, stringType.getSimpleName(), otherPackagePaths.PACKAGE_AUTOMATON));
 
-        BaseMod.loadCustomStringsFile(stringType, makeLocalizationPath(language, stringType.getSimpleName(), otherPackagePaths.PACKAGE_TODO));
+        BaseMod.loadCustomStringsFile(stringType, makeLocalizationPath(language, stringType.getSimpleName(), otherPackagePaths.PACKAGE_AWAKENED_ONE));
     }
 
     private void loadLocalization(Settings.GameLanguage language) {
@@ -438,7 +435,7 @@ public class downfallMod implements
         loadModKeywords(ChampMod.getModID(), otherPackagePaths.PACKAGE_CHAMP);
         loadModKeywords(AutomatonMod.getModID(), otherPackagePaths.PACKAGE_AUTOMATON);
         loadModKeywords(modID, otherPackagePaths.PACKAGE_DOWNFALL);
-        loadModKeywords(modID, otherPackagePaths.PACKAGE_TODO);
+        loadModKeywords(modID, otherPackagePaths.PACKAGE_AWAKENED_ONE);
     }
 
 
@@ -1400,7 +1397,7 @@ public class downfallMod implements
         PACKAGE_CHAMP,
         PACKAGE_AUTOMATON,
         PACKAGE_DOWNFALL,
-        PACKAGE_TODO; //TODO: Change this
+        PACKAGE_AWAKENED_ONE; //TODO: Change this
 
         otherPackagePaths() {
         }
