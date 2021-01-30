@@ -1,14 +1,14 @@
 package awakenedOne.cards.democards;
 
+import awakenedOne.cards.AbstractAwakenedCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.NirvanaPower;
-import awakenedOne.cards.AbstractEasyCard;
 
 import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.applyToSelfTemp;
 
-public class TemporaryPowerDemo extends AbstractEasyCard {
+public class TemporaryPowerDemo extends AbstractAwakenedCard {
 
     public final static String ID = makeID("TemporaryPowerDemo");
     // intellij stuff power, self, uncommon

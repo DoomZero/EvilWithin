@@ -1,24 +1,24 @@
 package awakenedOne.cards.democards;
 
+import awakenedOne.cards.AbstractAwakenedCard;
+import awakenedOne.cards.AwakenedModalChoiceCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import awakenedOne.actions.EasyModalChoiceAction;
-import awakenedOne.cards.AbstractEasyCard;
-import awakenedOne.cards.EasyModalChoiceCard;
 
 import java.util.ArrayList;
 
 import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.*;
 
-public class EasyModalChoiceDemo extends AbstractEasyCard {
-    public final static String ID = makeID("EasyModalChoiceDemo");
+public class AwakenedModalChoiceDemo extends AbstractAwakenedCard {
+    public final static String ID = makeID("AwakenedModalChoiceDemo");
     // intellij stuff skill, self, uncommon, , , , , , 
 
-    public EasyModalChoiceDemo() {
+    public AwakenedModalChoiceDemo() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
         baseSilly = silly = 1;
@@ -26,8 +26,8 @@ public class EasyModalChoiceDemo extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> easyCardList = new ArrayList<>();
-        easyCardList.add(new EasyModalChoiceCard("Draw", "Draw " + magicNumber + " cards.", () -> att(new DrawCardAction(magicNumber))));
-        easyCardList.add(new EasyModalChoiceCard("Strength", "Gain " + silly + " Strength.", () -> applyToSelfTop(new StrengthPower(p, silly))));
+        easyCardList.add(new AwakenedModalChoiceCard("Draw", "Draw " + magicNumber + " cards.", () -> att(new DrawCardAction(magicNumber))));
+        easyCardList.add(new AwakenedModalChoiceCard("Strength", "Gain " + silly + " Strength.", () -> applyToSelfTop(new StrengthPower(p, silly))));
         atb(new EasyModalChoiceAction(easyCardList));
     }
 

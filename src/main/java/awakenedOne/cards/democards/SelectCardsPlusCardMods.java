@@ -1,5 +1,6 @@
 package awakenedOne.cards.democards;
 
+import awakenedOne.cards.AbstractAwakenedCard;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import downfall.cardmods.EtherealMod;
 import downfall.cardmods.ExhaustMod;
-import awakenedOne.cards.AbstractEasyCard;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import java.util.Collections;
 import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.*;
 
-public class SelectCardsPlusCardMods extends AbstractEasyCard {
+public class SelectCardsPlusCardMods extends AbstractAwakenedCard {
 
     public final static String ID = makeID("SelectCardsPlusCardMods");
     // intellij stuff skill, self, uncommon

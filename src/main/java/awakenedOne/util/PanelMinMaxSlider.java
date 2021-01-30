@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
-import awakenedOne.cards.AbstractEasyCard;
+import awakenedOne.cards.AbstractAwakenedCard;
 
 import java.util.function.Consumer;
 
@@ -159,7 +159,7 @@ public class PanelMinMaxSlider implements IUIElement {
 
     public static float getCorrectAmount(char type) {
         AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-        if (q instanceof AbstractEasyCard) {
+        if (q instanceof AbstractAwakenedCard) {
             switch (type) {
                 case 'h':
                     return CardArtRoller.infos.get(q.cardID).H;

@@ -5,16 +5,16 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import awakenedOne.actions.EasyXCostAction;
-import awakenedOne.cards.AbstractEasyCard;
+import awakenedOne.cards.AbstractAwakenedCard;
 
 import static awakenedOne.util.Wiz.*;
 import static awakenedOne.AwakenedOneMod.makeID;
 
-public class EasyXCostDemo extends AbstractEasyCard {
-    public final static String ID = makeID("EasyXCostDemo");
+public class AwakenedXCostDemo extends AbstractAwakenedCard {
+    public final static String ID = makeID("AwakenedXCostDemo");
     // intellij stuff attack, enemy, rare, , , , , 0, 1
 
-    public EasyXCostDemo() {
+    public AwakenedXCostDemo() {
         super(ID, -1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 0;
         baseDamage = 5;

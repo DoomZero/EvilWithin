@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.optionCards.LiveForever;
 import com.megacrit.cardcrawl.cards.tempCards.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import awakenedOne.cards.AbstractEasyCard;
+import awakenedOne.cards.AbstractAwakenedCard;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.getRandomItem;
 import static awakenedOne.util.Wiz.makeInHand;
 
-public class MultiPreviewDemoCard extends AbstractEasyCard {
+public class MultiPreviewDemoCard extends AbstractAwakenedCard {
 
     public final static String ID = makeID("MultiPreviewDemoCard");
     // intellij stuff skill, self, uncommon

@@ -1,19 +1,19 @@
 package awakenedOne.cards.democards;
 
+import awakenedOne.cards.AbstractAwakenedCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import awakenedOne.cards.AbstractEasyCard;
 import awakenedOne.powers.LambdaPower;
 
 import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.applyToSelf;
 import static awakenedOne.util.Wiz.atb;
 
-public class InlinePowerDemo extends AbstractEasyCard {
+public class InlinePowerDemo extends AbstractAwakenedCard {
 
     public final static String ID = makeID("InlinePowerDemo");
     // intellij stuff power, self, uncommon

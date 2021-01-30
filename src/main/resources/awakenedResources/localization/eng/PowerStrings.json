@@ -1,1 +1,9 @@
-{}
+{
+  "awakened:AwakenedHex": {
+    "NAME": "Hex",
+    "DESCRIPTIONS": [
+      "When this enemy attacks, it takes #b",
+      " damage."
+    ]
+  }
+}

@@ -8,17 +8,17 @@ import downfall.util.CardIgnore;
 import static awakenedOne.AwakenedOneMod.makeID;
 
 @CardIgnore
-public class EasyModalChoiceCard extends AbstractEasyCard {
+public class AwakenedModalChoiceCard extends AbstractAwakenedCard {
 
     //RIP Octopus.
     //Why isn't this abstract? Because AbstractCard MakeCopy for Lambdas would be very difficult. Maybe some other time. Also Java hates instantiating abstracts unless they're SAMs.
-    //Typically you'll want to add the EasyModalChoiceAction to the bottom, and have the EasyModalChoiceCard Runnables inside add to top.
+    //Typically you'll want to add the EasyModalChoiceAction to the bottom, and have the AwakenedModalChoiceCard Runnables inside add to top.
 
     private Runnable onUseOrChosen;
     private String passedName;
     private String passedDesc;
 
-    public EasyModalChoiceCard(String name, String description, Runnable onUseOrChosen) {
+    public AwakenedModalChoiceCard(String name, String description, Runnable onUseOrChosen) {
         super(makeID(name), -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE, CardColor.COLORLESS);
         this.name = this.originalName = passedName = name;
         this.rawDescription = passedDesc = description;
@@ -53,6 +53,6 @@ public class EasyModalChoiceCard extends AbstractEasyCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new EasyModalChoiceCard(passedName, passedDesc, onUseOrChosen);
+        return new AwakenedModalChoiceCard(passedName, passedDesc, onUseOrChosen);
     }
 }

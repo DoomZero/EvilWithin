@@ -1,14 +1,14 @@
 package awakenedOne.cards.democards;
 
+import awakenedOne.cards.AbstractAwakenedCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
-import awakenedOne.cards.AbstractEasyCard;
 
 import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.applyToSelfNextTurn;
 
-public class NextTurnPowerDemo extends AbstractEasyCard {
+public class NextTurnPowerDemo extends AbstractAwakenedCard {
 
     public final static String ID = makeID("NextTurnPowerDemo");
     // intellij stuff skill, self, uncommon

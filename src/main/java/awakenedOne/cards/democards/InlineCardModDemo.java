@@ -9,13 +9,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Spiker;
 import awakenedOne.cardmods.LambdaMod;
-import awakenedOne.cards.AbstractEasyCard;
+import awakenedOne.cards.AbstractAwakenedCard;
 
 import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.makeInHand;
 import static awakenedOne.util.Wiz.returnTrulyRandomPrediCardInCombat;
 
-public class InlineCardModDemo extends AbstractEasyCard {
+public class InlineCardModDemo extends AbstractAwakenedCard {
 
     public final static String ID = makeID("InlineCardModDemo");
     // intellij stuff skill, self, uncommon

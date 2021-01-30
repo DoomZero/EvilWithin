@@ -1,5 +1,6 @@
 package awakenedOne.patches;
 
+import awakenedOne.cards.AbstractAwakenedCard;
 import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
@@ -14,7 +15,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
-import awakenedOne.cards.AbstractEasyCard;
 import awakenedOne.util.CardArtRoller;
 import awakenedOne.util.NonModButton;
 import awakenedOne.util.PanelMinMaxSlider;
@@ -60,10 +60,10 @@ public class CardArtRollerPatches {
     public static class UIAdditions {
         public static SpireField<PanelMinMaxSlider> hueSlider = new SpireField<>(() -> new PanelMinMaxSlider("hue", 1500, 400, 0, 1, 0.5f, "", (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 CardArtRoller.infos.get(q.cardID).H = c.getValue();
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -78,10 +78,10 @@ public class CardArtRollerPatches {
         }));
         public static SpireField<PanelMinMaxSlider> saturationSlider = new SpireField<>(() -> new PanelMinMaxSlider("saturation", 1500, 300, 0, 1, 0.5f, "", (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 CardArtRoller.infos.get(q.cardID).S = c.getValue();
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -96,10 +96,10 @@ public class CardArtRollerPatches {
         }));
         public static SpireField<PanelMinMaxSlider> lightnessSlider = new SpireField<>(() -> new PanelMinMaxSlider("lightness", 1500, 200, 0, 1, 0.5f, "", (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 CardArtRoller.infos.get(q.cardID).L = c.getValue();
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -114,10 +114,10 @@ public class CardArtRollerPatches {
         }));
         public static SpireField<PanelMinMaxSlider> contrastSlider = new SpireField<>(() -> new PanelMinMaxSlider("contrast", 1500, 100, 0, 1, 0.5f, "", (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 CardArtRoller.infos.get(q.cardID).C = c.getValue();
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -132,10 +132,10 @@ public class CardArtRollerPatches {
         }));
         public static SpireField<NonModButton> flipXButton = new SpireField<NonModButton>(() -> new NonModButton(1500, 600, (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 CardArtRoller.infos.get(q.cardID).flipX = !CardArtRoller.infos.get(q.cardID).flipX;
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -151,7 +151,7 @@ public class CardArtRollerPatches {
 
         public static SpireField<NonModButton> randomizeButton = new SpireField<NonModButton>(() -> new NonModButton(1500, 700, (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 Random rng = new Random();
                 CardArtRoller.infos.put(q.cardID, new CardArtRoller.ReskinInfo(CardArtRoller.infos.get(q.cardID).origCardID, rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.randomBoolean()));
@@ -159,7 +159,7 @@ public class CardArtRollerPatches {
                 UIAdditions.saturationSlider.get(CardCrawlGame.cardPopup).setValue(CardArtRoller.infos.get(q.cardID).S);
                 UIAdditions.lightnessSlider.get(CardCrawlGame.cardPopup).setValue(CardArtRoller.infos.get(q.cardID).L);
                 UIAdditions.contrastSlider.get(CardCrawlGame.cardPopup).setValue(CardArtRoller.infos.get(q.cardID).C);
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -175,13 +175,13 @@ public class CardArtRollerPatches {
 
         public static SpireField<NonModButton> prevButton = new SpireField<NonModButton>(() -> new NonModButton(1400, 800, (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 int idx = stringAllCards(q.type).indexOf(CardArtRoller.infos.get(q.cardID).origCardID) - 1;
                 if (idx != 0) {
                     CardArtRoller.infos.get(q.cardID).origCardID = stringAllCards(q.type).get(idx);
                 }
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -197,13 +197,13 @@ public class CardArtRollerPatches {
 
         public static SpireField<NonModButton> nextButton = new SpireField<NonModButton>(() -> new NonModButton(1600, 800, (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 CardArtRoller.doneCards.remove(q.cardID);
                 int idx = stringAllCards(q.type).indexOf(CardArtRoller.infos.get(q.cardID).origCardID) + 1;
                 if (idx != stringAllCards(q.type).size() - 1) {
                     CardArtRoller.infos.get(q.cardID).origCardID = stringAllCards(q.type).get(idx);
                 }
-                CardArtRoller.computeCard((AbstractEasyCard) q);
+                CardArtRoller.computeCard((AbstractAwakenedCard) q);
                 Texture t = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg");
                 t.dispose();
                 ReflectionHacks.setPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "portraitImg", null);
@@ -218,7 +218,7 @@ public class CardArtRollerPatches {
         }));
         public static SpireField<NonModButton> saveButton = new SpireField<NonModButton>(() -> new NonModButton(1500, 900, (c) -> {
             AbstractCard q = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (q instanceof AbstractEasyCard) {
+            if (q instanceof AbstractAwakenedCard) {
                 colorCardsPrefs.putString(q.cardID + "origID", CardArtRoller.infos.get(q.cardID).origCardID);
                 colorCardsPrefs.putFloat(q.cardID + "hue", CardArtRoller.infos.get(q.cardID).H);
                 colorCardsPrefs.putFloat(q.cardID + "sat", CardArtRoller.infos.get(q.cardID).S);
@@ -237,7 +237,7 @@ public class CardArtRollerPatches {
     public static class RenderDataSliders {
         public static void Postfix(SingleCardViewPopup __instance, SpriteBatch sb) {
             AbstractCard ___card = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (___card instanceof AbstractEasyCard) {
+            if (___card instanceof AbstractAwakenedCard) {
                 PanelMinMaxSlider hueSlider = UIAdditions.hueSlider.get(__instance);
                 PanelMinMaxSlider saturationSlider = UIAdditions.saturationSlider.get(__instance);
                 PanelMinMaxSlider lightnessSlider = UIAdditions.lightnessSlider.get(__instance);
@@ -268,7 +268,7 @@ public class CardArtRollerPatches {
     public static class UpdateDataSliders {
         public static void Prefix(SingleCardViewPopup __instance) {
             AbstractCard ___card = ReflectionHacks.getPrivate(CardCrawlGame.cardPopup, SingleCardViewPopup.class, "card");
-            if (___card instanceof AbstractEasyCard) {
+            if (___card instanceof AbstractAwakenedCard) {
                 PanelMinMaxSlider hueSlider = UIAdditions.hueSlider.get(__instance);
                 PanelMinMaxSlider saturationSlider = UIAdditions.saturationSlider.get(__instance);
                 PanelMinMaxSlider lightnessSlider = UIAdditions.lightnessSlider.get(__instance);
@@ -301,7 +301,7 @@ public class CardArtRollerPatches {
     )
     public static class Open {
         public static void Postfix(SingleCardViewPopup __instance, AbstractCard ___card, CardGroup c) {
-            if (___card instanceof AbstractEasyCard) {
+            if (___card instanceof AbstractAwakenedCard) {
                 UIAdditions.hueSlider.get(__instance).setValue(CardArtRoller.infos.get(___card.cardID).H);
                 UIAdditions.saturationSlider.get(__instance).setValue(CardArtRoller.infos.get(___card.cardID).S);
                 UIAdditions.lightnessSlider.get(__instance).setValue(CardArtRoller.infos.get(___card.cardID).L);
@@ -319,7 +319,7 @@ public class CardArtRollerPatches {
     )
     public static class OpenTwo {
         public static void Postfix(SingleCardViewPopup __instance, AbstractCard ___card) {
-            if (___card instanceof AbstractEasyCard) {
+            if (___card instanceof AbstractAwakenedCard) {
                 UIAdditions.hueSlider.get(__instance).setValue(CardArtRoller.infos.get(___card.cardID).H);
                 UIAdditions.saturationSlider.get(__instance).setValue(CardArtRoller.infos.get(___card.cardID).S);
                 UIAdditions.lightnessSlider.get(__instance).setValue(CardArtRoller.infos.get(___card.cardID).L);
@@ -334,7 +334,7 @@ public class CardArtRollerPatches {
     )
     public static class OpenPrev {
         public static void Postfix(SingleCardViewPopup __instance, AbstractCard ___prevCard) {
-            if (___prevCard instanceof AbstractEasyCard) {
+            if (___prevCard instanceof AbstractAwakenedCard) {
                 UIAdditions.hueSlider.get(__instance).setValue(CardArtRoller.infos.get(___prevCard.cardID).H);
                 UIAdditions.saturationSlider.get(__instance).setValue(CardArtRoller.infos.get(___prevCard.cardID).S);
                 UIAdditions.lightnessSlider.get(__instance).setValue(CardArtRoller.infos.get(___prevCard.cardID).L);
@@ -350,7 +350,7 @@ public class CardArtRollerPatches {
     public static class OpenNext {
 
         public static void Postfix(SingleCardViewPopup __instance, AbstractCard ___nextCard) {
-            if (___nextCard instanceof AbstractEasyCard) {
+            if (___nextCard instanceof AbstractAwakenedCard) {
                 UIAdditions.hueSlider.get(__instance).setValue(CardArtRoller.infos.get(___nextCard.cardID).H);
                 UIAdditions.saturationSlider.get(__instance).setValue(CardArtRoller.infos.get(___nextCard.cardID).S);
                 UIAdditions.lightnessSlider.get(__instance).setValue(CardArtRoller.infos.get(___nextCard.cardID).L);
