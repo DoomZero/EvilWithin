@@ -7,10 +7,47 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "timeeatermod:HoldYourBreath": {
+    "NAME": "Hold Your Breath",
+    "DESCRIPTION": "Gain 1 Time Lock. NL Gain !B! Block."
+  },
   "timeeatermod:Hiccup": {
     "NAME": "Hiccup",
-    "DESCRIPTION": "Apply 1 Time Lock. Deal !D! damage."
+    "DESCRIPTION": "Apply 1 Time Lock. NL Deal !D! damage."
   },
+  "timeeatermod:WakeUpSlap": {
+    "NAME": "Wake-Up Slap",
+    "DESCRIPTION": "Deal !D! damage. NL Reduce the duration of Time Lock on the enemy by 1."
+  },
+  "timeeatermod:EchoingGuard": {
+    "NAME": "Echoing Guard",
+    "DESCRIPTION": "Gain !B! Block. NL If you have Time Lock, gain !B! additional Block."
+  },
+  "timeeatermod:EndlessMemory": {
+    "NAME": "Endless Memory",
+    "DESCRIPTION": "Deal !D! damage. NL Return this card to your hand."
+  },
+  "timeeatermod:TimeShock": {
+    "NAME": "Time Shock",
+    "DESCRIPTION": "Double the enemy's Time Locked damage."
+  },
+  "timeeatermod:OneTimeRewind": {
+    "NAME": "One Time Rewind",
+    "DESCRIPTION": "It's rewind time! Yaaaa. NL This is a debug card tbh."
+  },
+  "timeeatermod:ReverseGrip": {
+    "NAME": "Reverse Grip",
+    "DESCRIPTION": "Deal !D! damage. NL Switch Tempo."
+  },
+  "timeeatermod:RetraceYourSteps": {
+    "NAME": "Retrace Your Steps",
+    "DESCRIPTION": "Gain !B! Block. NL Enter Rewind Tempo."
+  },
+
+
+
+
+
   "timeeatermod:TemporaryPowerDemo": {
     "NAME": "Auto-Generated Temporary Power",
     "DESCRIPTION": "Whenever you Scry this turn, gain !M! Block."

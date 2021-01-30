@@ -18,8 +18,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theHexaghost.vfx.ExplosionSmallEffectGreen;
 import theTimeEater.TimeEaterMod;
@@ -87,6 +85,11 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
 
         this.addToBot(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    public void setDuration(int durAmount){
+        this.fontScale = 8.0F;
+        amount2 = durAmount;
     }
 
     @Override

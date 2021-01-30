@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static theTimeEater.TimeEaterMod.makeID;
 
 public class Strike extends AbstractTimeEaterCard {
-    public final static String ID = makeID("Strike");
+    public final static String ID = makeID(Strike.class.getSimpleName());
     // intellij stuff attack, enemy, basic, 6, 3,  , , , 
 
     public Strike() {

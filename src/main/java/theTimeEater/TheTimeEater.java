@@ -18,9 +18,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import theTimeEater.cards.Defend;
-import theTimeEater.cards.Hiccup;
-import theTimeEater.cards.Strike;
+import theTimeEater.cards.*;
 import theTimeEater.cards.democards.TimeEaterModalChoiceDemo;
 import theTimeEater.cards.democards.InlineCardModDemo;
 import theTimeEater.cards.democards.InlinePowerDemo;
@@ -50,6 +48,8 @@ public class TheTimeEater extends CustomPlayer {
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
 
+    public tempos tempo;
+
 
     public TheTimeEater(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null), new SpriterAnimation(
@@ -77,17 +77,26 @@ public class TheTimeEater extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            retVal.add(Strike.ID);
+//            retVal.add(Strike.ID);
         }
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
 
         retVal.add(Hiccup.ID);
-        retVal.add(TimeEaterModalChoiceDemo.ID);
-        retVal.add(InlineCardModDemo.ID);
-        retVal.add(InlinePowerDemo.ID);
-        retVal.add(NextTurnPowerDemo.ID);
+        retVal.add(HoldYourBreath.ID);
+//        retVal.add(HoldYourBreath.ID);
+        retVal.add(WakeUpSlap.ID);
+        retVal.add(EchoingGuard.ID);
+//        retVal.add(TimeShock.ID);
+        retVal.add(EndlessMemory.ID);
+        retVal.add(OneTimeRewind.ID);
+        retVal.add(RetraceYourSteps.ID);
+        retVal.add(ReverseGrip.ID);
+//        retVal.add(TimeEaterModalChoiceDemo.ID);
+//        retVal.add(InlineCardModDemo.ID);
+//        retVal.add(InlinePowerDemo.ID);
+//        retVal.add(NextTurnPowerDemo.ID);
         return retVal;
     }
 
@@ -176,6 +185,12 @@ public class TheTimeEater extends CustomPlayer {
     @Override
     public String getVampireText() {
         return TEXT[2];
+    }
+
+    public enum tempos {
+        FORWARD,
+        REWIND,
+        PAUSE
     }
 
     public static class Enums {
