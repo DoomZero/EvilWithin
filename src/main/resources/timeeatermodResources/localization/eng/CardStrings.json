@@ -43,7 +43,10 @@
     "NAME": "Retrace Your Steps",
     "DESCRIPTION": "Gain !B! Block. NL Enter Rewind Tempo."
   },
-
+  "timeeatermod:Snooze": {
+    "NAME": "Snooze",
+    "DESCRIPTION": "If you have Time Lock, extend it by 1. NL Otherwise, gain Time Lock for 2 turns. NL Exhaust."
+  },
 
 
 

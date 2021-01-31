@@ -42,6 +42,18 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
         loadRegion("time");
     }
 
+    public TimeLockPower(AbstractCreature owner, int amount, int duration) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.amount = amount;
+        this.isTurnBased = true;
+        amount2 = duration;
+        this.type = AbstractPower.PowerType.BUFF;
+        this.updateDescription();
+        loadRegion("time");
+    }
+
     @Override
     public int getHealthBarAmount() {
         if (amount2 == 1)
@@ -64,7 +76,26 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
         return 0;
     }
 
+    @Override
     public void atStartOfTurn() {
+        if (owner.isPlayer) return;
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && amount2 == 1) {// 65 66
+            explode();
+        } else {
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    isDone = true;
+                    amount2--;
+                    updateDescription();
+                }
+            });
+        }
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if (!owner.isPlayer) return;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && amount2 == 1) {// 65 66
             explode();
         } else {
