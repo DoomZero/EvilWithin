@@ -7,10 +7,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,11 +19,14 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theHexaghost.vfx.ExplosionSmallEffectGreen;
 import theTimeEater.TimeEaterMod;
 
+import static theTimeEater.util.Wiz.atb;
+
 public class TimeLockPower extends TwoAmountPower implements CloneablePowerInterface, HealthBarRenderPower {
-    public static final String POWER_ID = TimeEaterMod.makeID("TimeLockPower");
+    public static final String POWER_ID = TimeEaterMod.makeID(TimeLockPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private boolean justApplied = true;
 
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
 
@@ -36,7 +36,7 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
         this.owner = owner;
         this.amount = amount;
         this.isTurnBased = true;
-        amount2 = 2;
+        amount2 = 1;
         this.type = AbstractPower.PowerType.BUFF;
         this.updateDescription();
         loadRegion("time");
@@ -57,7 +57,7 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
     @Override
     public int getHealthBarAmount() {
         if (amount2 == 1)
-            return amount;
+            return this.amount;
         return 0;
     }
 
@@ -79,6 +79,10 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
     @Override
     public void atStartOfTurn() {
         if (owner.isPlayer) return;
+        if (this.justApplied) {
+            this.justApplied = false;
+            return;
+        }
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && amount2 == 1) {// 65 66
             explode();
         } else {
@@ -96,6 +100,10 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (!owner.isPlayer) return;
+        if (this.justApplied) {
+            this.justApplied = false;
+            return;
+        }
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && amount2 == 1) {// 65 66
             explode();
         } else {
@@ -112,10 +120,12 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
 
     public void explode(){
         this.flashWithoutSound();
-        this.addToBot(new VFXAction(new ExplosionSmallEffectGreen(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-
-        this.addToBot(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
+        if (this.amount > 0){
+            atb(new VFXAction(new ExplosionSmallEffectGreen(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
+//            this.addToBot(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
+            atb(new DamageAction(owner, new DamageInfo(AbstractDungeon.player, amount, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+        }
     }
 
     public void setDuration(int durAmount){
@@ -132,13 +142,13 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
     @Override
     public void updateDescription() {
         if (amount2 == 1)
-            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[2] + amount + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[3];
         else
-            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new TimeLockPower(owner, amount);
+        return new TimeLockPower(owner, this.amount);
     }
 }

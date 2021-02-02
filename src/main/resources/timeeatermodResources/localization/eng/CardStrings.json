@@ -47,7 +47,14 @@
     "NAME": "Snooze",
     "DESCRIPTION": "If you have Time Lock, extend it by 1. NL Otherwise, gain Time Lock for 2 turns. NL Exhaust."
   },
-
+  "timeeatermod:TimeWard": {
+    "NAME": "Time Ward",
+    "DESCRIPTION": "Gain Time Ward."
+  },
+  "timeeatermod:TimelineDivergence": {
+    "NAME": "Timeline Divergence",
+    "DESCRIPTION": "Scry !M!. NL Shuffle your draw pile."
+  },
 
 
 

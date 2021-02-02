@@ -21,7 +21,7 @@ public class Snooze extends AbstractTimeEaterCard {
             tl.setDuration(tl.amount2 + 1);
         }
         else {
-            applyToSelf(new TimeLockPower(p, 0, 3));
+            applyToSelf(new TimeLockPower(p, 0, 2));
         }
     }
 

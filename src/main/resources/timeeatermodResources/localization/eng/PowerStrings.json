@@ -7,5 +7,12 @@
       " turn, loses #b",
       " HP, then #yTime #yLock is removed."
     ]
+  },
+  "timeeatermod:TimeWardPower": {
+    "NAME": "Time Ward",
+    "DESCRIPTIONS": [
+      "In #b",
+      " turns, gains debuffs, then #yTime #yWard is removed."
+    ]
   }
 }
