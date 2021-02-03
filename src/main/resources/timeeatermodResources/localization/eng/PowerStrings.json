@@ -8,6 +8,15 @@
       " HP, then #yTime #yLock is removed."
     ]
   },
+  "timeeatermod:TimeLockExtendablePower": {
+    "NAME": "Time Lock",
+    "DESCRIPTIONS": [
+      "In #b",
+      " turns, loses #b",
+      " turn, loses #b",
+      " HP, then #yTime #yLock is removed."
+    ]
+  },
   "timeeatermod:TimeWardPower": {
     "NAME": "Time Ward",
     "DESCRIPTIONS": [

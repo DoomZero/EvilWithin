@@ -2,18 +2,17 @@ package theTimeEater.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theHexaghost.vfx.ExplosionSmallEffectGreen;
@@ -21,8 +20,8 @@ import theTimeEater.TimeEaterMod;
 
 import static theTimeEater.util.Wiz.atb;
 
-public class TimeLockPower extends TwoAmountPower implements CloneablePowerInterface, HealthBarRenderPower {
-    public static final String POWER_ID = TimeEaterMod.makeID(TimeLockPower.class.getSimpleName());
+public class TimeLockExtendablePower extends TwoAmountPower implements CloneablePowerInterface, HealthBarRenderPower {
+    public static final String POWER_ID = TimeEaterMod.makeID(TimeLockExtendablePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -30,18 +29,18 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
 
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
 
-    public TimeLockPower(AbstractCreature owner, int amount) {
+    public TimeLockExtendablePower(AbstractCreature owner, int amount) {
         this(owner, amount, 1);
     }
 
-    public TimeLockPower(AbstractCreature owner, int amount, int duration) {
+    public TimeLockExtendablePower(AbstractCreature owner, int amount, int duration) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
         this.isTurnBased = true;
         amount2 = duration;
-        this.type = AbstractPower.PowerType.BUFF;
+        this.type = PowerType.BUFF;
         this.updateDescription();
         loadRegion("time");
     }
@@ -141,6 +140,6 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
 
     @Override
     public AbstractPower makeCopy() {
-        return new TimeLockPower(owner, this.amount);
+        return new TimeLockExtendablePower(owner, this.amount);
     }
 }
