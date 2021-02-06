@@ -9,15 +9,16 @@ import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
 
 import java.util.ArrayList;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TheTimeEater.tempos;
 
 public class EnterTempoAction extends AbstractGameAction {
 
     TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
     DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
     DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
-    TheTimeEater.tempos direction;
+    tempos direction;
 
-    public EnterTempoAction(TheTimeEater.tempos tempo) {
+    public EnterTempoAction(tempos tempo) {
         this.direction = tempo;
     }
 
@@ -33,6 +34,8 @@ public class EnterTempoAction extends AbstractGameAction {
         p.discardPile.group = p.drawPile.group;
         p.drawPile.group = tmp;
 
+        p.tempo = this.direction;
+
         //flip the icons
         float temp_x = drawPile.target_x;
         float temp_y = drawPile.target_y;
@@ -41,7 +44,6 @@ public class EnterTempoAction extends AbstractGameAction {
         discardPile.target_x = discardPile.current_x = temp_x;
         discardPile.target_y = discardPile.current_y = temp_y;
 
-        p.tempo = this.direction;
         isDone = true;
     }
 }

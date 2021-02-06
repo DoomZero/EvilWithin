@@ -9,7 +9,7 @@
     ]
   },
   "timeeatermod:TimeLockExtendablePower": {
-    "NAME": "Time Lock",
+    "NAME": "Time Lock Extendable",
     "DESCRIPTIONS": [
       "In #b",
       " turns, loses #b",
@@ -22,6 +22,20 @@
     "DESCRIPTIONS": [
       "In #b",
       " turns, gains debuffs, then #yTime #yWard is removed."
+    ]
+  },
+  "timeeatermod:DrawVoidPower": {
+    "NAME": "Draw Void",
+    "DESCRIPTIONS": [
+      "The next card you draw this turn will be a Void.",
+      "The next #b",
+      "cards you draw this turn will be Voids."
+    ]
+  },
+  "timeeatermod:DesynchronizePower": {
+    "NAME": "Desynchronize",
+    "DESCRIPTIONS": [
+      "Each time your Time Lock expires, you regain Time Lock for 1 turn."
     ]
   }
 }

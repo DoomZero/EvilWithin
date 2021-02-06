@@ -13,11 +13,11 @@ public class TimelineDivergence extends AbstractTimeEaterCard {
 
     public TimelineDivergence() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.magicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ScryAction(this.magicNumber));
+        scry();
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {

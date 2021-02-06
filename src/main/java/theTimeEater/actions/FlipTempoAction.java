@@ -10,12 +10,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.DiscardPilePanel;
 import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
+import theTimeEater.TheTimeEater;
+import theTimeEater.TheTimeEater.tempos;
 
 import java.util.ArrayList;
 
 public class FlipTempoAction extends AbstractGameAction {
 
-    AbstractPlayer p = AbstractDungeon.player;
+    TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
     DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
     DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
 
@@ -27,6 +29,9 @@ public class FlipTempoAction extends AbstractGameAction {
         ArrayList<AbstractCard> tmp = p.discardPile.group;
         p.discardPile.group = p.drawPile.group;
         p.drawPile.group = tmp;
+
+        if (p.tempo == tempos.REWIND)  p.tempo = tempos.FORWARD;
+        if (p.tempo == tempos.FORWARD) p.tempo = tempos.REWIND;
 
         //flip the icons
         float temp_x = drawPile.target_x;

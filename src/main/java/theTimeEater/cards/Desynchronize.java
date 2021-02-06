@@ -1,28 +1,26 @@
 package theTimeEater.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theTimeEater.powers.DesynchronizePower;
 import theTimeEater.powers.TimeLockExtendablePower;
-import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 
-public class HoldYourBreath extends AbstractTimeEaterCard {
-    public final static String ID = makeID(HoldYourBreath.class.getSimpleName());
+public class Desynchronize extends AbstractTimeEaterCard {
+    public final static String ID = makeID(Desynchronize.class.getSimpleName());
     // intellij stuff skill, self, basic, 5, 3,  , , ,
 
-    public HoldYourBreath() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
-        baseBlock = 5;
+    public Desynchronize() {
+        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        applyToSelf(new DesynchronizePower(0));
         applyToSelf(new TimeLockExtendablePower(p, 0));
-        blck();
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBaseCost(1);
     }
 }

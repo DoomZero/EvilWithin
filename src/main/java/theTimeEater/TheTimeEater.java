@@ -48,8 +48,7 @@ public class TheTimeEater extends CustomPlayer {
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
 
-    public tempos tempo;
-
+    public tempos tempo = tempos.FORWARD;
 
     public TheTimeEater(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null), new SpriterAnimation(
@@ -85,12 +84,10 @@ public class TheTimeEater extends CustomPlayer {
 
         retVal.add(Hiccup.ID);
         retVal.add(HoldYourBreath.ID);
-//        retVal.add(HoldYourBreath.ID);
         retVal.add(WakeUpSlap.ID);
         retVal.add(EchoingGuard.ID);
-//        retVal.add(TimeShock.ID);
         retVal.add(EndlessMemory.ID);
-        retVal.add(OneTimeRewind.ID);
+//        retVal.add(OneTimeRewind.ID);
         retVal.add(RetraceYourSteps.ID);
         retVal.add(ReverseGrip.ID);
 //        retVal.add(TimeEaterModalChoiceDemo.ID);

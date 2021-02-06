@@ -56,10 +56,47 @@
     "DESCRIPTION": "Scry !M!. NL Shuffle your draw pile."
   },
   "timeeatermod:BorrowedTime": {
-    "NAME": "BorrowedTime",
-    "DESCRIPTION": "Gain [E] [E]. NL Add a *Void into your discard pile.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Add a *Void into your discard pile."
+    "NAME": "Borrowed Time",
+    "DESCRIPTION": "Gain [E] [E]. NL The next card you draw will be a *Void.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL The next card you draw will be a *Void."
   },
+  "timeeatermod:Desynchronize": {
+    "NAME": "Desynchronize",
+    "DESCRIPTION": "Gain Time Lock. Whenever your Time Lock wears off, gain Time Lock."
+  },
+  "timeeatermod:KnockOutPunch": {
+    "NAME": "Knock Out Punch",
+    "DESCRIPTION": "Apply 2 Time Lock. NL Deal !D! damage."
+  },
+  "timeeatermod:ThirdEye": {
+    "NAME": "Third Eye",
+    "DESCRIPTION": "Gain !B! Block. NL Scry !M!."
+  },
+  "timeeatermod:ReliveThePast": {
+    "NAME": "Relive The Past",
+    "DESCRIPTION": "Draw 2 cards if in Rewind Tempo. Otherwise, enter Rewind Tempo."
+  },
+  "timeeatermod:GlimpseBeyond": {
+    "NAME": "Glimpse Beyond",
+    "DESCRIPTION": "Draw 2 cards if in Forward Tempo. Otherwise, enter Forward Tempo."
+  },
+  "timeeatermod:TimeLockWeak": {
+    "NAME": "TimeLockWeak",
+    "DESCRIPTION": "Deal 8 damage. NL If the target has Time Lock, apply 2 Weak."
+  },
+  "timeeatermod:TimeLockVulnerable": {
+    "NAME": "TimeLockVulnerable",
+    "DESCRIPTION": "Deal 8 damage. NL If the target has Time Lock, apply 2 Vulnerable."
+  },
+  "timeeatermod:ButterflyEffect": {
+    "NAME": "Butterfly Effect",
+    "DESCRIPTION": "Each time an enemy's Time Lock expires, it affects ALL enemies."
+  },
+
+
+
+
+
 
 
 
@@ -88,7 +125,7 @@
     "DESCRIPTION": "Ethereal. NL Add a random *Stinky *Watcher *Buddy into your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Ethereal. NL Add a random Upgraded *Stinky *Watcher *Buddy into your hand. NL Exhaust."
   },
-  "timeeatermod:EasyXCostDemo": {
+  "timeeatermod:TimeEaterXCostDemo": {
     "NAME": "Easy X Cost",
     "DESCRIPTION": "Deal !D! damage X times. NL Gain X Strength. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage X+1 times. NL Gain X+1 Strength. NL Exhaust."

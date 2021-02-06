@@ -7,11 +7,17 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.helpers.SaveHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import downfall.util.CardIgnore;
 import javassist.CtClass;
 import javassist.Modifier;
@@ -19,6 +25,7 @@ import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
 import theTimeEater.cards.cardvars.SecondDamage;
 import theTimeEater.cards.cardvars.SillyVariable;
+import theTimeEater.powers.TimeLockExtendablePower;
 import theTimeEater.relics.TodoItem;
 import theTimeEater.util.CardArtRoller;
 import theTimeEater.util.CardFilter;
@@ -34,13 +41,18 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static theTimeEater.util.Wiz.atb;
+
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
 public class TimeEaterMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        PostBattleSubscriber,
+        OnStartBattleSubscriber
+{
 
     public static Prefs colorCardsPrefs = new Prefs();
 
@@ -189,5 +201,18 @@ public class TimeEaterMod implements
         ArrayList<AbstractCard> cardsList = Wiz.getCardsMatchingPredicate(s -> s.type == t && BaseMod.isBaseGameCardColor(s.color), true);
         String q = Wiz.getRandomItem(cardsList, rng).cardID;
         return new CardArtRoller.ReskinInfo(q, rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.randomBoolean());
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        ((TheTimeEater) AbstractDungeon.player).tempo = TheTimeEater.tempos.FORWARD;
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        TimeLockExtendablePower q = (TimeLockExtendablePower) AbstractDungeon.player.getPower(TimeLockExtendablePower.POWER_ID);
+        if(q != null){
+            q.explode();
+        }
     }
 }
