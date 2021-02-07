@@ -21,7 +21,7 @@ import java.util.ArrayList;
         clz=DrawCardAction.class,
         method="update"
 )
-public class voidDrawPatch {
+public class VoidDrawPatch {
     @SpireInsertPatch(
         locator=Locator.class
     )

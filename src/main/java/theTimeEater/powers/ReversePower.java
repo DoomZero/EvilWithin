@@ -26,24 +26,23 @@ public class ReversePower extends AbstractPower {
 
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
 
-    public ReversePower(AbstractCreature owner, int amount) {
+    public ReversePower() {
         this.name = NAME;
         this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = -1;
+        this.owner = AbstractDungeon.player;
+        this.amount = 1;
         this.type = PowerType.BUFF;
         this.updateDescription();
         loadRegion("time");
     }
 
-    public void atStartOfTurn() {
-
-    }
+//    public void atStartOfTurn() {
+//    }
 
     @Override
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
-        this.amount += stackAmount;
+        this.amount *= -1;
     }
 
     /*@Override
