@@ -6,18 +6,26 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theTimeEater.TimeEaterMod.makeID;
 
-public class EndlessMemory extends AbstractTimeEaterCard {
-    public final static String ID = makeID(EndlessMemory.class.getSimpleName());
+public class RecurringRampage extends AbstractTimeEaterCard {
+    public final static String ID = makeID(RecurringRampage.class.getSimpleName());
     // intellij stuff attack, enemy, basic, 6, 3,  , , ,
 
-    public EndlessMemory() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 6;
+    public RecurringRampage() {
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        this.baseDamage = 2;
+        this.magicNumber = 5;
         this.returnToHand = true;
+    }
+
+    public void triggerWhenDrawn() {
+        this.upgradeDamage(this.magicNumber);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
+
+        updateCost(1);
+        baseDamage *= 2;
     }
 
     public void upp() {

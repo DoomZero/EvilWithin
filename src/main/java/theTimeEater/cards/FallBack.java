@@ -8,12 +8,12 @@ import theTimeEater.actions.EnterTempoAction;
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.atb;
 
-public class RetraceYourSteps extends AbstractTimeEaterCard {
-    public final static String ID = makeID(RetraceYourSteps.class.getSimpleName());
+public class FallBack extends AbstractTimeEaterCard {
+    public final static String ID = makeID(FallBack.class.getSimpleName());
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
-    public RetraceYourSteps() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+    public FallBack() {
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = 8;
     }
 

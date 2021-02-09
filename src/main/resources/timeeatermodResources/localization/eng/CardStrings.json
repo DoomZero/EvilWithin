@@ -39,8 +39,12 @@
     "NAME": "Reverse Grip",
     "DESCRIPTION": "Deal !D! damage. NL Switch Tempo."
   },
-  "timeeatermod:RetraceYourSteps": {
-    "NAME": "Retrace Your Steps",
+  "timeeatermod:SpringForward": {
+    "NAME": "Spring Forward",
+    "DESCRIPTION": "Deal !D! damage. NL Enter Forward Tempo."
+  },
+  "timeeatermod:FallBack": {
+    "NAME": "Fall Back",
     "DESCRIPTION": "Gain !B! Block. NL Enter Rewind Tempo."
   },
   "timeeatermod:Snooze": {
@@ -82,15 +86,31 @@
   },
   "timeeatermod:TimeLockWeak": {
     "NAME": "TimeLockWeak",
-    "DESCRIPTION": "Deal 8 damage. NL If the target has Time Lock, apply 2 Weak."
+    "DESCRIPTION": "Deal !D! damage. NL If the target has Time Lock, apply 2 Weak."
   },
   "timeeatermod:TimeLockVulnerable": {
     "NAME": "TimeLockVulnerable",
-    "DESCRIPTION": "Deal 8 damage. NL If the target has Time Lock, apply 2 Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If the target has Time Lock, apply 2 Vulnerable."
   },
   "timeeatermod:ButterflyEffect": {
     "NAME": "Butterfly Effect",
     "DESCRIPTION": "Each time an enemy's Time Lock expires, it affects ALL enemies."
+  },
+  "timeeatermod:RecurringRampage": {
+    "NAME": "Fall Back",
+    "DESCRIPTION": "Deal !D! damage. NL When you draw this card, increase its damage by !M! for the rest of combat."
+  },
+  "timeeatermod:DaylightSavings": {
+    "NAME": "Daylight Savings",
+    "DESCRIPTION": "Gain [E]. NL Whenever you draw this card, increase its [E] by 1 until played.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain",
+      ". NL Whenever you draw this card, increase its [E] by 1 until played."
+    ]
+  },
+  "timeeatermod:SelectiveMemory": {
+  "NAME": "Selective Memory",
+  "DESCRIPTION": "Choose 3 cards in your draw pile. Discard them."
   },
 
 

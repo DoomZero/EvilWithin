@@ -19,10 +19,6 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theTimeEater.cards.*;
-import theTimeEater.cards.democards.TimeEaterModalChoiceDemo;
-import theTimeEater.cards.democards.InlineCardModDemo;
-import theTimeEater.cards.democards.InlinePowerDemo;
-import theTimeEater.cards.democards.NextTurnPowerDemo;
 import theTimeEater.relics.TodoItem;
 
 import java.util.ArrayList;
@@ -88,7 +84,7 @@ public class TheTimeEater extends CustomPlayer {
         retVal.add(EchoingGuard.ID);
         retVal.add(EndlessMemory.ID);
 //        retVal.add(OneTimeRewind.ID);
-        retVal.add(RetraceYourSteps.ID);
+        retVal.add(FallBack.ID);
         retVal.add(ReverseGrip.ID);
 //        retVal.add(TimeEaterModalChoiceDemo.ID);
 //        retVal.add(InlineCardModDemo.ID);
