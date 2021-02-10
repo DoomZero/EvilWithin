@@ -109,8 +109,20 @@
     ]
   },
   "timeeatermod:SelectiveMemory": {
-  "NAME": "Selective Memory",
-  "DESCRIPTION": "Choose 3 cards in your draw pile. Discard them."
+    "NAME": "Selective Memory",
+    "DESCRIPTION": "Choose 3 cards in your draw pile. Discard them."
+  },
+  "timeeatermod:Ripple": {
+    "NAME": "Ripple",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! Weak and !M! Vulnerable to ALL enemies."
+  },
+  "timeeatermod:HeadSlam": {
+    "NAME": "Head Slam",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "timeeatermod:Reverberate": {
+    "NAME": "Reverberate",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
 
 
