@@ -19,9 +19,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theHexaghost.vfx.ExplosionSmallEffectGreen;
 import theTimeEater.TimeEaterMod;
 
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
-public class TimeLockPower extends TwoAmountPower implements CloneablePowerInterface, HealthBarRenderPower {
+public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePowerInterface, HealthBarRenderPower {
     public static final String POWER_ID = TimeEaterMod.makeID(TimeLockPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -35,14 +35,8 @@ public class TimeLockPower extends TwoAmountPower implements CloneablePowerInter
     }
 
     public TimeLockPower(AbstractCreature owner, int amount, int duration) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.isTurnBased = true;
+        super(NAME, POWER_ID, PowerType.BUFF, true, owner, amount);
         amount2 = duration;
-        this.type = AbstractPower.PowerType.BUFF;
-        this.updateDescription();
         loadRegion("time");
     }
 

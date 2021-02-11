@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
+import static theTimeEater.util.Wiz.atb;
 
 public class TimeShock extends AbstractTimeEaterCard {
     public final static String ID = makeID(TimeShock.class.getSimpleName());
@@ -18,7 +19,7 @@ public class TimeShock extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AbstractGameAction() {
+        atb(new AbstractGameAction() {
             @Override
             public void update() {
                 isDone = true;

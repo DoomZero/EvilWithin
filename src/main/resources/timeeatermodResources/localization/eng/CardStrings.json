@@ -124,6 +124,14 @@
     "NAME": "Reverberate",
     "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
+  "timeeatermod:DiscardAllAttack": {
+    "NAME": "DiscardAllAttack",
+    "DESCRIPTION": "Deal !D! damage. Discard ALL copies of this card in your hand and deck."
+  },
+  "timeeatermod:StarterTempoChange": {
+    "NAME": "StarterTempoChange",
+    "DESCRIPTION": "Switch Tempo. Scry !M!."
+  },
 
 
 

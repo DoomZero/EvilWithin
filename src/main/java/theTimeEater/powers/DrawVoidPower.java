@@ -18,13 +18,15 @@ import theTimeEater.TimeEaterMod;
 
 import java.util.ArrayList;
 
-public class DrawVoidPower extends AbstractPower implements CloneablePowerInterface {
+import static theTimeEater.util.Wiz.*;
+
+public class DrawVoidPower extends AbstractTimeEaterPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(DrawVoidPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public DrawVoidPower(AbstractCreature owner, int amount) {
+    /*public DrawVoidPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -32,6 +34,11 @@ public class DrawVoidPower extends AbstractPower implements CloneablePowerInterf
         this.isTurnBased = false;
         this.type = PowerType.DEBUFF;
         this.updateDescription();
+        loadRegion("time");
+    }*/
+
+    public DrawVoidPower(AbstractCreature owner, int amount){
+        super(NAME, POWER_ID, PowerType.DEBUFF, false, owner, amount);
         loadRegion("time");
     }
 
@@ -44,7 +51,7 @@ public class DrawVoidPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public void onCardDraw(AbstractCard notUsed){
         if (this.amount <= 0){
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner,this));
+            atb(new RemoveSpecificPowerAction(this.owner, this.owner,this));
         }
     }
 

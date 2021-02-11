@@ -23,7 +23,7 @@ import theTimeEater.TimeEaterMod;
 
 import java.util.ArrayList;
 
-public class TimeWardPower extends TwoAmountPower implements CloneablePowerInterface, OnReceivePowerPower {
+public class TimeWardPower extends AbstractTimeEaterPower implements CloneablePowerInterface, OnReceivePowerPower {
     public static final String POWER_ID = TimeEaterMod.makeID(TimeWardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -33,16 +33,12 @@ public class TimeWardPower extends TwoAmountPower implements CloneablePowerInter
 
     public ArrayList<AbstractPower> storedPowers = new ArrayList();
 
-    public TimeWardPower(AbstractCreature owner, int duration) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = duration;
+    public TimeWardPower(int duration) {
+        super(NAME, POWER_ID, PowerType.BUFF, duration);
         this.isTurnBased = true;
-        this.type = PowerType.BUFF;
-        this.updateDescription();
         loadRegion("time");
     }
+
 
     @Override
     public int onReceivePowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount) {
@@ -57,7 +53,7 @@ public class TimeWardPower extends TwoAmountPower implements CloneablePowerInter
 
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        // must be applied to player, must be debuff
+        // incoming power must be applied to player, must be debuff
         if (target != owner || power.type == PowerType.BUFF) return true;
 
         storedPowers.add(power);
@@ -71,16 +67,6 @@ public class TimeWardPower extends TwoAmountPower implements CloneablePowerInter
         if (!owner.isPlayer) return;
         if ((this.amount <= 1) && (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             explode();
-        /*} else {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    isDone = true;
-                    amount--;
-                    updateDescription();
-                }
-            });
-        }*/
         } else {
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
             updateDescription();
@@ -110,6 +96,6 @@ public class TimeWardPower extends TwoAmountPower implements CloneablePowerInter
 
     @Override
     public AbstractPower makeCopy() {
-        return new TimeWardPower(owner, this.amount);
+        return new TimeWardPower(this.amount);
     }
 }

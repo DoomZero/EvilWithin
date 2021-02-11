@@ -15,7 +15,7 @@ public class TimeWard extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new TimeWardPower(p, 1));
+        applyToSelf(new TimeWardPower(1));
     }
 
     public void upp() {

@@ -23,7 +23,7 @@ import theTimeEater.TimeEaterMod;
 
 import static theTimeEater.util.Wiz.atb;
 
-public class TimeLockExtendablePower extends TwoAmountPower implements CloneablePowerInterface, HealthBarRenderPower {
+public class TimeLockExtendablePower extends AbstractTimeEaterPower implements CloneablePowerInterface, HealthBarRenderPower {
     public static final String POWER_ID = TimeEaterMod.makeID(TimeLockExtendablePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -38,14 +38,8 @@ public class TimeLockExtendablePower extends TwoAmountPower implements Cloneable
     }
 
     public TimeLockExtendablePower(AbstractCreature owner, int damage, int duration) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = damage;
+        super(NAME, POWER_ID, PowerType.BUFF, true, owner, damage);
         amount2 = duration;
-        this.isTurnBased = true;
-        this.type = PowerType.BUFF;
-        this.updateDescription();
         loadRegion("time");
     }
 

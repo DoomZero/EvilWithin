@@ -10,7 +10,7 @@ import theTimeEater.actions.FlipTempoAction;
 import theTimeEater.powers.ReversePower;
 
 import static theTimeEater.TimeEaterMod.makeID;
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
 public class ReliveThePast extends AbstractTimeEaterCard {
     public final static String ID = makeID(ReliveThePast.class.getSimpleName());

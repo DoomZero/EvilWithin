@@ -24,8 +24,7 @@ import theTimeEater.util.CardArtRoller;
 import java.util.ArrayList;
 
 import static theTimeEater.TimeEaterMod.*;
-import static theTimeEater.util.Wiz.atb;
-import static theTimeEater.util.Wiz.att;
+import static theTimeEater.util.Wiz.*;
 
 public abstract class AbstractTimeEaterCard extends CustomCard {
 

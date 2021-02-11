@@ -70,27 +70,28 @@ public class TheTimeEater extends CustomPlayer {
 
     @Override
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
+        ArrayList<String> startingDeck = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-//            retVal.add(Strike.ID);
+            startingDeck.add(Strike.ID);
         }
         for (int i = 0; i < 4; i++) {
-            retVal.add(Defend.ID);
+            startingDeck.add(Defend.ID);
         }
 
-        retVal.add(Hiccup.ID);
-        retVal.add(HoldYourBreath.ID);
-        retVal.add(WakeUpSlap.ID);
-        retVal.add(EchoingGuard.ID);
-        retVal.add(EndlessMemory.ID);
-//        retVal.add(OneTimeRewind.ID);
-        retVal.add(FallBack.ID);
-        retVal.add(ReverseGrip.ID);
-//        retVal.add(TimeEaterModalChoiceDemo.ID);
-//        retVal.add(InlineCardModDemo.ID);
-//        retVal.add(InlinePowerDemo.ID);
-//        retVal.add(NextTurnPowerDemo.ID);
-        return retVal;
+        startingDeck.add(StarterTempoChange.ID);
+//        startingDeck.add(Hiccup.ID);
+        startingDeck.add(HoldYourBreath.ID);
+//        startingDeck.add(WakeUpSlap.ID);
+//        startingDeck.add(EchoingGuard.ID);
+//        startingDeck.add(EndlessMemory.ID);
+//        startingDeck.add(OneTimeRewind.ID);
+//        startingDeck.add(FallBack.ID);
+//        startingDeck.add(ReverseGrip.ID);
+//        startingDeck.add(TimeEaterModalChoiceDemo.ID);
+//        startingDeck.add(InlineCardModDemo.ID);
+//        startingDeck.add(InlinePowerDemo.ID);
+//        startingDeck.add(NextTurnPowerDemo.ID);
+        return startingDeck;
     }
 
     public ArrayList<String> getStartingRelics() {

@@ -9,6 +9,7 @@ import theTimeEater.powers.ReversePower;
 import theTimeEater.powers.TimeLockExtendablePower;
 
 import static theTimeEater.TimeEaterMod.makeID;
+import static theTimeEater.util.Wiz.*;
 
 public class OneTimeRewind extends AbstractTimeEaterCard {
     public final static String ID = makeID(OneTimeRewind.class.getSimpleName());
@@ -21,10 +22,10 @@ public class OneTimeRewind extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new FlipTempoAction());
+        atb(new FlipTempoAction());
         applyToSelf(new ReversePower());
-//        this.addToBot(new MoveDrawAndDiscardPileAction());
-        this.addToBot(new DrawCardAction(p, 1));
+//        atb(new MoveDrawAndDiscardPileAction());
+        atb(new DrawCardAction(p, 1));
     }
 
     public void upp() {

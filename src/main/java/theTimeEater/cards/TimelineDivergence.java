@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theTimeEater.TimeEaterMod.makeID;
+import static theTimeEater.util.Wiz.*;
 
 public class TimelineDivergence extends AbstractTimeEaterCard {
     public final static String ID = makeID(TimelineDivergence.class.getSimpleName());
@@ -18,7 +19,7 @@ public class TimelineDivergence extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         scry();
-        addToBot(new AbstractGameAction() {
+        atb(new AbstractGameAction() {
             @Override
             public void update() {
                 isDone = true;

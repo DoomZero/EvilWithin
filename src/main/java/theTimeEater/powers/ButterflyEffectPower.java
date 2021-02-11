@@ -7,19 +7,14 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.TimeEaterMod;
 
-public class ButterflyEffectPower extends AbstractPower implements CloneablePowerInterface {
+public class ButterflyEffectPower extends AbstractTimeEaterPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(ButterflyEffectPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public ButterflyEffectPower(final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = AbstractDungeon.player;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
-        this.updateDescription();
+    public ButterflyEffectPower() {
+        super(NAME, POWER_ID, PowerType.BUFF);
         loadRegion("time");
     }
 
@@ -35,6 +30,6 @@ public class ButterflyEffectPower extends AbstractPower implements CloneablePowe
 
     @Override
     public AbstractPower makeCopy() {
-        return new ButterflyEffectPower(0);
+        return new ButterflyEffectPower();
     }
 }

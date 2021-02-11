@@ -10,19 +10,14 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.TimeEaterMod;
 
-public class DesynchronizePower extends AbstractPower implements CloneablePowerInterface {
+public class DesynchronizePower extends AbstractTimeEaterPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(DesynchronizePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public DesynchronizePower(final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = AbstractDungeon.player;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
-        this.updateDescription();
+        super(NAME, POWER_ID, PowerType.BUFF, amount);
         loadRegion("time");
     }
 

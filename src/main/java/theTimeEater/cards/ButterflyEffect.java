@@ -17,7 +17,7 @@ public class ButterflyEffect extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new ButterflyEffectPower(0));
+        applyToSelf(new ButterflyEffectPower());
     }
 
     public void upp() {

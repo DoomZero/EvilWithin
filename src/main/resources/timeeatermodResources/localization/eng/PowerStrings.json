@@ -37,5 +37,33 @@
     "DESCRIPTIONS": [
       "Each time your Time Lock expires, you regain Time Lock for 1 turn."
     ]
+  },
+  "timeeatermod:EnergyBlurPower": {
+    "NAME": "Energy Blur",
+    "DESCRIPTIONS": [
+      "Leftover energy is retained ",
+      "this turn.",
+      "for the next #b",
+      " turns."
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "timeeatermod:ReversePower": {
+    "NAME": "Reverse Power",
+    "DESCRIPTIONS": [
+      "Placeholder"
+    ]
   }
 }

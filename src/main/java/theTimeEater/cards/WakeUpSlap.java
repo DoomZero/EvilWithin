@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
+import static theTimeEater.util.Wiz.*;
 
 public class WakeUpSlap extends AbstractTimeEaterCard {
     public final static String ID = makeID(WakeUpSlap.class.getSimpleName());
@@ -20,7 +21,7 @@ public class WakeUpSlap extends AbstractTimeEaterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         //decrease duration of time lock on enemy
-        addToBot(new AbstractGameAction() {
+        atb(new AbstractGameAction() {
             @Override
             public void update() {
                 isDone = true;

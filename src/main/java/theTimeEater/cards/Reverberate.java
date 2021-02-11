@@ -18,7 +18,7 @@ public class Reverberate extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++) {
-            dmg(m, AbstractGameAction.AttackEffect.LIGHTNING);
+            allDmg(AbstractGameAction.AttackEffect.LIGHTNING);
         }
     }
 
