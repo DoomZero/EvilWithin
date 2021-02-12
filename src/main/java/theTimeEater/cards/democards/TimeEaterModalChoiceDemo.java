@@ -21,18 +21,18 @@ public class TimeEaterModalChoiceDemo extends AbstractTimeEaterCard {
     public TimeEaterModalChoiceDemo() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
-        baseSilly = silly = 1;
+        baseSecondMagic = secondMagic = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> easyCardList = new ArrayList<>();
         easyCardList.add(new TimeEaterModalChoiceCard("Draw", "Draw " + magicNumber + " cards.", () -> att(new DrawCardAction(magicNumber))));
-        easyCardList.add(new TimeEaterModalChoiceCard("Strength", "Gain " + silly + " Strength.", () -> applyToSelfTop(new StrengthPower(p, silly))));
+        easyCardList.add(new TimeEaterModalChoiceCard("Strength", "Gain " + secondMagic + " Strength.", () -> applyToSelfTop(new StrengthPower(p, secondMagic))));
         atb(new EasyModalChoiceAction(easyCardList));
     }
 
     public void upp() {
         upgradeMagicNumber(1);
-        upgradeSilly(1);
+        upgradeSecondMagic(1);
     }
 }

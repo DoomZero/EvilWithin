@@ -3,9 +3,7 @@ package theTimeEater.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theTimeEater.TheTimeEater;
-import theTimeEater.actions.EnterTempoAction;
-import theTimeEater.actions.FlipTempoAction;
+import theTimeEater.actions.SwitchTempoAction;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.atb;
@@ -21,7 +19,7 @@ public class ReverseGrip extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        atb(new FlipTempoAction());
+        atb(new SwitchTempoAction());
     }
 
     public void upp() {

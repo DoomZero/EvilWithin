@@ -4,12 +4,14 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.util.TexLoader;
 
 import static theTimeEater.TimeEaterMod.makeID;
+import static theTimeEater.util.Wiz.atb;
 
 public abstract class AbstractTimeEaterPower extends TwoAmountPower implements CloneablePowerInterface {
     public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType) {
@@ -40,5 +42,9 @@ public abstract class AbstractTimeEaterPower extends TwoAmountPower implements C
         }
 
         this.updateDescription();
+    }
+
+    public void remove(){
+        atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 }

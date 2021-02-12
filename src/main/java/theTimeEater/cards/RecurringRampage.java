@@ -14,18 +14,14 @@ public class RecurringRampage extends AbstractTimeEaterCard {
         super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 2;
         this.magicNumber = 5;
-        this.returnToHand = true;
     }
 
     public void triggerWhenDrawn() {
-        this.upgradeDamage(this.magicNumber);
+        baseDamage += this.magicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-
-        updateCost(1);
-        baseDamage *= 2;
     }
 
     public void upp() {

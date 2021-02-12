@@ -13,10 +13,12 @@ public class HeadSlam extends AbstractTimeEaterCard {
     public HeadSlam() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 26;
+        baseMagicNumber = magicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        p.draw(baseMagicNumber);
     }
 
     public void upp() {

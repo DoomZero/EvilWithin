@@ -28,7 +28,7 @@ public class ReversePower extends AbstractTimeEaterPower {
 
     @Override
     public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
+//        this.fontScale = 8.0F;
         this.amount *= -1;
     }
 

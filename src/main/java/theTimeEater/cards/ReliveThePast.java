@@ -2,12 +2,9 @@ package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
 import theTimeEater.actions.EnterTempoAction;
-import theTimeEater.actions.FlipTempoAction;
-import theTimeEater.powers.ReversePower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.*;

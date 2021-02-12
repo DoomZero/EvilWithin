@@ -118,7 +118,8 @@ public class TimeLockExtendablePower extends AbstractTimeEaterPower implements C
     public void explode(){
         //note: this is also called in TimeEaterMod.java to facilitate end of combat explosion
         this.flashWithoutSound();
-        atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        this.remove();
+
         if (this.amount > 0){
             atb(new VFXAction(new ExplosionSmallEffectGreen(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
 //            this.addToBot(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));

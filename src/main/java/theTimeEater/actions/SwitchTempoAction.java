@@ -15,13 +15,13 @@ import theTimeEater.TheTimeEater.tempos;
 
 import java.util.ArrayList;
 
-public class FlipTempoAction extends AbstractGameAction {
+public class SwitchTempoAction extends AbstractGameAction {
 
     TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
     DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
     DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
 
-//    public FlipTempoAction(AbstractPlayer p) { }
+//    public SwitchTempoAction(AbstractPlayer p) { }
 
     @Override
     public void update() {

@@ -97,11 +97,15 @@
     "DESCRIPTION": "Each time an enemy's Time Lock expires, it affects ALL enemies."
   },
   "timeeatermod:RecurringRampage": {
-    "NAME": "Fall Back",
+    "NAME": "Recurring Rampage",
     "DESCRIPTION": "Deal !D! damage. NL When you draw this card, increase its damage by !M! for the rest of combat."
   },
   "timeeatermod:DaylightSavings": {
     "NAME": "Daylight Savings",
+    "DESCRIPTION": "Energy is conserved for next turn."
+  },
+  "timeeatermod:EnergyDraw": {
+    "NAME": "EnergyDraw",
     "DESCRIPTION": "Gain [E]. NL Whenever you draw this card, increase its [E] by 1 until played.",
     "EXTENDED_DESCRIPTION": [
       "Gain",
@@ -114,11 +118,11 @@
   },
   "timeeatermod:Ripple": {
     "NAME": "Ripple",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! Weak and !M! Vulnerable to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable and !M! Weak to ALL enemies."
   },
   "timeeatermod:HeadSlam": {
     "NAME": "Head Slam",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   },
   "timeeatermod:Reverberate": {
     "NAME": "Reverberate",
@@ -130,7 +134,13 @@
   },
   "timeeatermod:StarterTempoChange": {
     "NAME": "StarterTempoChange",
-    "DESCRIPTION": "Switch Tempo. Scry !M!."
+    "DESCRIPTION": "You may choose to enter Forward or Rewind Tempo. Scry !M!.",
+    "EXTENDED_DESCRIPTION": ["Enter #bForward #bTempo.","Enter #bRewind #bTempo.", "Do nothing."]
+  },
+  "timeeatermod:LeapPastFate": {
+    "NAME": "Leap Past Fate",
+    "DESCRIPTION": "Deal damage equal to your Time Lock. Negate your Time Lock.",
+    "UPGRADE_DESCRIPTION": " NL (Deals !D! damage.)"
   },
 
 
