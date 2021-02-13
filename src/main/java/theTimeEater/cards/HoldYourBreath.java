@@ -1,9 +1,7 @@
 package theTimeEater.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theTimeEater.powers.TimeLockExtendablePower;
 import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
@@ -18,7 +16,7 @@ public class HoldYourBreath extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new TimeLockExtendablePower(p, 0));
+        applyToSelf(new TimeLockPower(p, 0));
         blck();
     }
 

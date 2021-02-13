@@ -1,15 +1,12 @@
 package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theTimeEater.powers.TimeLockExtendablePower;
+import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.adp;
-import static theTimeEater.util.Wiz.atb;
 
 public class LeapPastFate extends AbstractTimeEaterCard {
     public final static String ID = makeID(LeapPastFate.class.getSimpleName());
@@ -18,11 +15,12 @@ public class LeapPastFate extends AbstractTimeEaterCard {
     public LeapPastFate() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 0;
-        this.retain = true;
+//        this.retain = true;
+        this.exhaust = true;
     }
 
     private void calcDam(){
-        TimeLockExtendablePower p = (TimeLockExtendablePower) adp().getPower(TimeLockExtendablePower.POWER_ID);
+        TimeLockPower p = (TimeLockPower) adp().getPower(TimeLockPower.POWER_ID);
         baseDamage = 0;
         if (p == null) return;
 

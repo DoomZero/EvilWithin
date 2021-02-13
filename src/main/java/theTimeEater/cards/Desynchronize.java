@@ -3,7 +3,7 @@ package theTimeEater.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.powers.DesynchronizePower;
-import theTimeEater.powers.TimeLockExtendablePower;
+import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 
@@ -17,7 +17,7 @@ public class Desynchronize extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new DesynchronizePower(0));
-        applyToSelf(new TimeLockExtendablePower(p, 0));
+        applyToSelf(new TimeLockPower(p, 0));
     }
 
     public void upp() {

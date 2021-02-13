@@ -100,6 +100,10 @@
     "NAME": "Recurring Rampage",
     "DESCRIPTION": "Deal !D! damage. NL When you draw this card, increase its damage by !M! for the rest of combat."
   },
+  "timeeatermod:RecurringStrike": {
+    "NAME": "Recurring Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Double this card's damage, increase its cost by 1, and return it to your hand."
+  },
   "timeeatermod:DaylightSavings": {
     "NAME": "Daylight Savings",
     "DESCRIPTION": "Energy is conserved for next turn."
@@ -132,7 +136,7 @@
     "NAME": "DiscardAllAttack",
     "DESCRIPTION": "Deal !D! damage. Discard ALL copies of this card in your hand and deck."
   },
-  "timeeatermod:StarterTempoChange": {
+  "timeeatermod:ChangeOfPace": {
     "NAME": "StarterTempoChange",
     "DESCRIPTION": "You may choose to enter Forward or Rewind Tempo. Scry !M!.",
     "EXTENDED_DESCRIPTION": ["Enter #bForward #bTempo.","Enter #bRewind #bTempo.", "Do nothing."]

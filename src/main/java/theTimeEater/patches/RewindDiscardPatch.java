@@ -15,38 +15,35 @@ import theTimeEater.powers.ReversePower;
 import java.util.ArrayList;
 
 @SpirePatch(
-        clz=AbstractPlayer.class,
-        method="draw",
-        paramtypez = {int.class}
+        clz=AbstractCard.class,
+        method="moveToDiscardPile"
 )
-public class ShortTermRewindDrawPatch {
-    @SpireInsertPatch(
-        locator= drawCardLocator.class,
-        localvars= {"c"}
-    )
-    public static void drawFromDiscard(AbstractPlayer __instance, int drawNum, @ByRef AbstractCard[] c){
+public class RewindDiscardPatch {
+    @SpirePostfixPatch
+    public static void discardToDraw(AbstractCard __instance){
+        System.out.printf("DEBUG - target_x before: %.5f", __instance.target_x);
         AbstractPlayer p = AbstractDungeon.player;
         if (p instanceof TheTimeEater){
             TheTimeEater tp = (TheTimeEater) p;
             if (tp.tempo == TheTimeEater.tempos.REWIND){
-                c[0].current_x = CardGroup.DISCARD_PILE_X;
+                __instance.target_x = CardGroup.DRAW_PILE_X;
             }
         }
         else {
             AbstractPower revPower = p.getPower(ReversePower.POWER_ID);
             if (revPower != null && revPower.amount >= 1){
-                c[0].current_x = CardGroup.DISCARD_PILE_X;
-//                c[0].current_y = CardGroup.DISCARD_PILE_Y;
+                __instance.target_x = CardGroup.DRAW_PILE_X;
             }
         }
+        System.out.printf("DEBUG - target_x after: %.5f", __instance.target_x);
     }
 
-    private static class drawCardLocator extends SpireInsertLocator {
+    /*private static class discardCardLocator extends SpireInsertLocator {
         public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractCard.class, "setAngle");
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractDungeon.class, "getCurrRoom");
             return LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
         }
-    }
+    }*/
 
 
 }

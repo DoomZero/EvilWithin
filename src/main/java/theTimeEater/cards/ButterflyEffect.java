@@ -3,8 +3,6 @@ package theTimeEater.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.powers.ButterflyEffectPower;
-import theTimeEater.powers.DesynchronizePower;
-import theTimeEater.powers.TimeLockExtendablePower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 

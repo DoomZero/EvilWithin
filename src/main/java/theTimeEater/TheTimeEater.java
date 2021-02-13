@@ -78,7 +78,7 @@ public class TheTimeEater extends CustomPlayer {
             startingDeck.add(Defend.ID);
         }
 
-        startingDeck.add(StarterTempoChange.ID);
+        startingDeck.add(ChangeOfPace.ID);
 //        startingDeck.add(Hiccup.ID);
         startingDeck.add(HoldYourBreath.ID);
 //        startingDeck.add(WakeUpSlap.ID);

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
 import theTimeEater.actions.EnterTempoAction;
-import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.atb;

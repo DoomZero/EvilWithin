@@ -1,10 +1,12 @@
 package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theTimeEater.TimeEaterMod.makeID;
+import static theTimeEater.util.Wiz.atb;
 
 public class HeadSlam extends AbstractTimeEaterCard {
     public final static String ID = makeID(HeadSlam.class.getSimpleName());
@@ -18,7 +20,7 @@ public class HeadSlam extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        p.draw(baseMagicNumber);
+        atb(new DrawCardAction(p, baseMagicNumber));
     }
 
     public void upp() {

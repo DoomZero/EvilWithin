@@ -1,7 +1,6 @@
 package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.powers.TimeLockPower;
 

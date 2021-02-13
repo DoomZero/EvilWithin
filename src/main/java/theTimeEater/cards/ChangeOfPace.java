@@ -14,14 +14,14 @@ import java.util.ArrayList;
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.*;
 
-public class StarterTempoChange extends AbstractTimeEaterCard implements OctopusCard {
-    public final static String ID = makeID(StarterTempoChange.class.getSimpleName());
+public class ChangeOfPace extends AbstractTimeEaterCard implements OctopusCard {
+    public final static String ID = makeID(ChangeOfPace.class.getSimpleName());
     // intellij stuff skill, self, basic, 5, 3,  , , ,
 
     String[] EXTENDED_DESCRIPTION;
 
-    public StarterTempoChange() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+    public ChangeOfPace() {
+        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         this.baseMagicNumber = this.magicNumber = 3;
     }
 

@@ -4,7 +4,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
+
+import static theTimeEater.TheTimeEater.tempos.FORWARD;
 
 public class ReversePower extends AbstractTimeEaterPower {
     public static final String POWER_ID = TimeEaterMod.makeID(ReversePower.class.getSimpleName());
@@ -14,11 +17,17 @@ public class ReversePower extends AbstractTimeEaterPower {
 
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
 
-    public ReversePower() {
-        this(1);
+    public ReversePower()
+    {
+        this(FORWARD,1);
     }
 
-    public ReversePower(int amount){
+    public ReversePower(int amount)
+    {
+        this(FORWARD, amount);
+    }
+
+    public ReversePower(TheTimeEater.tempos tempo, int amount){
         super(NAME, POWER_ID, PowerType.BUFF, amount);
         loadRegion("time");
     }

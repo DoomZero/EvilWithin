@@ -1,15 +1,12 @@
 package theTimeEater.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import theTimeEater.powers.TimeLockExtendablePower;
 
 import static theTimeEater.TimeEaterMod.makeID;
-import static theTimeEater.util.Wiz.atb;
 
 public class Ripple extends AbstractTimeEaterCard {
     public final static String ID = makeID(Ripple.class.getSimpleName());

@@ -7,15 +7,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.helpers.SaveHelper;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import downfall.util.CardIgnore;
@@ -25,7 +21,7 @@ import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
 import theTimeEater.cards.cardvars.SecondDamage;
 import theTimeEater.cards.cardvars.SillyVariable;
-import theTimeEater.powers.TimeLockExtendablePower;
+import theTimeEater.powers.TimeLockPower;
 import theTimeEater.relics.TodoItem;
 import theTimeEater.util.CardArtRoller;
 import theTimeEater.util.CardFilter;
@@ -41,7 +37,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.adp;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -205,13 +201,15 @@ public class TimeEaterMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        ((TheTimeEater) AbstractDungeon.player).tempo = TheTimeEater.tempos.FORWARD;
+        if (adp() instanceof TheTimeEater){
+            ((TheTimeEater) AbstractDungeon.player).tempo = TheTimeEater.tempos.FORWARD;
+        }
     }
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        TimeLockExtendablePower q = (TimeLockExtendablePower) AbstractDungeon.player.getPower(TimeLockExtendablePower.POWER_ID);
-        if(q != null){
+        TimeLockPower q = (TimeLockPower) AbstractDungeon.player.getPower(TimeLockPower.POWER_ID);
+        if (q != null){
             q.explode();
         }
     }

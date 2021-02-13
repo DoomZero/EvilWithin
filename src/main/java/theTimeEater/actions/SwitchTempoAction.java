@@ -21,8 +21,6 @@ public class SwitchTempoAction extends AbstractGameAction {
     DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
     DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
 
-//    public SwitchTempoAction(AbstractPlayer p) { }
-
     @Override
     public void update() {
         //change the contents

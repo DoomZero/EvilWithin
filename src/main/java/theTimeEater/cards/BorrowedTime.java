@@ -1,15 +1,10 @@
 package theTimeEater.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.powers.DrawVoidPower;
-import theTimeEater.powers.TimeLockExtendablePower;
-import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.atb;
