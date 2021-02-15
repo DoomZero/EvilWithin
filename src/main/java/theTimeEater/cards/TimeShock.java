@@ -24,7 +24,7 @@ public class TimeShock extends AbstractTimeEaterCard {
                 isDone = true;
                 if (m.hasPower(TimeLockPower.POWER_ID)) {
                     AbstractPower tl = m.getPower(TimeLockPower.POWER_ID);
-                    applyToEnemyTop(m, new TimeLockPower(m, tl.amount));
+                    applyToEnemyTop(m, new TimeLockPower(m, tl.amount, 0));
                 }
             }
         });

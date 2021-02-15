@@ -1,9 +1,9 @@
 package theTimeEater.patches;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
+import com.megacrit.cardcrawl.ui.panels.DiscardPilePanel;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -13,10 +13,10 @@ import theTimeEater.powers.ReversePower;
 import static theTimeEater.util.Wiz.adp;
 
 @SpirePatch(
-        clz= DrawPilePanel.class,
+        clz= DiscardPilePanel.class,
         method="render"
 )
-public class DrawPileRenderFlipPatch {
+public class DiscardPileRenderFlipPatch {
     public static boolean check(){
         if (adp() instanceof TheTimeEater){
             TheTimeEater tp = (TheTimeEater) adp();
@@ -39,7 +39,7 @@ public class DrawPileRenderFlipPatch {
         return result;
     }
 
-    public static ExprEditor Instrument() {
+    /*public static ExprEditor Instrument() {
 
         return new ExprEditor() {
             public boolean done = false;
@@ -47,8 +47,8 @@ public class DrawPileRenderFlipPatch {
             @Override
             public void edit(MethodCall m) throws CannotCompileException {
                 if (m.getClassName().equals(SpriteBatch.class.getName()) && m.getMethodName().equals("draw") && !done) {
-                    System.out.println("DEBUG - PERFORMING DRAW FLIP PATCH");
-                    String patchName = DrawPileRenderFlipPatch.class.getName();
+                    System.out.println("DEBUG - PERFORMING DISCARD FLIP PATCH");
+                    String patchName = DiscardPileRenderFlipPatch.class.getName();
                     m.replace("{" +
                             "$2 = this.current_x + DECK_X * " + patchName+".getPow();" +
                             "$15 = " + patchName+".check();" +
@@ -58,5 +58,5 @@ public class DrawPileRenderFlipPatch {
                 }
             }
         };
-    }
+    }*/
 }

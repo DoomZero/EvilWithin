@@ -16,7 +16,7 @@ public class HoldYourBreath extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new TimeLockPower(p, 0));
+        applyToSelf(new TimeLockPower(p, 1));
         blck();
     }
 

@@ -20,12 +20,7 @@ public class ButterflyEffectPower extends AbstractTimeEaterPower implements Clon
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1){
-            description = DESCRIPTIONS[0];
-        }
-        else {
-            description = DESCRIPTIONS[1];
-        }
+        description = DESCRIPTIONS[0];
     }
 
     @Override

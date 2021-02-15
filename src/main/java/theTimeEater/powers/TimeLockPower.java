@@ -30,8 +30,8 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
 //    public static Color myColor = TimeEaterMod.characterColor;
 
-    public TimeLockPower(AbstractCreature owner, int damage) {
-        this(owner, damage, 1);
+    public TimeLockPower(AbstractCreature owner, int duration) {
+        this(owner, 0, duration);
     }
 
     public TimeLockPower(AbstractCreature owner, int damage, int duration) {
@@ -96,7 +96,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
 
             //reapply Time Lock after explosion if player has Desynchronize power
             if (this.owner.hasPower(DesynchronizePower.POWER_ID)){
-                atb(new ApplyPowerAction(this.owner, this.owner, new TimeLockPower(this.owner, 0)));
+                atb(new ApplyPowerAction(this.owner, this.owner, new TimeLockPower(this.owner, 1)));
             }
 
         } else {
@@ -143,9 +143,9 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     }
 
     @Override
-    public void stackPower(int duration) {
+    public void stackPower(int amount) {
         this.fontScale = 8.0F;
-        amount2 += duration;
+        amount2 += amount;
     }
 
     @Override
@@ -158,6 +158,6 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
 
     @Override
     public AbstractPower makeCopy() {
-        return new TimeLockPower(owner, this.amount);
+        return new TimeLockPower(owner, this.amount, this.amount2);
     }
 }

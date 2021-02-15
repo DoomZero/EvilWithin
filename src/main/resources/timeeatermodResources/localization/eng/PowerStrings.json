@@ -47,6 +47,12 @@
       " turns."
     ]
   },
+  "timeeatermod:ButterflyEffectPower": {
+    "NAME": "Butterfly Effect",
+    "DESCRIPTIONS": [
+      "Each time an enemy's Time Lock expires, it affects ALL enemies."
+    ]
+  },
 
 
 

@@ -17,7 +17,7 @@ public class Desynchronize extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new DesynchronizePower(0));
-        applyToSelf(new TimeLockPower(p, 0));
+        applyToSelf(new TimeLockPower(p, 1));
     }
 
     public void upp() {

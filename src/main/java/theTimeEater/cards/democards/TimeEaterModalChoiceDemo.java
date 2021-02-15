@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import theTimeEater.actions.EasyModalChoiceAction;
+import theTimeEater.actions.TimeEaterModalChoiceAction;
 import theTimeEater.cards.AbstractTimeEaterCard;
 import theTimeEater.cards.TimeEaterModalChoiceCard;
 
@@ -28,7 +28,7 @@ public class TimeEaterModalChoiceDemo extends AbstractTimeEaterCard {
         ArrayList<AbstractCard> easyCardList = new ArrayList<>();
         easyCardList.add(new TimeEaterModalChoiceCard("Draw", "Draw " + magicNumber + " cards.", () -> att(new DrawCardAction(magicNumber))));
         easyCardList.add(new TimeEaterModalChoiceCard("Strength", "Gain " + secondMagic + " Strength.", () -> applyToSelfTop(new StrengthPower(p, secondMagic))));
-        atb(new EasyModalChoiceAction(easyCardList));
+        atb(new TimeEaterModalChoiceAction(easyCardList));
     }
 
     public void upp() {

@@ -12,7 +12,7 @@ public class TimeEaterModalChoiceCard extends AbstractTimeEaterCard {
 
     //RIP Octopus.
     //Why isn't this abstract? Because AbstractCard MakeCopy for Lambdas would be very difficult. Maybe some other time. Also Java hates instantiating abstracts unless they're SAMs.
-    //Typically you'll want to add the EasyModalChoiceAction to the bottom, and have the TimeEaterModalChoiceCard Runnables inside add to top.
+    //Typically you'll want to add the TimeEaterModalChoiceAction to the bottom, and have the TimeEaterModalChoiceCard Runnables inside add to top.
 
     private Runnable onUseOrChosen;
     private String passedName;

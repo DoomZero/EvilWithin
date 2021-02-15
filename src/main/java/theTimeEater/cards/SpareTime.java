@@ -9,12 +9,12 @@ import java.util.Collections;
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.atb;
 
-public class EnergyDraw extends AbstractTimeEaterCard {
-    public final static String ID = makeID(EnergyDraw.class.getSimpleName());
+public class SpareTime extends AbstractTimeEaterCard {
+    public final static String ID = makeID(SpareTime.class.getSimpleName());
     //stupid intellij stuff skill, self, uncommon
 
-    public EnergyDraw() {
-        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+    public SpareTime() {
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = 1;
     }
 
@@ -26,7 +26,6 @@ public class EnergyDraw extends AbstractTimeEaterCard {
     }
 
     public void triggerWhenDrawn() {
-//        this.upgradeMagicNumber(1);
         this.baseMagicNumber++;
         this.magicNumber = this.baseMagicNumber;
         fixDescription();
@@ -39,6 +38,6 @@ public class EnergyDraw extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBaseCost(0);
     }
 }

@@ -108,8 +108,8 @@
     "NAME": "Daylight Savings",
     "DESCRIPTION": "Energy is conserved for next turn."
   },
-  "timeeatermod:EnergyDraw": {
-    "NAME": "EnergyDraw",
+  "timeeatermod:SpareTime": {
+    "NAME": "Spare Time",
     "DESCRIPTION": "Gain [E]. NL Whenever you draw this card, increase its [E] by 1 until played.",
     "EXTENDED_DESCRIPTION": [
       "Gain",
@@ -137,14 +137,18 @@
     "DESCRIPTION": "Deal !D! damage. Discard ALL copies of this card in your hand and deck."
   },
   "timeeatermod:ChangeOfPace": {
-    "NAME": "StarterTempoChange",
-    "DESCRIPTION": "You may choose to enter Forward or Rewind Tempo. Scry !M!.",
-    "EXTENDED_DESCRIPTION": ["Enter #bForward #bTempo.","Enter #bRewind #bTempo.", "Do nothing."]
+    "NAME": "Change of Pace",
+    "DESCRIPTION": "You may choose to enter Forward or Rewind Tempo. NL Scry !M!.",
+    "EXTENDED_DESCRIPTION": ["Enter Rewind Tempo.","Do nothing.","Enter Forward Tempo."]
   },
   "timeeatermod:LeapPastFate": {
     "NAME": "Leap Past Fate",
     "DESCRIPTION": "Deal damage equal to your Time Lock. Negate your Time Lock.",
     "UPGRADE_DESCRIPTION": " NL (Deals !D! damage.)"
+  },
+  "timeeatermod:RecordScratch": {
+    "NAME": "Record Scratch",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
   },
 
 

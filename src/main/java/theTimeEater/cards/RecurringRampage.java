@@ -11,9 +11,9 @@ public class RecurringRampage extends AbstractTimeEaterCard {
     // intellij stuff attack, enemy, basic, 6, 3,  , , ,
 
     public RecurringRampage() {
-        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 2;
-        this.magicNumber = 5;
+        this.baseMagicNumber = this.magicNumber = 5;
     }
 
     public void triggerWhenDrawn() {

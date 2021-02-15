@@ -19,7 +19,7 @@ import java.util.ArrayList;
         method="draw",
         paramtypez = {int.class}
 )
-public class ShortTermRewindDrawPatch {
+public class DrawFromDiscardPatch {
     @SpireInsertPatch(
         locator= drawCardLocator.class,
         localvars= {"c"}

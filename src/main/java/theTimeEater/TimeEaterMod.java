@@ -52,7 +52,7 @@ public class TimeEaterMod implements
 
     public static Prefs colorCardsPrefs = new Prefs();
 
-    public static final String modID = "timeeatermod"; //TODO: Change this.
+    public static final String modID = "timeeatermod";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
