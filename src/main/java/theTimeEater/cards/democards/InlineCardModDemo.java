@@ -21,7 +21,7 @@ public class InlineCardModDemo extends AbstractTimeEaterCard {
     // intellij stuff skill, self, uncommon
 
     public InlineCardModDemo() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

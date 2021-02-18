@@ -25,5 +25,6 @@ public class RecordScratch extends AbstractTimeEaterCard {
 
     public void upp() {
         upgradeDamage(3);
+        upgradeMagicNumber(1);
     }
 }

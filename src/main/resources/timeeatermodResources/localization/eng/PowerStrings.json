@@ -53,6 +53,22 @@
       "Each time an enemy's Time Lock expires, it affects ALL enemies."
     ]
   },
+  "timeeatermod:TakeDoubleDamagePower": {
+    "NAME": "Double Damage",
+    "DESCRIPTIONS": [
+      "All incoming damage is doubled for #b",
+      "1 turn.",
+      " turns."
+    ]
+  },
+  "timeeatermod:IntangibleNextTurnPower": {
+    "NAME": "Double Damage",
+    "DESCRIPTIONS": [
+      "Gain Intangible at the start of your next ",
+      "turn.",
+      " turns."
+    ]
+  },
 
 
 

@@ -47,7 +47,7 @@ public class MultiPreviewDemoCard extends AbstractTimeEaterCard {
     }
 
     public MultiPreviewDemoCard() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         isEthereal = true;
         cardToPreview = myCardsList();
         exhaust = true;

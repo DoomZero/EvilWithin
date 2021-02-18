@@ -3,6 +3,7 @@ package theTimeEater.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -18,14 +19,15 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theHexaghost.vfx.ExplosionSmallEffectGreen;
 import theTimeEater.TimeEaterMod;
 
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
-public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePowerInterface, HealthBarRenderPower {
+public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePowerInterface, HealthBarRenderPower, OnReceivePowerPower {
     public static final String POWER_ID = TimeEaterMod.makeID(TimeLockPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private boolean justApplied = true;
+    private int baseDamage = 0;
 
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
 //    public static Color myColor = TimeEaterMod.characterColor;
@@ -37,6 +39,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     public TimeLockPower(AbstractCreature owner, int damage, int duration) {
         super(NAME, POWER_ID, PowerType.BUFF, true, owner, damage);
         amount2 = duration;
+        baseDamage = damage;
         loadRegion("time");
     }
 
@@ -55,8 +58,8 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0) {
-//            this.stackPower(damageAmount);
             this.stackDamage(damageAmount);
+//            baseDamage += damageAmount;
             this.flash();
         }
 
@@ -117,6 +120,10 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
         this.flashWithoutSound();
         this.remove();
 
+        DamageInfo d = new DamageInfo(adp(), baseDamage);
+        d.applyEnemyPowersOnly(owner);
+        amount = d.output;
+
         if (this.amount > 0){
             atb(new VFXAction(new ExplosionSmallEffectGreen(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
 //            this.addToBot(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
@@ -140,12 +147,24 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     public void stackDamage(int damageAmount){
         this.fontScale = 8.0F;
         this.amount += damageAmount;
+        baseDamage += damageAmount;
     }
 
     @Override
     public void stackPower(int amount) {
         this.fontScale = 8.0F;
         amount2 += amount;
+    }
+
+    @Override
+    public boolean onReceivePower(AbstractPower pow, AbstractCreature target, AbstractCreature source){
+        //skip non-owner targets
+        if (target != owner) return true;
+
+        DamageInfo d = new DamageInfo(adp(), baseDamage);
+        d.applyEnemyPowersOnly(owner);
+        amount = d.output;
+        return true;
     }
 
     @Override

@@ -19,7 +19,7 @@ public class SpringForward extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         atb(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
     }
 

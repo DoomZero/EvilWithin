@@ -14,7 +14,7 @@ public class OneTimeRewind extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public OneTimeRewind()  {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE);
         this.returnToHand = true;
         this.selfRetain = true;
     }

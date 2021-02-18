@@ -78,11 +78,11 @@
   },
   "timeeatermod:ReliveThePast": {
     "NAME": "Relive The Past",
-    "DESCRIPTION": "Draw 2 cards if in Rewind Tempo. Otherwise, enter Rewind Tempo."
+    "DESCRIPTION": "If in Rewind Tempo: Draw 2 Cards. NL Otherwise, enter Rewind Tempo."
   },
   "timeeatermod:GlimpseBeyond": {
     "NAME": "Glimpse Beyond",
-    "DESCRIPTION": "Draw 2 cards if in Forward Tempo. Otherwise, enter Forward Tempo."
+    "DESCRIPTION": "If in Forward Tempo: Draw 2 Cards. NL Otherwise, enter Forward Tempo."
   },
   "timeeatermod:TimeLockWeak": {
     "NAME": "TimeLockWeak",
@@ -149,6 +149,18 @@
   "timeeatermod:RecordScratch": {
     "NAME": "Record Scratch",
     "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
+  },
+  "timeeatermod:Blueshift": {
+    "NAME": "Blueshift",
+    "DESCRIPTION": "Take double damage this turn. Gain 1 Intangible next turn. Exhaust."
+  },
+  "timeeatermod:Redshift": {
+    "NAME": "Redshift",
+    "DESCRIPTION": "Deal double damage this turn. Next turn, ALL enemies gain 1 Intangible. Exhaust."
+  },
+  "timeeatermod:AfterImage": {
+    "NAME": "After Image",
+    "DESCRIPTION": "Whenever you play a card, gain 1 Block."
   },
 
 

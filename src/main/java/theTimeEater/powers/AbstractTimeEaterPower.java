@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -46,5 +47,12 @@ public abstract class AbstractTimeEaterPower extends TwoAmountPower implements C
 
     public void remove(){
         atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+    }
+
+    public void decrement() {
+        decrement(1);
+    }
+    public void decrement(int decreaseBy) {
+        atb(new ReducePowerAction(this.owner, this.owner, this, decreaseBy));
     }
 }

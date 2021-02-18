@@ -17,7 +17,7 @@ public class TemporaryPowerDemo extends AbstractTimeEaterCard {
     private static final int UPG_MAGIC = 2;
 
     public TemporaryPowerDemo() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.POWER, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
     }
 
