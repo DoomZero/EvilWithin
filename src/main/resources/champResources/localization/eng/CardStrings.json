@@ -157,7 +157,10 @@
   },
   "champ:EnchantShield": {
     "NAME": "Enchant Shield",
-    "DESCRIPTION": "Choose a card in hand. Increase its Block by !M! for this combat. NL Exhaust."
+    "DESCRIPTION": "Choose a card in hand. Increase its Block by !M! for this combat. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I have nothing to Enchant."
+    ]
   },
   "champ:BringItOn": {
     "NAME": "Bring It On",
@@ -209,9 +212,7 @@
     "NAME": "Vicious Mockery",
     "DESCRIPTION": "*Berserker champ:Combo: Gain !M! temporary Strength. NL *Defensive champ:Combo: Gain !M! temporary  Dexterity.",
     "EXTENDED_DESCRIPTION": [
-      "Berserker champ:Combo: Gain !M! temporary Strength. NL Exhaust.",
       "Berserker champ:Combo: Gain !M! temporary Strength. NL ",
-      "Defensive champ:Combo: Gain !M! temporary Dexterity. NL Exhaust.",
       "Defensive champ:Combo: Gain !M! temporary Dexterity."
     ]
   },
@@ -239,7 +240,10 @@
   },
   "champ:EnchantSword": {
     "NAME": "Enchant Sword",
-    "DESCRIPTION": "Choose a card in hand. Increase its damage by !M! for this combat. Exhaust."
+    "DESCRIPTION": "Choose a card in hand. Increase its damage by !M! for this combat. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I have nothing to Enchant."
+    ]
   },
   "champ:BladeFlurry": {
     "NAME": "Flurry of Strikes",
@@ -363,8 +367,7 @@
     "EXTENDED_DESCRIPTION": [
       "Berserker champ:Combo: Gain [E] [E] , then Exhaust this. NL ",
       "Berserker champ:Combo: Gain [E] [E] [E] , then Exhaust this. NL ",
-      "Defensive champ:Combo: Draw !M! cards.",
-      "A poor time for that move."
+      "Defensive champ:Combo: Draw !M! cards."
     ]
 	},
   "champ:PerfectedStrike": {
@@ -429,7 +432,10 @@
   },
   "champ:EnchantCrown": {
     "NAME": "Enchant Crown",
-    "DESCRIPTION": "Choose a card in hand. It costs 0 this combat. NL Exhaust."
+    "DESCRIPTION": "Choose a card in hand. It costs 0 this combat. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I have nothing to Enchant."
+    ]
   },
   "champ:ModFinisherStrike": {
     "NAME": "Finishing Strike",

@@ -42,13 +42,15 @@ public class ShopBossPatch {
         ArrayList<AbstractCard> potentialCardsList = new ArrayList<>();
         for (AbstractCard q : CardLibrary.getAllCards()) {
             if (q.color == CardColorEnumPatch.CardColorPatch.BOSS && q.rarity == rarity && okayToSpawn(q)) {
-                potentialCardsList.add(q);
+                potentialCardsList.add(q.makeCopy());
             }
         }
         return potentialCardsList.get(AbstractDungeon.merchantRng.random(0, potentialCardsList.size() - 1));
     }
 
-    private static boolean okayToSpawn(AbstractCard q) {
+    public static boolean okayToSpawn(AbstractCard q) {
+        if (q.rarity == AbstractCard.CardRarity.SPECIAL) return false;
+
         if (AbstractDungeon.player instanceof SlimeboundCharacter) {
             if (q.cardID.equals(PrepareCrush.ID)) {
                 return false;
@@ -64,7 +66,7 @@ public class ShopBossPatch {
             if (q.cardID.equals(LastStand.ID)) return false;
         }
         if (AbstractDungeon.player instanceof AutomatonChar || RandomCardWithTagAction.autoLocked()) {
-            if (q.cardID.equals(HyperBeam.ID)) return false;
+            return !q.cardID.equals(HyperBeam.ID);
         }
         return true;
     }
