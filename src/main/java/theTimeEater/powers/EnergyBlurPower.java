@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.TimeEaterMod;
 
+import static theTimeEater.util.Wiz.*;
+
 public class EnergyBlurPower extends AbstractTimeEaterPower {
     public static final String POWER_ID = TimeEaterMod.makeID(EnergyBlurPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

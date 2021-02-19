@@ -148,19 +148,27 @@
   },
   "timeeatermod:RecordScratch": {
     "NAME": "Record Scratch",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak."
   },
   "timeeatermod:Blueshift": {
     "NAME": "Blueshift",
-    "DESCRIPTION": "Take double damage this turn. Gain 1 Intangible next turn. Exhaust."
+    "DESCRIPTION": "Take double damage this turn. NL Gain 1 Intangible next turn. NL Exhaust."
   },
   "timeeatermod:Redshift": {
     "NAME": "Redshift",
-    "DESCRIPTION": "Deal double damage this turn. Next turn, ALL enemies gain 1 Intangible. Exhaust."
+    "DESCRIPTION": "Deal double damage this turn. NL Next turn, ALL enemies gain 1 Intangible. NL Exhaust."
   },
   "timeeatermod:AfterImage": {
     "NAME": "After Image",
     "DESCRIPTION": "Whenever you play a card, gain 1 Block."
+  },
+  "timeeatermod:FleetingStrength": {
+    "NAME": "Fleeting Strength",
+    "DESCRIPTION": "Gain !M! Strength. Lose !M! Strength the next time you lose HP."
+  },
+  "timeeatermod:FleetingDexterity": {
+    "NAME": "Fleeting Dexterity",
+    "DESCRIPTION": "Gain !M! Dexterity. Lose !M! Dexterity the next time you lose HP."
   },
 
 

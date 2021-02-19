@@ -1,0 +1,41 @@
+package theTimeEater.powers;
+
+import basemod.interfaces.CloneablePowerInterface;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import theTimeEater.TimeEaterMod;
+
+import static theTimeEater.util.Wiz.*;
+
+public class FleetingDexterityPower extends AbstractTimeEaterPower implements CloneablePowerInterface {
+    public static final String POWER_ID = TimeEaterMod.makeID(FleetingDexterityPower.class.getSimpleName());
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+
+    public FleetingDexterityPower(AbstractCreature owner, int amount) {
+        super(NAME, POWER_ID, PowerType.DEBUFF, false, owner, amount);
+        loadRegion("time");
+    }
+
+    @Override
+    public int onLoseHp(int damageAmount) {
+        atb(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
+        remove();
+        return damageAmount;
+    }
+
+    @Override
+    public void updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+    }
+
+    @Override
+    public AbstractPower makeCopy() {
+        return new FleetingDexterityPower(owner, this.amount);
+    }
+}

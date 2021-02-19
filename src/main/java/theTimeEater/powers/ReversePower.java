@@ -8,6 +8,7 @@ import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
 
 import static theTimeEater.TheTimeEater.tempos.FORWARD;
+import static theTimeEater.util.Wiz.*;
 
 public class ReversePower extends AbstractTimeEaterPower {
     public static final String POWER_ID = TimeEaterMod.makeID(ReversePower.class.getSimpleName());

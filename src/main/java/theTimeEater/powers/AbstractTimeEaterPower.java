@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.util.TexLoader;
 
 import static theTimeEater.TimeEaterMod.makeID;
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
 public abstract class AbstractTimeEaterPower extends TwoAmountPower implements CloneablePowerInterface {
     public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType) {

@@ -26,7 +26,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private boolean justApplied = true;
+    private boolean justApplied = false;
     private int baseDamage = 0;
 
     public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
@@ -41,12 +41,13 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
         amount2 = duration;
         baseDamage = damage;
         loadRegion("time");
+        if (owner == adp()) justApplied = true;
     }
 
     @Override
     public int getHealthBarAmount() {
         if (amount2 == 1)
-            return this.amount;
+            return amount;
         return 0;
     }
 
@@ -58,8 +59,8 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (damageAmount > 0) {
+//            this.stackDamage(info.base);
             this.stackDamage(damageAmount);
-//            baseDamage += damageAmount;
             this.flash();
         }
 
@@ -88,7 +89,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfTurn(boolean unused) {
         if (!owner.isPlayer) return;
         if (this.justApplied) {
             this.justApplied = false;
@@ -124,7 +125,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
         d.applyEnemyPowersOnly(owner);
         amount = d.output;
 
-        if (this.amount > 0){
+        if (amount > 0){
             atb(new VFXAction(new ExplosionSmallEffectGreen(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
 //            this.addToBot(new LoseHPAction(owner, owner, amount, AbstractGameAction.AttackEffect.FIRE));
             if (AbstractDungeon.player.hasPower(ButterflyEffectPower.POWER_ID)){
@@ -146,8 +147,8 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
 
     public void stackDamage(int damageAmount){
         this.fontScale = 8.0F;
-        this.amount += damageAmount;
         baseDamage += damageAmount;
+        updateDamage();
     }
 
     @Override
@@ -161,22 +162,38 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
         //skip non-owner targets
         if (target != owner) return true;
 
-        DamageInfo d = new DamageInfo(adp(), baseDamage);
-        d.applyEnemyPowersOnly(owner);
-        amount = d.output;
+        updateDamage();
+
         return true;
+    }
+
+    public void updateDamage(){
+        AbstractPower p = this;
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                DamageInfo d = new DamageInfo(adp(), baseDamage);
+                d.applyEnemyPowersOnly(owner);
+                p.amount = d.output;
+                p.updateDescription();
+                isDone = true;
+            }
+        });
     }
 
     @Override
     public void updateDescription() {
+        final String PLURAL_BIT;
         if (amount2 == 1)
-            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[3];
+            PLURAL_BIT = DESCRIPTIONS[2];
         else
-            description = DESCRIPTIONS[0] + amount2 + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3];
+            PLURAL_BIT = DESCRIPTIONS[1];
+
+        description = DESCRIPTIONS[0] + amount2 + PLURAL_BIT + amount + DESCRIPTIONS[3] + baseDamage + DESCRIPTIONS[4];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new TimeLockPower(owner, this.amount, this.amount2);
+        return new TimeLockPower(owner, amount, amount2);
     }
 }

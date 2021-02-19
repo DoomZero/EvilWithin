@@ -20,7 +20,7 @@ public class IntangibleNextTurnPower extends AbstractTimeEaterPower implements C
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private boolean justApplied = true;
+//    private boolean justApplied = true;
 
     public IntangibleNextTurnPower(AbstractCreature owner, int duration) {
         super(NAME, POWER_ID, PowerType.BUFF, true, owner, duration);

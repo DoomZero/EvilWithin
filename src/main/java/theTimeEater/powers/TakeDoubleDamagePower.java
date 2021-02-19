@@ -11,12 +11,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import theTimeEater.TimeEaterMod;
 
+import static theTimeEater.util.Wiz.*;
+
 public class TakeDoubleDamagePower extends AbstractTimeEaterPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(TakeDoubleDamagePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private boolean justApplied = true;
+//    private boolean justApplied = true;
 
     public TakeDoubleDamagePower(AbstractCreature owner, int duration) {
         super(NAME, POWER_ID, PowerType.DEBUFF, true, owner, duration);

@@ -3,18 +3,10 @@
     "NAME": "Time Lock",
     "DESCRIPTIONS": [
       "In #b",
-      " turns, loses #b",
-      " turn, loses #b",
-      " HP, then #yTime #yLock is removed."
-    ]
-  },
-  "timeeatermod:TimeLockExtendablePower": {
-    "NAME": "Time Lock Extendable",
-    "DESCRIPTIONS": [
-      "In #b",
-      " turns, loses #b",
-      " turn, loses #b",
-      " HP, then #yTime #yLock is removed."
+      " turns, takes #b",
+      " turn, takes #b",
+      " damage ( #b",
+      " base damage), then #yTime #yLock is removed."
     ]
   },
   "timeeatermod:TimeWardPower": {
@@ -67,6 +59,18 @@
       "Gain Intangible at the start of your next ",
       "turn.",
       " turns."
+    ]
+  },
+  "timeeatermod:FleetingStrengthPower": {
+    "NAME": "Fleeting Strength",
+    "DESCRIPTIONS": [
+      "Lose #b", " Strength the next time you lose HP."
+    ]
+  },
+  "timeeatermod:FleetingDexterityPower": {
+    "NAME": "Fleeting Dexterity",
+    "DESCRIPTIONS": [
+      "Lose #b", " Dexterity the next time you lose HP."
     ]
   },
 

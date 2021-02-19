@@ -215,19 +215,19 @@ public abstract class AbstractTimeEaterCard extends CustomCard {
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
     protected void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+        atb(new DamageAction(m, new DamageInfo(adp(), damage, damageTypeForTurn), fx));
     }
 
     protected void dmgTop(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+        att(new DamageAction(m, new DamageInfo(adp(), damage, damageTypeForTurn), fx));
     }
 
     protected void allDmg(AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
+        atb(new DamageAllEnemiesAction(adp(), multiDamage, damageTypeForTurn, fx));
     }
 
     protected void blck() {
-        atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+        atb(new GainBlockAction(adp(), adp(), block));
     }
 
     protected void scry() {
@@ -235,26 +235,26 @@ public abstract class AbstractTimeEaterCard extends CustomCard {
     }
 
     public void applyToEnemy(AbstractMonster m, AbstractPower po) {
-        atb(new ApplyPowerAction(m, AbstractDungeon.player, po, po.amount));
+        atb(new ApplyPowerAction(m, adp(), po, po.amount));
     }
 
     public void applyToEnemyTop(AbstractMonster m, AbstractPower po) {
-        att(new ApplyPowerAction(m, AbstractDungeon.player, po, po.amount));
+        att(new ApplyPowerAction(m, adp(), po, po.amount));
     }
 
     public void applyToSelf(AbstractPower po) {
-        atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
+        atb(new ApplyPowerAction(adp(), adp(), po, po.amount));
     }
 
     public void applyToSelfTop(AbstractPower po) {
-        att(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
+        att(new ApplyPowerAction(adp(), adp(), po, po.amount));
     }
 
     /*@Override
     public void moveToDiscardPile() {
         this.target_x = (float) CardGroup.DISCARD_PILE_X;
 
-        AbstractPlayer p = AbstractDungeon.player;
+        AbstractPlayer p = adp();
         if (p instanceof TheTimeEater){
             TheTimeEater tp = (TheTimeEater) p;
             if (tp.tempo == TheTimeEater.tempos.REWIND){
