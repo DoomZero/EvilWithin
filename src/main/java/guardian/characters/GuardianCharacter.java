@@ -179,7 +179,6 @@ public class GuardianCharacter extends CustomPlayer {
     public void preBattlePrep() {
         super.preBattlePrep();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ModeShiftPower(AbstractDungeon.player, AbstractDungeon.player, 20), 20));
-
     }
 
     public void switchToOffensiveMode() {

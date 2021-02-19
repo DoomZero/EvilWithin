@@ -1,22 +1,28 @@
 package awakenedOne;
 
 
+import awakenedOne.powers.RitePower;
+import awakenedOne.stances.AbstractAwakenedStance;
 import basemod.BaseMod;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
+import champ.StanceHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.helpers.SaveHelper;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import downfall.util.CardIgnore;
+import guardian.powers.ModeShiftPower;
 import javassist.CtClass;
 import javassist.Modifier;
 import javassist.NotFoundException;
@@ -44,7 +50,9 @@ public class AwakenedOneMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+//        OnStartBattleSubscriber,
+        PostInitializeSubscriber,
+        PostBattleSubscriber{
 
     public static Prefs colorCardsPrefs = new Prefs();
 
@@ -70,6 +78,11 @@ public class AwakenedOneMod implements
     private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
+
+    @SpireEnum
+    public static AbstractCard.CardTags AWAKENED;
+
+    public static boolean isAwakened;
 
     public AwakenedOneMod() {
         BaseMod.subscribe(this);
@@ -177,6 +190,18 @@ public class AwakenedOneMod implements
 
         }
     }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        if (AbstractDungeon.player instanceof AwakenedOneChar) {
+            if (AbstractDungeon.player.stance instanceof AbstractAwakenedStance) {
+                AbstractDungeon.player.stance = new NeutralStance();
+                AwakenedOneChar c = (AwakenedOneChar) AbstractDungeon.player;
+//                c.switchStanceVisual(NeutralStance.STANCE_ID);
+            }
+        }
+    }
+
 
     @Override
     public void receivePostInitialize() {

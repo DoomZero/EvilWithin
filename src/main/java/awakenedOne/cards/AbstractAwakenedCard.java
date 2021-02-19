@@ -223,4 +223,5 @@ public abstract class AbstractAwakenedCard extends CustomCard {
     protected void blck() {
         atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
     }
+
 }

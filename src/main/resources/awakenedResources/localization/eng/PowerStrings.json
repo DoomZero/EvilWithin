@@ -5,5 +5,28 @@
       "When this enemy attacks, it takes #b",
       " damage."
     ]
+  },
+  "awakened:RitePower": {
+    "NAME": "Rite",
+    "DESCRIPTIONS": [
+      "When you play an attack, gain #b",
+      " Rite. If you have 10 Rite, Awaken and lose all Rite."
+    ]
+  },
+  "awakened:FeatherPower": {
+    "NAME": "FeatherPower",
+    "DESCRIPTIONS": [
+      "In #b",
+      " turns, remove this power and discard ",
+      "At the end of this turn, remove this power and discard ",
+      "."
+    ]
+  },
+  "awakened:IronFeatherPower": {
+    "NAME": "Iron Feather",
+    "DESCRIPTIONS": [
+      "When attacked, you gain #b",
+      " block."
+    ]
   }
 }

@@ -1,4 +1,7 @@
 {
+  "awakened:Feather": {
+    "DESCRIPTION": "When you draw this card, draw another card. NL Deal !D! Damage."
+  },
   "awakened:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
@@ -10,6 +13,18 @@
   "awakened:HexCard": {
     "NAME": "HexCard",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Hex."
+  },
+  "awakened:Sludge": {
+    "NAME": "Sludge",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and !M! Vulnerable. NL Shuffle a Void into your draw pile."
+  },
+  "awakened:EnervatingAssault": {
+    "NAME": "HexCard",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Hex X times."
+  },
+  "awakened:IronFeather": {
+    "NAME": "Iron Feather",
+    "DESCRIPTION": "Embedded: Whenever you attack this enemy, gain 1 Block."
   },
   "awakened:TemporaryPowerDemo": {
     "NAME": "Auto-Generated Temporary Power",

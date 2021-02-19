@@ -8,8 +8,8 @@ import awakenedOne.util.TexLoader;
 
 import static awakenedOne.AwakenedOneMod.makeID;
 
-public abstract class AbstractEasyPower extends AbstractPower {
-    public AbstractEasyPower(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
+public abstract class AbstractAwakenedPower extends AbstractPower {
+    public AbstractAwakenedPower(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
         this.ID = makeID(NAME.replaceAll("([ ])", "") );
         this.isTurnBased = isTurnBased;
 

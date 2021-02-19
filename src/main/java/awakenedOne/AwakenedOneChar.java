@@ -1,5 +1,6 @@
 package awakenedOne;
 
+import awakenedOne.powers.RitePower;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -8,11 +9,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -21,6 +24,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import awakenedOne.cards.Defend;
 import awakenedOne.cards.Strike;
 import awakenedOne.relics.TodoItem;
+import guardian.powers.ModeShiftPower;
 
 import java.util.ArrayList;
 
@@ -83,6 +87,12 @@ public class AwakenedOneChar extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(TodoItem.ID);
         return retVal;
+    }
+
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RitePower(AbstractDungeon.player, AbstractDungeon.player)));
     }
 
     @Override

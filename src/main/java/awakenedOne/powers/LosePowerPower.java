@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class LosePowerPower extends AbstractEasyPower {
+public class LosePowerPower extends AbstractAwakenedPower {
     private AbstractPower powerToLose;
     //private static Texture chain = TexLoader.getTexture("todomodResources/images/ui/chain.png");
 

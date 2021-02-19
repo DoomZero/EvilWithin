@@ -3,6 +3,7 @@ package awakenedOne.util;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +15,8 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -150,6 +153,14 @@ public class Wiz {
         shuffleIn(c, 1);
     }
 
+    public static void makeInDiscard(AbstractCard c, int i) {
+        atb(new MakeTempCardInDiscardAction(c, i));
+    }
+
+    public static void makeInDiscard(AbstractCard c) {
+        makeInDiscard(c, 1);
+    }
+
     public static void topDeck(AbstractCard c, int i) {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, i, false, true));
     }
@@ -181,5 +192,13 @@ public class Wiz {
 
     public static void applyToSelfNextTurn(AbstractPower po) {
         atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnPowerPower(AbstractDungeon.player, po)));
+    }
+
+    public static WeakPower autoWeak(AbstractMonster m, int i) {
+        return new WeakPower(m, i, false);
+    }
+
+    public static VulnerablePower autoVuln(AbstractMonster m, int i) {
+        return new VulnerablePower(m, i, false);
     }
 }

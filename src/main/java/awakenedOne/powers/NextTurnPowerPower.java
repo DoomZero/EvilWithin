@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class NextTurnPowerPower extends AbstractEasyPower {
+public class NextTurnPowerPower extends AbstractAwakenedPower {
     private AbstractPower powerToGain;
         /*
     private static Texture arrow48 = TexLoader.getTexture("todomodResources/images/ui/arrow48.png");
