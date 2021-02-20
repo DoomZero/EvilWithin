@@ -1,6 +1,22 @@
 {
   "awakened:Feather": {
-    "DESCRIPTION": "When you draw this card, draw another card. NL Deal !D! Damage."
+    "DESCRIPTION": "awakened:Restore. NL Deal !D! Damage."
+  },
+  "awakened:IronFeather": {
+    "NAME": "Iron Feather",
+    "DESCRIPTION": "Embedded: Whenever you attack this enemy, gain !M! Block."
+  },
+  "awakened:BarbedFeather": {
+    "NAME": "Barbed Feather",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Embedded: Vulnerable does not decrease at the end of the turn."
+  },
+  "awakened:SappingFeather": {
+    "NAME": "Sapping Feather",
+    "DESCRIPTION": "Apply !M! Weak. NL Embedded: Weak does not decrease at the end of the turn."
+  },
+  "awakened:SwiftFeather": {
+    "NAME": "Swift Feather",
+    "DESCRIPTION": "Embedded: The first time you attack this enemy each turn, draw !M! cards."
   },
   "awakened:Strike": {
     "NAME": "Strike",
@@ -19,12 +35,12 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak and !M! Vulnerable. NL Shuffle a Void into your draw pile."
   },
   "awakened:EnervatingAssault": {
-    "NAME": "HexCard",
+    "NAME": "Enervating Assault",
     "DESCRIPTION": "Deal !D! damage and apply !M! Hex X times."
   },
-  "awakened:IronFeather": {
-    "NAME": "Iron Feather",
-    "DESCRIPTION": "Embedded: Whenever you attack this enemy, gain 1 Block."
+  "awakened:SoulStrike": {
+    "NAME": "Soul Strike",
+    "DESCRIPTION": "Deal !D! damage !M! times. Gain 3 Rite."
   },
   "awakened:TemporaryPowerDemo": {
     "NAME": "Auto-Generated Temporary Power",

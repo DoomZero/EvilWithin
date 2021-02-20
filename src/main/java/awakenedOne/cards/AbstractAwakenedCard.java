@@ -1,6 +1,9 @@
 package awakenedOne.cards;
 
+import awakenedOne.stances.AwakenedPhase;
 import basemod.abstracts.CustomCard;
+import champ.stances.BerserkerStance;
+import champ.stances.UltimateStance;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 import static awakenedOne.AwakenedOneMod.*;
 import static awakenedOne.util.Wiz.atb;
 import static awakenedOne.util.Wiz.att;
+import static champ.ChampMod.enteredBerserkerThisTurn;
 
 public abstract class AbstractAwakenedCard extends CustomCard {
 
@@ -89,6 +93,10 @@ public abstract class AbstractAwakenedCard extends CustomCard {
             textureString = makeImagePath("ui/missing.png");
         }
         return textureString;
+    }
+
+    public static boolean isAwakened() {
+        return (AbstractDungeon.player.stance.ID.equals(AwakenedPhase.STANCE_ID));
     }
 
     @Override

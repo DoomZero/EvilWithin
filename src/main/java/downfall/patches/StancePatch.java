@@ -1,5 +1,6 @@
 package downfall.patches;
 
+import awakenedOne.stances.AwakenedPhase;
 import champ.stances.BerserkerStance;
 import champ.stances.DefensiveStance;
 import champ.stances.UltimateStance;
@@ -34,6 +35,9 @@ public class StancePatch {
                 if (name.equals(UltimateStance.STANCE_ID)) {
                     return SpireReturn.Return(new UltimateStance());
                 }
+                if (name.equals(AwakenedPhase.STANCE_ID)) {
+                    return SpireReturn.Return(new AwakenedPhase());
+                }
                 return SpireReturn.Continue();
             }
         }
@@ -46,7 +50,7 @@ public class StancePatch {
         public static class StanceAuraEffectPatch{
             @SpirePostfixPatch
             public static SpireReturn<Void> Postfix(StanceAuraEffect _instance,String stanceId) {
-                if (stanceId.equals("DefensiveMode")) {
+                if (stanceId.equals("DefensiveMode") || stanceId.equals("AwakenedPhase")) {
                     try{
                         Field colorField = _instance.getClass().getSuperclass().getDeclaredField("color");
                         colorField.setAccessible(true);

@@ -8,6 +8,7 @@ package awakenedOne.powers;
 import awakenedOne.AwakenedOneMod;
 import awakenedOne.cards.AbstractFeather;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -24,7 +25,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import static awakenedOne.util.Wiz.*;
 
 
-public abstract class AbstractFeatherPower extends TwoAmountPower {
+public abstract class AbstractFeatherPower extends TwoAmountPower implements NonStackablePower {
     public static String POWER_ID = AwakenedOneMod.makeID("FeatherPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -39,8 +40,9 @@ public abstract class AbstractFeatherPower extends TwoAmountPower {
     }
 
     @Override
-    public void atStartOfTurn() {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && amount2 == 1) {
+    public void atEndOfTurn(boolean isPlayer) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()
+                && amount2 == 1 && !isPlayer) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
             makeInDiscard(featherCard);
         } else {

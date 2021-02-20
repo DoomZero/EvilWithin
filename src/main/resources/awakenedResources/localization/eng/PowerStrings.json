@@ -28,5 +28,24 @@
       "When attacked, you gain #b",
       " block."
     ]
+  },
+  "awakened:BarbedFeatherPower": {
+    "NAME": "Barbed Feather",
+    "DESCRIPTIONS": [
+      "Vulnerable does not decrease at the end of the turn."
+    ]
+  },
+  "awakened:SappingFeatherPower": {
+    "NAME": "Sapping Feather",
+    "DESCRIPTIONS": [
+      "Weak does not decrease at the end of the turn."
+    ]
+  },
+  "awakened:SwiftFeatherPower": {
+    "NAME": "Swift Feather",
+    "DESCRIPTIONS": [
+      "When attacked, you draw #b",
+      " cards."
+    ]
   }
 }

@@ -49,7 +49,6 @@ public class AwakenedOneChar extends CustomPlayer {
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
 
-
     public AwakenedOneChar(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null), new SpriterAnimation(
                 modID + "Resources/images/char/mainChar/static.scml"));

@@ -2,6 +2,7 @@ package awakenedOne.powers;
 
 
 import awakenedOne.AwakenedOneMod;
+import awakenedOne.stances.AwakenedPhase;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -16,6 +17,8 @@ import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import guardian.stances.DefensiveMode;
+
+import static awakenedOne.util.Wiz.atb;
 
 
 public class RitePower extends AbstractAwakenedPower {
@@ -35,15 +38,13 @@ public class RitePower extends AbstractAwakenedPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.source = source;
-        this.loadRegion("modeShift");
         this.type = POWER_TYPE;
         this.amount = 0;
         this.active = true;
         this.amount_gain = 1;
         this.name = NAME;
-
+        this.loadRegion("unawakened");
         updateDescription();
-
     }
 
     public void updateDescription() {
@@ -55,8 +56,7 @@ public class RitePower extends AbstractAwakenedPower {
         updateDescription();
         flash();
         if (this.amount >= 10) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, BLOCKONTRIGGER));
-            AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(DefensiveMode.STANCE_ID));
+            atb(new ChangeStanceAction(AwakenedPhase.STANCE_ID));
             updateDescription();
             this.amount = 0;
         }

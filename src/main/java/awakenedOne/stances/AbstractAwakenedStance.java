@@ -67,8 +67,4 @@ public abstract class AbstractAwakenedStance extends AbstractStance {
     }
 
     public abstract void updateDescription();
-
-//    public abstract void technique();
-//
-//    public abstract void finisher();
 }
