@@ -71,7 +71,7 @@ public class TheTimeEater extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> startingDeck = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             startingDeck.add(Strike.ID);
         }
         for (int i = 0; i < 4; i++) {
@@ -79,18 +79,8 @@ public class TheTimeEater extends CustomPlayer {
         }
 
         startingDeck.add(ChangeOfPace.ID);
-//        startingDeck.add(Hiccup.ID);
+        startingDeck.add(Hiccup.ID);
         startingDeck.add(HoldYourBreath.ID);
-//        startingDeck.add(WakeUpSlap.ID);
-//        startingDeck.add(EchoingGuard.ID);
-//        startingDeck.add(EndlessMemory.ID);
-//        startingDeck.add(OneTimeRewind.ID);
-//        startingDeck.add(FallBack.ID);
-//        startingDeck.add(ReverseGrip.ID);
-//        startingDeck.add(TimeEaterModalChoiceDemo.ID);
-//        startingDeck.add(InlineCardModDemo.ID);
-//        startingDeck.add(InlinePowerDemo.ID);
-//        startingDeck.add(NextTurnPowerDemo.ID);
         return startingDeck;
     }
 

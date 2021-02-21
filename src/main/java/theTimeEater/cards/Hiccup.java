@@ -12,7 +12,7 @@ public class Hiccup extends AbstractTimeEaterCard {
     // intellij stuff attack, enemy, common, 6, 3,  , , ,
 
     public Hiccup() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
         baseDamage = 9;
     }
 

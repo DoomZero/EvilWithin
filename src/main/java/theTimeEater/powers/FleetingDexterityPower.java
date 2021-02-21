@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import theTimeEater.TimeEaterMod;
 
 import static theTimeEater.util.Wiz.*;
@@ -17,15 +18,20 @@ public class FleetingDexterityPower extends AbstractTimeEaterPower implements Cl
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    public static boolean triggered = false;
+
     public FleetingDexterityPower(AbstractCreature owner, int amount) {
-        super(NAME, POWER_ID, PowerType.DEBUFF, false, owner, amount);
+        super(NAME, POWER_ID, PowerType.DEBUFF, owner, amount, false);
         loadRegion("time");
     }
 
     @Override
     public int onLoseHp(int damageAmount) {
-        atb(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
-        remove();
+        if (!triggered){
+            atb(new ApplyPowerAction(owner, owner, new DexterityPower(owner, -amount), -amount));
+            this.remove();
+            triggered = true;
+        }
         return damageAmount;
     }
 

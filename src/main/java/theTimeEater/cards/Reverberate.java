@@ -12,7 +12,7 @@ public class Reverberate extends AbstractTimeEaterCard {
 
     public Reverberate() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
-        this.baseDamage = 5;
+        this.baseDamage = 4;
         this.baseMagicNumber = this.magicNumber = 3;
     }
 

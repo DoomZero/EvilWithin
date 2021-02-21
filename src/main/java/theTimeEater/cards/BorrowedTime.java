@@ -25,6 +25,6 @@ public class BorrowedTime extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeMagicNumber(1);
     }
 }

@@ -17,8 +17,8 @@ public class Redshift extends AbstractTimeEaterCard {
         this.exhaust = true;
     }
 
-    public void use(AbstractPlayer p, AbstractMonster mo) {
-        applyToSelf(new DoubleDamagePower(p, 1, true));
+    public void use(AbstractPlayer p, AbstractMonster unused) {
+        applyToSelf(new DoubleDamagePower(p, 1, false));
         forAllMonstersLiving(m -> applyToEnemy(m, new IntangibleNextTurnPower(m, 1)));
     }
 

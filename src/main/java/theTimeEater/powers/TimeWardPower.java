@@ -23,7 +23,7 @@ import theTimeEater.TimeEaterMod;
 
 import java.util.ArrayList;
 
-public class TimeWardPower extends AbstractTimeEaterPower implements CloneablePowerInterface, OnReceivePowerPower {
+public class TimeWardPower extends AbstractTimeEaterPower implements OnReceivePowerPower {
     public static final String POWER_ID = TimeEaterMod.makeID(TimeWardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

@@ -23,7 +23,7 @@ public class IntangibleNextTurnPower extends AbstractTimeEaterPower implements C
 //    private boolean justApplied = true;
 
     public IntangibleNextTurnPower(AbstractCreature owner, int duration) {
-        super(NAME, POWER_ID, PowerType.BUFF, true, owner, duration);
+        super(NAME, POWER_ID, PowerType.BUFF, owner, duration, true);
         loadRegion("time");
     }
 

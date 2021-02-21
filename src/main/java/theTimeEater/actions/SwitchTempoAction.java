@@ -18,8 +18,20 @@ import java.util.ArrayList;
 public class SwitchTempoAction extends AbstractGameAction {
 
     TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
-    DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
-    DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
+    static final DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
+    static final DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
+
+    static final float DRAW_DECK_X = 76.0F * Settings.scale - 64.0F;// 44
+    static final float DRAW_DECK_Y = 74.0F * Settings.scale - 64.0F;// 45
+
+    static final float DISCARD_DECK_X = 180.0F * Settings.scale - 64.0F;// 42
+    static final float DISCARD_DECK_Y = 70.0F * Settings.scale - 64.0F;// 43
+
+    static final float originalDrawPileX = drawPile.current_x;
+    static final float originalDrawPileY = drawPile.current_y;
+    static final float originalDiscardPileX = discardPile.current_x;
+    static final float originalDiscardPileY = discardPile.current_y;
+
 
     @Override
     public void update() {
@@ -28,16 +40,25 @@ public class SwitchTempoAction extends AbstractGameAction {
         p.discardPile.group = p.drawPile.group;
         p.drawPile.group = tmp;
 
-        if (p.tempo == tempos.REWIND)  p.tempo = tempos.FORWARD;
-        if (p.tempo == tempos.FORWARD) p.tempo = tempos.REWIND;
-
         //flip the icons
-        float temp_x = drawPile.target_x;
-        float temp_y = drawPile.target_y;
-        drawPile.target_x = drawPile.current_x = discardPile.target_x;
-        drawPile.target_y = drawPile.current_y = discardPile.target_y;
-        discardPile.target_x = discardPile.current_x = temp_x;
-        discardPile.target_y = discardPile.current_y = temp_y;
+        if (p.tempo == tempos.REWIND){
+            p.tempo = tempos.FORWARD;
+
+            drawPile.target_x = drawPile.current_x = originalDrawPileX;
+            drawPile.target_y = drawPile.current_y = originalDrawPileY;
+            discardPile.target_x = discardPile.current_x = originalDiscardPileX;
+            discardPile.target_y = discardPile.current_y = originalDiscardPileY;
+
+        }
+        if (p.tempo == tempos.FORWARD){
+            p.tempo = tempos.REWIND;
+
+//            drawPile.target_x = drawPile.current_x = originalDrawPileX + DECK_X * 2;
+            drawPile.target_y = drawPile.current_y = originalDrawPileY;
+//            discardPile.target_x = discardPile.current_x = originalDiscardPileX - DECK_X * 2;
+            discardPile.target_y = discardPile.current_y = originalDiscardPileY;
+        }
+
         isDone = true;
     }
 }

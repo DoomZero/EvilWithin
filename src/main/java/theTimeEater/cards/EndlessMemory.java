@@ -12,7 +12,7 @@ public class EndlessMemory extends AbstractTimeEaterCard {
 
     public EndlessMemory() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.baseDamage = 6;
+        this.baseDamage = 7;
         this.returnToHand = true;
     }
 

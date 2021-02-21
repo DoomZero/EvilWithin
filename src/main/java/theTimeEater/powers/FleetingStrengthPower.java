@@ -18,15 +18,20 @@ public class FleetingStrengthPower extends AbstractTimeEaterPower implements Clo
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    public static boolean triggered = false;
+
     public FleetingStrengthPower(AbstractCreature owner, int amount) {
-        super(NAME, POWER_ID, PowerType.DEBUFF, false, owner, amount);
+        super(NAME, POWER_ID, PowerType.DEBUFF, owner, amount, false);
         loadRegion("time");
     }
 
     @Override
     public int onLoseHp(int damageAmount) {
-        atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
-        remove();
+        if (!triggered){
+            atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
+            this.remove();
+            triggered = true;
+        }
         return damageAmount;
     }
 

@@ -37,8 +37,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements CloneablePo
     }
 
     public TimeLockPower(AbstractCreature owner, int damage, int duration) {
-        super(NAME, POWER_ID, PowerType.BUFF, true, owner, damage);
-        amount2 = duration;
+        super(NAME, POWER_ID, PowerType.BUFF, owner, damage, duration,true);
         baseDamage = damage;
         loadRegion("time");
         if (owner == adp()) justApplied = true;

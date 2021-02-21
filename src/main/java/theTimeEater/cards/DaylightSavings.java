@@ -12,7 +12,7 @@ public class DaylightSavings extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, 5, 3,  , , ,
 
     public DaylightSavings() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

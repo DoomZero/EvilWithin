@@ -38,7 +38,7 @@ public class DrawVoidPower extends AbstractTimeEaterPower implements CloneablePo
     }*/
 
     public DrawVoidPower(AbstractCreature owner, int amount){
-        super(NAME, POWER_ID, PowerType.DEBUFF, false, owner, amount);
+        super(NAME, POWER_ID, PowerType.DEBUFF, owner, amount, false);
         loadRegion("time");
     }
 

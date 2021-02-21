@@ -21,11 +21,11 @@ import java.util.ArrayList;
 public class RewindDiscardPatch {
     @SpirePostfixPatch
     public static void discardToDraw(AbstractCard __instance){
-        System.out.printf("DEBUG - target_x before: %.5f", __instance.target_x);
         AbstractPlayer p = AbstractDungeon.player;
         if (p instanceof TheTimeEater){
             TheTimeEater tp = (TheTimeEater) p;
             if (tp.tempo == TheTimeEater.tempos.REWIND){
+                //this is the only line that is important:
                 __instance.target_x = CardGroup.DRAW_PILE_X;
             }
         }
@@ -35,7 +35,6 @@ public class RewindDiscardPatch {
                 __instance.target_x = CardGroup.DRAW_PILE_X;
             }
         }
-        System.out.printf("DEBUG - target_x after: %.5f", __instance.target_x);
     }
 
     /*private static class discardCardLocator extends SpireInsertLocator {

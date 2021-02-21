@@ -11,7 +11,7 @@ public class HoldYourBreath extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, 5, 3,  , , ,
 
     public HoldYourBreath() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = 5;
     }
 

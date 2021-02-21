@@ -16,20 +16,43 @@ import static theTimeEater.util.Wiz.*;
 
 public abstract class AbstractTimeEaterPower extends TwoAmountPower implements CloneablePowerInterface {
     public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType) {
-        this(NAME, ID, powerType, false, AbstractDungeon.player, 0);
+        this(NAME, ID, powerType, AbstractDungeon.player);
     }
 
     public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, int amount) {
-        this(NAME, ID, powerType, false, AbstractDungeon.player, amount);
+        this(NAME, ID, powerType, AbstractDungeon.player, amount);
     }
 
-    public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
+    public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, AbstractCreature owner) {
+        this(NAME, ID, powerType, owner, 0);
+    }
+
+    public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, AbstractCreature owner, int amount) {
+        this(NAME, ID, powerType, owner, amount, 0);
+    }
+
+    public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, AbstractCreature owner, int amount, boolean isTurnBased) {
+        this(NAME, ID, powerType, owner, amount, 0, isTurnBased);
+    }
+
+    public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, AbstractCreature owner, int amount, int amount2) {
+        this(NAME, ID, powerType, owner, amount, amount2, false);
+    }
+
+    public AbstractTimeEaterPower(String NAME, String ID, PowerType powerType, AbstractCreature owner, int amount, int amount2, boolean isTurnBased) {
         this.name = NAME;
         this.ID = ID;
         this.type = powerType;
         this.isTurnBased = isTurnBased;
         this.owner = owner;
         this.amount = amount;
+        this.amount2 = amount2;
+
+        AbstractTimeEaterPower dupe = (AbstractTimeEaterPower) owner.getPower(this.ID);
+        if (dupe != null && dupe.amount2 != 0){
+            dupe.amount  += this.amount;
+            dupe.amount2 += this.amount2;
+        }
 
         Texture normalTexture = TexLoader.getTexture("bronzeResources/images/powers/" + NAME.replaceAll("([ ])", "")  + "32.png");
         Texture hiDefImage = TexLoader.getTexture("bronzeResources/images/powers/" + NAME.replaceAll("([ ])", "")  + "84.png");
@@ -48,11 +71,12 @@ public abstract class AbstractTimeEaterPower extends TwoAmountPower implements C
     public void remove(){
         atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
-
     public void decrement() {
         decrement(1);
     }
     public void decrement(int decreaseBy) {
         atb(new ReducePowerAction(this.owner, this.owner, this, decreaseBy));
     }
+
+
 }

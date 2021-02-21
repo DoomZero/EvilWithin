@@ -21,7 +21,7 @@ public class TakeDoubleDamagePower extends AbstractTimeEaterPower implements Clo
 //    private boolean justApplied = true;
 
     public TakeDoubleDamagePower(AbstractCreature owner, int duration) {
-        super(NAME, POWER_ID, PowerType.DEBUFF, true, owner, duration);
+        super(NAME, POWER_ID, PowerType.DEBUFF, owner, duration, true);
         loadRegion("time");
     }
 

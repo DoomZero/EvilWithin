@@ -5,7 +5,7 @@
       "In #b",
       " turns, takes #b",
       " turn, takes #b",
-      " damage ( #b",
+      " damage ( [REMOVE_SPACE]#b",
       " base damage), then #yTime #yLock is removed."
     ]
   },
