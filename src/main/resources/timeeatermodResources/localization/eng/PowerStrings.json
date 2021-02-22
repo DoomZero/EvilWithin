@@ -2,7 +2,7 @@
   "timeeatermod:TimeLockPower": {
     "NAME": "Time Lock",
     "DESCRIPTIONS": [
-      "In #b",
+      "All damage received is reduced to 0. In #b",
       " turns, takes #b",
       " turn, takes #b",
       " damage ( [REMOVE_SPACE]#b",
@@ -12,8 +12,8 @@
   "timeeatermod:TimeWardPower": {
     "NAME": "Time Ward",
     "DESCRIPTIONS": [
-      "In #b",
-      " turns, gains debuffs, then #yTime #yWard is removed."
+      "You gain no debuffs. In #b",
+      " turns, you gain all the debuffs you should've gained, then #yTime #yWard is removed."
     ]
   },
   "timeeatermod:DrawVoidPower": {
@@ -27,7 +27,7 @@
   "timeeatermod:DesynchronizePower": {
     "NAME": "Desynchronize",
     "DESCRIPTIONS": [
-      "Each time your Time Lock expires, you regain Time Lock for 1 turn."
+      "Each time your Time Lock expires, you gain 1 Time Lock."
     ]
   },
   "timeeatermod:EnergyBlurPower": {
@@ -54,7 +54,7 @@
     ]
   },
   "timeeatermod:IntangibleNextTurnPower": {
-    "NAME": "Double Damage",
+    "NAME": "Intangible Next Turn",
     "DESCRIPTIONS": [
       "Gain Intangible at the start of your next ",
       "turn.",

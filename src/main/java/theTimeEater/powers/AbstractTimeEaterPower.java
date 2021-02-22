@@ -48,12 +48,6 @@ public abstract class AbstractTimeEaterPower extends TwoAmountPower implements C
         this.amount = amount;
         this.amount2 = amount2;
 
-        AbstractTimeEaterPower dupe = (AbstractTimeEaterPower) owner.getPower(this.ID);
-        if (dupe != null && dupe.amount2 != 0){
-            dupe.amount  += this.amount;
-            dupe.amount2 += this.amount2;
-        }
-
         Texture normalTexture = TexLoader.getTexture("bronzeResources/images/powers/" + NAME.replaceAll("([ ])", "")  + "32.png");
         Texture hiDefImage = TexLoader.getTexture("bronzeResources/images/powers/" + NAME.replaceAll("([ ])", "")  + "84.png");
         if (hiDefImage != null) {
@@ -71,12 +65,12 @@ public abstract class AbstractTimeEaterPower extends TwoAmountPower implements C
     public void remove(){
         atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
+
     public void decrement() {
         decrement(1);
     }
     public void decrement(int decreaseBy) {
         atb(new ReducePowerAction(this.owner, this.owner, this, decreaseBy));
     }
-
 
 }

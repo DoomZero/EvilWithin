@@ -27,7 +27,6 @@ public class LeapPastFate extends AbstractTimeEaterCard {
         if (p.amount > 0){
             baseDamage = p.amount;
         }
-        p.remove();
     }
 
     private void updateDesc(){
@@ -45,6 +44,11 @@ public class LeapPastFate extends AbstractTimeEaterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         calculateCardDamage(m);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+
+        TimeLockPower tl = (TimeLockPower) adp().getPower(TimeLockPower.POWER_ID);
+        if (tl != null){
+            tl.remove();
+        }
     }
 
     public void applyPowers() {

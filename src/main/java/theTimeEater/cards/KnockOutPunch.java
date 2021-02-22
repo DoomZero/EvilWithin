@@ -17,7 +17,7 @@ public class KnockOutPunch extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToEnemy(m, new TimeLockPower(m, 0, 2));
+        applyToEnemy(m, new TimeLockPower(m, 2));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
     }
 

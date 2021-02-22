@@ -29,6 +29,6 @@ public class TimelineDivergence extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeMagicNumber(5);
     }
 }

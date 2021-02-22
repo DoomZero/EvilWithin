@@ -19,8 +19,8 @@ public class RecordScratch extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         applyToEnemy(m, new WeakPower(m, baseMagicNumber, false));
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
     }
 
     public void upp() {

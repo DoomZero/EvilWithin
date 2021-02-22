@@ -8,32 +8,32 @@ import theTimeEater.powers.TimeLockPower;
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.*;
 
-public class WakeUpSlap extends AbstractTimeEaterCard {
-    public final static String ID = makeID(WakeUpSlap.class.getSimpleName());
+public class EdgeOfTomorrow extends AbstractTimeEaterCard {
+    public final static String ID = makeID(EdgeOfTomorrow.class.getSimpleName());
     // intellij stuff attack, enemy, common, 3, 3,  , , ,
 
-    public WakeUpSlap() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.baseDamage = 3;
+    public EdgeOfTomorrow() {
+        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-
-        //decrease duration of time lock on enemy
+        //detonate time lock on enemy
         TimeLockPower tl = (TimeLockPower) m.getPower(TimeLockPower.POWER_ID);
         if (tl == null) return;
+
         atb(new AbstractGameAction() {
             @Override
             public void update() {
                 isDone = true;
-                tl.changeDuration(-magicNumber);
+                tl.explode();
             }
         });
+
+        //reapply time lock to enemy
+        if (!m.isDeadOrEscaped()) applyToEnemy(m, new TimeLockPower(m, tl.amount, tl.amount2));
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBaseCost(0);
     }
 }

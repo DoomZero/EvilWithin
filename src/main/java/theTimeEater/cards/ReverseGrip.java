@@ -26,6 +26,6 @@ public class ReverseGrip extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeDamage(3);
     }
 }

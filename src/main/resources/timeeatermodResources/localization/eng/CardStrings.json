@@ -25,7 +25,7 @@
   },
   "timeeatermod:EndlessMemory": {
     "NAME": "Endless Memory",
-    "DESCRIPTION": "Deal !D! damage. NL Return this card to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Return this card to your hand. NL Cannot cost less than 1."
   },
   "timeeatermod:TimeShock": {
     "NAME": "Time Shock",
@@ -53,7 +53,7 @@
   },
   "timeeatermod:TimeWard": {
     "NAME": "Time Ward",
-    "DESCRIPTION": "Gain Time Ward."
+    "DESCRIPTION": "Gain Time Ward. NL BUGGED AS SHIT NL DO NOT TAKE"
   },
   "timeeatermod:TimelineDivergence": {
     "NAME": "Timeline Divergence",
@@ -169,6 +169,19 @@
   "timeeatermod:FleetingDexterity": {
     "NAME": "Fleeting Dexterity",
     "DESCRIPTION": "Gain !M! Dexterity. Lose !M! Dexterity the next time you lose HP."
+  },
+  "timeeatermod:ExhaustDraw": {
+    "NAME": "ExhaustDraw",
+    "DESCRIPTION": "Draw 1 card, then Exhaust 1 card.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card, then you may Exhaust 1 card."
+  },
+  "timeeatermod:Recall": {
+    "NAME": "Recall",
+    "DESCRIPTION": "Put 1 card from your discard pile to your hand, then discard 1 card."
+  },
+  "timeeatermod:EdgeOfTomorrow": {
+    "NAME": "Edge Of Tomorrow",
+    "DESCRIPTION": "Detonate the target enemy's Time Lock, then reapply the Time Lock that the enemy had before."
   },
 
 

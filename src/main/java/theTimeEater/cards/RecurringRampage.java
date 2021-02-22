@@ -16,12 +16,13 @@ public class RecurringRampage extends AbstractTimeEaterCard {
         this.baseMagicNumber = this.magicNumber = 5;
     }
 
+    @Override
     public void triggerWhenDrawn() {
         baseDamage += this.magicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     public void upp() {

@@ -27,6 +27,6 @@ public class SelectiveMemory extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeMagicNumber(1);
     }
 }

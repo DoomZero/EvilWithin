@@ -13,19 +13,20 @@ public class Snooze extends AbstractTimeEaterCard {
     public Snooze() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(TimeLockPower.POWER_ID)) {
-            TimeLockPower tl = (TimeLockPower) p.getPower(TimeLockPower.POWER_ID);
-            tl.setDuration(tl.amount2 + 1);
+        TimeLockPower tl = (TimeLockPower) p.getPower(TimeLockPower.POWER_ID);
+        if (tl != null) {
+            tl.changeDuration(1);
         }
         else {
-            applyToSelf(new TimeLockPower(p, 0, 2));
+            applyToSelf(new TimeLockPower(p, this.magicNumber));
         }
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeMagicNumber(1);
     }
 }

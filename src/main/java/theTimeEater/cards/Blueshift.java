@@ -22,6 +22,6 @@ public class Blueshift extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBaseCost(0);
     }
 }

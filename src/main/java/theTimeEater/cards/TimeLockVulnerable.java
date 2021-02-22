@@ -14,7 +14,7 @@ public class TimeLockVulnerable extends AbstractTimeEaterCard {
     // intellij stuff attack, enemy, common, 6, 3,  , , ,
 
     public TimeLockVulnerable() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseDamage = 7;
     }
 

@@ -19,6 +19,6 @@ public class ButterflyEffect extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeBlock(3);
+        upgradeBaseCost(1);
     }
 }

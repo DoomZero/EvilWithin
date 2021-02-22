@@ -18,7 +18,7 @@ public class FleetingDexterityPower extends AbstractTimeEaterPower implements Cl
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public static boolean triggered = false;
+    public boolean triggered = false;
 
     public FleetingDexterityPower(AbstractCreature owner, int amount) {
         super(NAME, POWER_ID, PowerType.DEBUFF, owner, amount, false);
