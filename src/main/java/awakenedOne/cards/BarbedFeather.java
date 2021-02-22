@@ -23,6 +23,6 @@ public class BarbedFeather extends AbstractFeather{
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         applyToEnemy(m, autoVuln(m, magicNumber));
-        applyToEnemy(m, new BarbedFeatherPower(m, magicNumber, this));
+        applyFeatherPower(m, new BarbedFeatherPower(m, magicNumber, this));
     }
 }

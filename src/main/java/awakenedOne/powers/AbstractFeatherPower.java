@@ -57,6 +57,10 @@ public abstract class AbstractFeatherPower extends TwoAmountPower implements Non
         }
     }
 
+    public void onDeath() {
+        makeInDiscard(featherCard);
+    }
+
     String createFeatherPowerDesc(String uniqueText, String cardName){
         if (amount2 == 1)
             return uniqueText + " NL " + DESCRIPTIONS[2] + cardName + DESCRIPTIONS[3];

@@ -22,6 +22,6 @@ public class SwiftFeather extends AbstractFeather{
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
-        applyToEnemy(m, new SwiftFeatherPower(m, magicNumber, this));
+        applyFeatherPower(m, new SwiftFeatherPower(m, magicNumber, this));
     }
 }

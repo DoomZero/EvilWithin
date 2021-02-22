@@ -23,6 +23,6 @@ public class SappingFeather extends AbstractFeather{
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         applyToEnemy(m, autoWeak(m, magicNumber));
-        applyToEnemy(m, new SappingFeatherPower(m, magicNumber, this));
+        applyFeatherPower(m, new SappingFeatherPower(m, magicNumber, this));
     }
 }

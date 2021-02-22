@@ -21,6 +21,6 @@ public class IronFeather extends AbstractFeather{
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
-        applyToEnemy(m, new IronFeatherPower(m, magicNumber, this));
+        applyFeatherPower(m, new IronFeatherPower(m, magicNumber, this));
     }
 }

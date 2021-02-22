@@ -1,5 +1,7 @@
 package awakenedOne.cards;
 
+import awakenedOne.powers.AbstractFeatherPower;
+import awakenedOne.powers.SwiftFeatherPower;
 import awakenedOne.stances.AwakenedPhase;
 import basemod.abstracts.CustomCard;
 import champ.stances.BerserkerStance;
@@ -20,12 +22,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import awakenedOne.AwakenedOneChar;
 import awakenedOne.util.CardArtRoller;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static awakenedOne.AwakenedOneMod.*;
-import static awakenedOne.util.Wiz.atb;
-import static awakenedOne.util.Wiz.att;
+import static awakenedOne.util.Wiz.*;
 import static champ.ChampMod.enteredBerserkerThisTurn;
 
 public abstract class AbstractAwakenedCard extends CustomCard {
@@ -232,4 +235,14 @@ public abstract class AbstractAwakenedCard extends CustomCard {
         atb(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
     }
 
+    protected void applyFeatherPower(AbstractMonster m, AbstractFeatherPower fPower) {
+        int fPowerCount = 0;
+        AbstractPower p;
+        for(Iterator var2 = m.powers.iterator(); var2.hasNext(); fPowerCount += p instanceof AbstractFeatherPower ? 1 : 0) {
+            p = (AbstractPower)var2.next();
+        }
+        if (fPowerCount < 3) {
+            applyToEnemy(m, fPower);
+        }
+    }
 }

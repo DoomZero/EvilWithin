@@ -5,5 +5,12 @@
       "restore"
     ],
     "DESCRIPTION": "When you draw this card, draw another card."
+  },
+  {
+    "PROPER_NAME": "Awakened",
+    "NAMES": [
+      "awakened"
+    ],
+    "DESCRIPTION": "Activates a secondary effect when in Awakened Phase, and usually exhausts after playing."
   }
 ]

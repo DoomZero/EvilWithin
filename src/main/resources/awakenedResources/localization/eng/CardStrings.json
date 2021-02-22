@@ -42,6 +42,18 @@
     "NAME": "Soul Strike",
     "DESCRIPTION": "Deal !D! damage !M! times. Gain 3 Rite."
   },
+  "awakened:DiveBomb": {
+    "NAME": "Dive Bomb",
+    "DESCRIPTION": "Deal !D! damage. NL awakened:Awakened - Affects ALL enemies. NL Exhaust."
+  },
+  "awakened:ShieldingStrike": {
+    "NAME": "Shielding Strike",
+    "DESCRIPTION": "Deal !D! damage. NL awakened:Awakened - Gain !B! Block."
+  },
+  "awakened:WingedRiposte": {
+    "NAME": "Winged Riposte",
+    "DESCRIPTION": "Gain !B! Block. NL awakened:Awakened - Deal !D! damage !M! times."
+  },
   "awakened:TemporaryPowerDemo": {
     "NAME": "Auto-Generated Temporary Power",
     "DESCRIPTION": "Whenever you Scry this turn, gain !M! Block."

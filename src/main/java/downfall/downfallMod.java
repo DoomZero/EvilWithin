@@ -447,6 +447,7 @@ public class downfallMod implements
         loadModKeywords(GuardianMod.getModID(), otherPackagePaths.PACKAGE_GUARDIAN);
         loadModKeywords(ChampMod.getModID(), otherPackagePaths.PACKAGE_CHAMP);
         loadModKeywords(AutomatonMod.getModID(), otherPackagePaths.PACKAGE_AUTOMATON);
+        loadModKeywords(AwakenedOneMod.getModID(), otherPackagePaths.PACKAGE_AWAKENED_ONE);
         loadModKeywords(modID, otherPackagePaths.PACKAGE_DOWNFALL);
         loadModKeywords(modID, otherPackagePaths.PACKAGE_AWAKENED_ONE);
     }
