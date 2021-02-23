@@ -182,6 +182,7 @@ public abstract class AbstractTimeEaterCard extends CustomCard {
         if (!upgraded) {
             upgradeName();
             upp();
+            initializeDescription();
         }
     }
 

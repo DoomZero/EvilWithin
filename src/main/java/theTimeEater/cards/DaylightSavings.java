@@ -3,7 +3,6 @@ package theTimeEater.cards;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ConservePower;
-import theTimeEater.powers.EnergyBlurPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 

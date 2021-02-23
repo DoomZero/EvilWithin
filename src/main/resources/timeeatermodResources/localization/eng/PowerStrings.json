@@ -73,6 +73,12 @@
       "Lose #b", " Dexterity the next time you lose HP."
     ]
   },
+  "timeeatermod:PivotPower": {
+    "NAME": "Pivot",
+    "DESCRIPTIONS": [
+      "Gain [E] the first #b", " time", " times", " you change Tempo each turn."
+    ]
+  },
 
 
 

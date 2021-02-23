@@ -16,7 +16,7 @@ public class ExhaustDraw extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public ExhaustDraw() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -26,6 +26,6 @@ public class ExhaustDraw extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        uDesc();
     }
 }

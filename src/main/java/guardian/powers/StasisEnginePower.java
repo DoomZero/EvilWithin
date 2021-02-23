@@ -40,7 +40,6 @@ public class StasisEnginePower extends AbstractGuardianTwoAmountPower {
             this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[3] + DESCRIPTIONS[4];
 
         }
-
     }
 
     @Override

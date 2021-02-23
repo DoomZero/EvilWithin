@@ -177,11 +177,16 @@
   },
   "timeeatermod:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "Put 1 card from your discard pile to your hand, then discard 1 card."
+    "DESCRIPTION": "Put 1 card from your discard pile into your hand, then discard 1 card."
   },
   "timeeatermod:EdgeOfTomorrow": {
     "NAME": "Edge Of Tomorrow",
     "DESCRIPTION": "Detonate the target enemy's Time Lock, then reapply the Time Lock that the enemy had before."
+  },
+  "timeeatermod:Pivot": {
+    "NAME": "Pivot",
+    "DESCRIPTION": "Gain [E] the first time you change Tempo each turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain [E] the first time you change Tempo each turn."
   },
 
 

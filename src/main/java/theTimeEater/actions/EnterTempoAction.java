@@ -4,12 +4,14 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.DiscardPilePanel;
 import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
 
 import java.util.ArrayList;
 import theTimeEater.TheTimeEater;
 import theTimeEater.TheTimeEater.tempos;
+import theTimeEater.powers.PivotPower;
 
 public class EnterTempoAction extends AbstractGameAction {
 
@@ -29,6 +31,15 @@ public class EnterTempoAction extends AbstractGameAction {
             isDone = true;
             return;
         }
+
+        PivotPower pivot = (PivotPower) p.getPower(PivotPower.POWER_ID);
+        if (pivot != null){
+            pivot.giveEnergyIfActive();
+        }
+
+        if (p.tempo == tempos.PAUSE) return;
+
+
         //change the contents
         ArrayList<AbstractCard> tmp = p.discardPile.group;
         p.discardPile.group = p.drawPile.group;
