@@ -13,7 +13,7 @@ public class DiscardAllAttack extends AbstractTimeEaterCard {
     // intellij stuff attack, enemy, basic, 6, 3,  , , ,
 
     public DiscardAllAttack() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseDamage = 6;
     }
 
