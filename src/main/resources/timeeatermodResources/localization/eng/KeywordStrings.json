@@ -1,10 +1,35 @@
 [
   {
-    "PROPER_NAME": "TODO",
+    "PROPER_NAME": "Time Lock",
     "NAMES": [
-      "todo",
-      "todos"
+      "Time Lock",
+      "Time_Lock"
     ],
-    "DESCRIPTION": "TODO: Make your own epic keywords"
+    "DESCRIPTION": "All damage that would be taken is delayed for a number of turns and then received all at once at the start of the enemy turn."
+  },
+  {
+    "PROPER_NAME": "Forget",
+    "NAMES": [
+      "Forget"
+    ],
+    "DESCRIPTION": "Reduce the amount of damage being delayed by Time Lock by the given amount."
+  },
+  {
+    "PROPER_NAME": "Forward Tempo",
+    "NAMES": [
+      "Forward Tempo",
+      "Forward_Tempo",
+      "Forward"
+    ],
+    "DESCRIPTION": "Draw cards from your draw pile and discard cards to your discard pile."
+  },
+  {
+    "PROPER_NAME": "Rewind Tempo",
+    "NAMES": [
+      "Rewind Tempo",
+      "Rewind_Tempo",
+      "Rewind"
+    ],
+    "DESCRIPTION": "Draw cards from your discard pile and discard cards to your draw pile."
   }
 ]

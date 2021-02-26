@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -16,10 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import theHexaghost.vfx.ExplosionSmallEffectGreen;
 import theTimeEater.TimeEaterMod;
-
-import java.util.ArrayList;
 
 import static theTimeEater.util.Wiz.*;
 
@@ -56,11 +52,6 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
     }
 
     @Override
-    public void onInitialApplication() {
-
-    }
-
-    @Override
     public Color getColor() {
         return myColor.cpy();
     }
@@ -71,7 +62,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
 
         if (damageAmount > 0) {
 //            this.stackDamage(info.base);
-            this.stackDamage(damageAmount);
+            this.setBaseDamage(damageAmount);
             this.flash();
         }
 
@@ -172,7 +163,11 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
         }
     }
 
-    public void stackDamage(int damageAmount){
+    public int getBaseDamage() {
+        return this.baseDamage;
+    }
+
+    public void setBaseDamage(int damageAmount){
         this.fontScale = 8.0F;
         baseDamage += damageAmount;
         updateDamage();

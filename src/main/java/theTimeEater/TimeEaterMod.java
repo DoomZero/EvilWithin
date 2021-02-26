@@ -45,6 +45,7 @@ public class TimeEaterMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditCharactersSubscriber,
+//        EditKeywordsSubscriber,
         PostInitializeSubscriber,
         PostBattleSubscriber,
         OnStartBattleSubscriber
@@ -103,6 +104,10 @@ public class TimeEaterMod implements
 
     public static String makeCardPath(String resourcePath) {
         return modID + "Resources/images/cards/" + resourcePath;
+    }
+
+    public static String getModID() {
+        return modID;
     }
 
     public static void initialize() {

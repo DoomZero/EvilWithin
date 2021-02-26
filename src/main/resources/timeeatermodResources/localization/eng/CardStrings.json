@@ -9,19 +9,19 @@
   },
   "timeeatermod:HoldYourBreath": {
     "NAME": "Hold Your Breath",
-    "DESCRIPTION": "Gain 1 Time Lock. NL Gain !B! Block."
+    "DESCRIPTION": "Gain 1 timeeatermod:Time_Lock. NL Gain !B! Block."
   },
   "timeeatermod:Hiccup": {
     "NAME": "Hiccup",
-    "DESCRIPTION": "Apply 1 Time Lock. NL Deal !D! damage."
+    "DESCRIPTION": "Apply 1 timeeatermod:Time_Lock. NL Deal !D! damage."
   },
   "timeeatermod:WakeUpSlap": {
     "NAME": "Wake-Up Slap",
-    "DESCRIPTION": "Deal !D! damage. NL Reduce the duration of Time Lock on the enemy by 1."
+    "DESCRIPTION": "Deal !D! damage. NL Reduce the duration of timeeatermod:Time_Lock on the enemy by 1."
   },
   "timeeatermod:EchoingGuard": {
     "NAME": "Echoing Guard",
-    "DESCRIPTION": "Gain !B! Block. NL If you have Time Lock, gain !B! additional Block."
+    "DESCRIPTION": "Gain !B! Block. NL If you have timeeatermod:Time_Lock, gain !B! additional Block."
   },
   "timeeatermod:EndlessMemory": {
     "NAME": "Endless Memory",
@@ -29,7 +29,7 @@
   },
   "timeeatermod:TimeShock": {
     "NAME": "Time Shock",
-    "DESCRIPTION": "Double the enemy's Time Locked damage."
+    "DESCRIPTION": "Double the enemy's timeeatermod:Time_Locked damage."
   },
   "timeeatermod:OneTimeRewind": {
     "NAME": "One Time Rewind",
@@ -41,15 +41,15 @@
   },
   "timeeatermod:SpringForward": {
     "NAME": "Spring Forward",
-    "DESCRIPTION": "Deal !D! damage. NL Enter Forward Tempo."
+    "DESCRIPTION": "Deal !D! damage. NL Enter timeeatermod:Forward_Tempo."
   },
   "timeeatermod:FallBack": {
     "NAME": "Fall Back",
-    "DESCRIPTION": "Gain !B! Block. NL Enter Rewind Tempo."
+    "DESCRIPTION": "Gain !B! Block. NL Enter timeeatermod:Rewind_Tempo."
   },
   "timeeatermod:Snooze": {
     "NAME": "Snooze",
-    "DESCRIPTION": "If you have Time Lock, extend it by 1. NL Otherwise, gain 2 Time Lock. NL Exhaust."
+    "DESCRIPTION": "Gain 1 timeeatermod:Time_Lock. NL timeeatermod:Forget 10 damage."
   },
   "timeeatermod:TimeWard": {
     "NAME": "Time Ward",
@@ -66,11 +66,11 @@
   },
   "timeeatermod:Desynchronize": {
     "NAME": "Desynchronize",
-    "DESCRIPTION": "Gain 1 Time Lock. Whenever your Time Lock wears off, gain 1 Time Lock."
+    "DESCRIPTION": "Gain 1 timeeatermod:Time_Lock. Whenever your timeeatermod:Time_Lock wears off, gain 1 timeeatermod:Time_Lock."
   },
   "timeeatermod:KnockOutPunch": {
     "NAME": "Knock Out Punch",
-    "DESCRIPTION": "Apply 2 Time Lock. NL Deal !D! damage."
+    "DESCRIPTION": "Apply 2 timeeatermod:Time_Lock. NL Deal !D! damage."
   },
   "timeeatermod:ThirdEye": {
     "NAME": "Third Eye",
@@ -78,23 +78,23 @@
   },
   "timeeatermod:ReliveThePast": {
     "NAME": "Relive The Past",
-    "DESCRIPTION": "If in Rewind Tempo: Draw 2 Cards. NL Otherwise, enter Rewind Tempo."
+    "DESCRIPTION": "If in timeeatermod:Rewind_Tempo: Draw 2 Cards. NL Otherwise, enter timeeatermod:Rewind_Tempo."
   },
   "timeeatermod:GlimpseBeyond": {
     "NAME": "Glimpse Beyond",
-    "DESCRIPTION": "If in Forward Tempo: Draw 2 Cards. NL Otherwise, enter Forward Tempo."
+    "DESCRIPTION": "If in timeeatermod:Forward_Tempo: Draw 2 Cards. NL Otherwise, enter timeeatermod:Forward_Tempo."
   },
   "timeeatermod:TimeLockWeak": {
     "NAME": "TimeLockWeak",
-    "DESCRIPTION": "Deal !D! damage. NL If the target has Time Lock, apply 2 Weak."
+    "DESCRIPTION": "Deal !D! damage. NL If the target has timeeatermod:Time_Lock, apply 2 Weak."
   },
   "timeeatermod:TimeLockVulnerable": {
     "NAME": "TimeLockVulnerable",
-    "DESCRIPTION": "Deal !D! damage. NL If the target has Time Lock, apply 2 Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If the target has timeeatermod:Time_Lock, apply 2 Vulnerable."
   },
   "timeeatermod:ButterflyEffect": {
     "NAME": "Butterfly Effect",
-    "DESCRIPTION": "Each time an enemy's Time Lock expires, it affects ALL enemies."
+    "DESCRIPTION": "Each time an enemy's timeeatermod:Time_Lock expires, it affects ALL enemies."
   },
   "timeeatermod:RecurringRampage": {
     "NAME": "Recurring Rampage",
@@ -138,12 +138,12 @@
   },
   "timeeatermod:ChangeOfPace": {
     "NAME": "Change of Pace",
-    "DESCRIPTION": "You may choose to enter Forward or Rewind Tempo. NL Scry !M!.",
-    "EXTENDED_DESCRIPTION": ["Enter Rewind Tempo.","Do nothing.","Enter Forward Tempo."]
+    "DESCRIPTION": "You may choose to enter timeeatermod:Forward or timeeatermod:Rewind_Tempo. NL Scry !M!.",
+    "EXTENDED_DESCRIPTION": ["Enter timeeatermod:Rewind_Tempo.","Do nothing.","Enter timeeatermod:Forward_Tempo."]
   },
   "timeeatermod:LeapPastFate": {
     "NAME": "Leap Past Fate",
-    "DESCRIPTION": "Deal damage equal to your Time Lock. NL Negate your Time Lock.",
+    "DESCRIPTION": "Deal damage equal to your timeeatermod:Time_Lock. NL Negate your timeeatermod:Time_Lock.",
     "UPGRADE_DESCRIPTION": " NL (Deals !D! damage.)"
   },
   "timeeatermod:RecordScratch": {
@@ -181,13 +181,31 @@
   },
   "timeeatermod:EdgeOfTomorrow": {
     "NAME": "Edge Of Tomorrow",
-    "DESCRIPTION": "Detonate the target enemy's Time Lock, then reapply the Time Lock that the enemy had before."
+    "DESCRIPTION": "Detonate the target enemy's timeeatermod:Time_Lock, then reapply the timeeatermod:Time_Lock that the enemy had before."
   },
   "timeeatermod:Pivot": {
     "NAME": "Pivot",
     "DESCRIPTION": "Gain [E] the first time you change Tempo each turn.",
     "UPGRADE_DESCRIPTION": "Innate. NL Gain [E] the first time you change Tempo each turn."
   },
+  "timeeatermod:WarpForm": {
+    "NAME": "Warp Form",
+    "DESCRIPTION": "Whenever you draw, gain [E]."
+  },
+  "timeeatermod:OneUseTimeLock": {
+    "NAME": "OneUseTimeLock",
+    "DESCRIPTION": "Gain !M! timeeatermod:Time_Lock. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 timeeatermod:Time_Lock."
+  },
+  "timeeatermod:BlurCard": {
+    "NAME": "BlurCard",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! bronze:Blur."
+  },
+  "timeeatermod:DiscardAllForEnergy": {
+    "NAME": "DiscardAllForEnergy",
+    "DESCRIPTION": "Choose 1 card in your hand, and discard the rest. NL Gain [E] [E] [E] [E]. NL You cannot draw additional cards this turn. NL Exhaust."
+  },
+
 
 
 

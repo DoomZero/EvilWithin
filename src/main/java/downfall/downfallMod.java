@@ -448,7 +448,7 @@ public class downfallMod implements
         loadModKeywords(ChampMod.getModID(), otherPackagePaths.PACKAGE_CHAMP);
         loadModKeywords(AutomatonMod.getModID(), otherPackagePaths.PACKAGE_AUTOMATON);
         loadModKeywords(modID, otherPackagePaths.PACKAGE_DOWNFALL);
-        loadModKeywords(modID, otherPackagePaths.PACKAGE_TIME_EATER);
+        loadModKeywords(TimeEaterMod.getModID(), otherPackagePaths.PACKAGE_TIME_EATER);
     }
 
 
@@ -1455,7 +1455,7 @@ public class downfallMod implements
         PACKAGE_CHAMP,
         PACKAGE_AUTOMATON,
         PACKAGE_DOWNFALL,
-        PACKAGE_TIME_EATER; //TODO: Change this
+        PACKAGE_TIME_EATER;
 
         otherPackagePaths() {
         }

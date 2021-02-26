@@ -79,6 +79,12 @@
       "Gain [E] the first #b", " time", " times", " you change Tempo each turn."
     ]
   },
+  "timeeatermod:WarpFormPower": {
+    "NAME": "Warp Form",
+    "DESCRIPTIONS": [
+      "Whenever you draw, gain #b", " [E] ."
+    ]
+  },
 
 
 
