@@ -14,10 +14,11 @@ public class OneUseTimeLock extends AbstractTimeEaterCard {
     public OneUseTimeLock() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new TimeLockPower(p, 1));
+        applyToSelf(new TimeLockPower(p, this.magicNumber));
     }
 
     public void upp() {

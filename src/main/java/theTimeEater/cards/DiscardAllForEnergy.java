@@ -43,8 +43,7 @@ public class DiscardAllForEnergy extends AbstractTimeEaterCard {
                 @Override
                 public void update() {
                     isDone = true;
-                    adp().limbo.moveToHand(c, adp().limbo);
-//                    adp().limbo.removeCard(c);
+                    adp().limbo.moveToHand(c);
                 }
             });
 //            for(AbstractCard card: adp().hand.group){
