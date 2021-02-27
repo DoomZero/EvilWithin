@@ -17,12 +17,13 @@ public class ExhaustDraw extends AbstractTimeEaterCard {
 
     public ExhaustDraw() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new DrawCardAction(p, 1));
+        atb(new DrawCardAction(p, this.magicNumber));
         //if upgraded, may choose zero
-        atb(new ExhaustAction(1, upgraded));
+        atb(new ExhaustAction(this.magicNumber, upgraded));
     }
 
     public void upp() {

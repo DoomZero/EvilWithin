@@ -19,7 +19,7 @@ public class TimeEaterModalChoiceDemo extends AbstractTimeEaterCard {
     // intellij stuff skill, self, uncommon, , , , , , 
 
     public TimeEaterModalChoiceDemo() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
         baseSecondMagic = secondMagic = 1;
     }

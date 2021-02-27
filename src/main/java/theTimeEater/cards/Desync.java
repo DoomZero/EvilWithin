@@ -7,11 +7,11 @@ import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 
-public class Desynchronize extends AbstractTimeEaterCard {
-    public final static String ID = makeID(Desynchronize.class.getSimpleName());
+public class Desync extends AbstractTimeEaterCard {
+    public final static String ID = makeID(Desync.class.getSimpleName());
     // intellij stuff skill, self, basic, 5, 3,  , , ,
 
-    public Desynchronize() {
+    public Desync() {
         super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
     }
 

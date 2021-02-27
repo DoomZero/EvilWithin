@@ -1,13 +1,10 @@
 package theTimeEater.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
-import static theTimeEater.util.Wiz.*;
 
 public class TimeShock extends AbstractTimeEaterCard {
     public final static String ID = makeID(TimeShock.class.getSimpleName());
@@ -18,10 +15,10 @@ public class TimeShock extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower tl = m.getPower(TimeLockPower.POWER_ID);
+        TimeLockPower tl = (TimeLockPower) m.getPower(TimeLockPower.POWER_ID);
         if (tl == null) return;
 
-        applyToEnemy(m, new TimeLockPower(m, tl.amount));
+        tl.setBaseDamage(tl.getBaseDamage()*2);
     }
 
     public void upp() {

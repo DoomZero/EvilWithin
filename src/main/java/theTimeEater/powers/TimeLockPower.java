@@ -37,7 +37,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
 
     public TimeLockPower(AbstractCreature owner, int duration, int damage) {
         super(NAME, POWER_ID, PowerType.BUFF, owner, duration, damage,true);
-        baseDamage = damage;
+        increaseBaseDamage(damage);
         loadRegion("time");
         if (owner == adp()) justApplied = true;
 
@@ -62,7 +62,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
 
         if (damageAmount > 0) {
 //            this.stackDamage(info.base);
-            this.setBaseDamage(damageAmount);
+            this.increaseBaseDamage(damageAmount);
             this.flash();
         }
 
@@ -145,7 +145,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
 
     @Override
     public void onRemove(){
-        //reapply Time Lock after explosion if player has Desynchronize power
+        //reapply Time Lock after explosion if player has Desync power
         if (owner.hasPower(DesynchronizePower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
             atb(new ApplyPowerAction(this.owner, this.owner, new TimeLockPower(this.owner, 1)));
         }
@@ -169,8 +169,13 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
 
     public void setBaseDamage(int damageAmount){
         this.fontScale = 8.0F;
-        baseDamage += damageAmount;
+        baseDamage = damageAmount;
+        if (baseDamage < 0) baseDamage = 0;
         updateDamage();
+    }
+
+    public void increaseBaseDamage(int damageAmount){
+        setBaseDamage(damageAmount + baseDamage);
     }
 
     @Override

@@ -17,7 +17,7 @@
   },
   "timeeatermod:WakeUpSlap": {
     "NAME": "Wake-Up Slap",
-    "DESCRIPTION": "Deal !D! damage. NL Reduce the duration of timeeatermod:Time_Lock on the enemy by 1."
+    "DESCRIPTION": "Deal !D! damage. NL Reduce the duration of timeeatermod:Time_Lock on the enemy by !M!."
   },
   "timeeatermod:EchoingGuard": {
     "NAME": "Echoing Guard",
@@ -64,8 +64,8 @@
     "DESCRIPTION": "Gain [E] [E]. NL The next card you draw will be a *Void.",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL The next card you draw will be a *Void."
   },
-  "timeeatermod:Desynchronize": {
-    "NAME": "Desynchronize",
+  "timeeatermod:Desync": {
+    "NAME": "Desync",
     "DESCRIPTION": "Gain 1 timeeatermod:Time_Lock. Whenever your timeeatermod:Time_Lock wears off, gain 1 timeeatermod:Time_Lock."
   },
   "timeeatermod:KnockOutPunch": {
@@ -172,12 +172,12 @@
   },
   "timeeatermod:ExhaustDraw": {
     "NAME": "ExhaustDraw",
-    "DESCRIPTION": "Draw 1 card, then Exhaust 1 card.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card, then you may Exhaust 1 card."
+    "DESCRIPTION": "Draw !M! card, then Exhaust !M! card.",
+    "UPGRADE_DESCRIPTION": "Draw !M! card, then you may Exhaust !M! card."
   },
   "timeeatermod:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "Put 1 card from your discard pile into your hand, then discard 1 card."
+    "DESCRIPTION": "Put !M! card from your discard pile into your hand, then discard !M! card."
   },
   "timeeatermod:EdgeOfTomorrow": {
     "NAME": "Edge Of Tomorrow",
@@ -195,7 +195,7 @@
   "timeeatermod:OneUseTimeLock": {
     "NAME": "OneUseTimeLock",
     "DESCRIPTION": "Gain !M! timeeatermod:Time_Lock. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 timeeatermod:Time_Lock."
+    "UPGRADE_DESCRIPTION": "Gain !M! timeeatermod:Time_Lock."
   },
   "timeeatermod:BlurCard": {
     "NAME": "BlurCard",

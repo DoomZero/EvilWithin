@@ -14,7 +14,7 @@ public class HeadSlam extends AbstractTimeEaterCard {
 
     public HeadSlam() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = 26;
+        baseDamage = 22;
         baseMagicNumber = magicNumber = 2;
     }
 
@@ -24,6 +24,7 @@ public class HeadSlam extends AbstractTimeEaterCard {
     }
 
     public void upp() {
-        upgradeDamage(10);
+        upgradeDamage(4);
+        upgradeMagicNumber(1);
     }
 }

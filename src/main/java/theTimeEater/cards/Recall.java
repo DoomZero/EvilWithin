@@ -15,11 +15,12 @@ public class Recall extends AbstractTimeEaterCard {
 
     public Recall() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new BetterDiscardPileToHandAction(1));
-        atb(new DiscardAction(p,p,1,false));
+        atb(new BetterDiscardPileToHandAction(this.magicNumber));
+        atb(new DiscardAction(p,p,this.magicNumber,false));
     }
 
     public void upp() {
