@@ -132,6 +132,11 @@
     "NAME": "Reverberate",
     "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
+  "timeeatermod:Haste": {
+    "NAME": "Haste",
+    "DESCRIPTION": "placeholder, no effect yet",
+    "UPGRADE_DESCRIPTION": "?"
+  },
   "timeeatermod:DiscardAllAttack": {
     "NAME": "DiscardAllAttack",
     "DESCRIPTION": "Deal !D! damage. Discard ALL copies of this card in your hand and deck."
@@ -201,9 +206,20 @@
     "NAME": "BlurCard",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! bronze:Blur."
   },
-  "timeeatermod:DiscardAllForEnergy": {
-    "NAME": "DiscardAllForEnergy",
-    "DESCRIPTION": "Choose 1 card in your hand, and discard the rest. NL Gain [E] [E] [E] [E]. NL You cannot draw additional cards this turn. NL Exhaust."
+  "timeeatermod:CarpeDiem": {
+    "NAME": "Carpe Diem",
+    "DESCRIPTION": "Choose 1 card in your hand, and discard the rest. NL Gain [E] [E] [E] [E]. NL You cannot draw additional cards this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose 1 card in your hand, and discard the rest. NL Gain [E] [E] [E] [E] [E]. NL You cannot draw additional cards this turn. NL Exhaust."
+  },
+  "timeeatermod:FastForward": {
+    "NAME": "Fast Forward",
+    "DESCRIPTION": "Enter timeeatermod:Forward_Tempo. NL Discard your hand, then draw 5 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter timeeatermod:Forward_Tempo. NL Discard your hand, then draw 5 cards."
+  },
+  "timeeatermod:InstantReplay": {
+    "NAME": "Instant Replay",
+    "DESCRIPTION": "Enter timeeatermod:Rewind_Tempo. NL At the end of this turn, before discarding, enter timeeatermod:Forward_Tempo. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter timeeatermod:Rewind_Tempo. NL At the end of this turn, before discarding, enter timeeatermod:Forward_Tempo. NL Exhaust."
   },
 
 
