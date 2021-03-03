@@ -55,8 +55,9 @@ public class RitePower extends AbstractAwakenedPower {
         this.amount += amount_gain;
         updateDescription();
         flash();
-        if (this.amount >= 10) {
+        if (this.amount >= 5) {
             atb(new ChangeStanceAction(AwakenedPhase.STANCE_ID));
+//            atb(new ChangeStanceAction(DefensiveMode.STANCE_ID));
             updateDescription();
             this.amount = 0;
         }
@@ -67,12 +68,4 @@ public class RitePower extends AbstractAwakenedPower {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && card.type == AbstractCard.CardType.ATTACK)
             onSpecificTrigger();
     }
-
-//    @Override
-//    public int onLoseHp(int damageAmount) {
-//        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && this.active && !AbstractDungeon.player.hasPower(BufferPower.POWER_ID)) {
-//            onSpecificTrigger(damageAmount);
-//        }
-//        return super.onLoseHp(damageAmount);
-//    }
 }

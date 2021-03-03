@@ -99,7 +99,8 @@ public abstract class AbstractAwakenedCard extends CustomCard {
     }
 
     public static boolean isAwakened() {
-        return (AbstractDungeon.player.stance.ID.equals(AwakenedPhase.STANCE_ID));
+//        return (AbstractDungeon.player.stance.ID.equals(AwakenedPhase.STANCE_ID));
+        return AbstractDungeon.player.stance instanceof AwakenedPhase;
     }
 
     @Override
