@@ -177,8 +177,7 @@
   },
   "timeeatermod:ExhaustDraw": {
     "NAME": "ExhaustDraw",
-    "DESCRIPTION": "Draw !M! card, then Exhaust !M! card.",
-    "UPGRADE_DESCRIPTION": "Draw !M! card, then you may Exhaust !M! card."
+    "DESCRIPTION": "Exhaust !M! cards, then draw cards equal to their combined cost +1."
   },
   "timeeatermod:Recall": {
     "NAME": "Recall",
@@ -219,7 +218,11 @@
   "timeeatermod:InstantReplay": {
     "NAME": "Instant Replay",
     "DESCRIPTION": "Enter timeeatermod:Rewind_Tempo. NL At the end of this turn, before discarding, enter timeeatermod:Forward_Tempo. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter timeeatermod:Rewind_Tempo. NL At the end of this turn, before discarding, enter timeeatermod:Forward_Tempo. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Enter timeeatermod:Rewind_Tempo. NL At the end of this turn, before discarding, enter timeeatermod:Forward_Tempo."
+  },
+  "timeeatermod:DejaVu": {
+    "NAME": "Deja Vu",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you change Tempo, add this card from your exhaust pile to your hand. NL Exhaust."
   },
 
 

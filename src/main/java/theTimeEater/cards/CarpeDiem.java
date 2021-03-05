@@ -25,7 +25,7 @@ public class CarpeDiem extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new SelectCardsInHandAction(1, "keep.", (cards) -> {
+        atb(new SelectCardsInHandAction(1, "Keep.", (cards) -> {
             AbstractCard keepCard = cards.get(0);
             adp().hand.moveToHand(keepCard);
             cards.remove(keepCard);

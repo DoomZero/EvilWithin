@@ -6,17 +6,18 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
+import theTimeEater.util.OnChangeTempoSubscriber;
 
 import static theTimeEater.util.Wiz.*;
 
-public class PivotPower extends AbstractTimeEaterPower implements CloneablePowerInterface {
+public class PivotPower extends AbstractTimeEaterPower implements CloneablePowerInterface, OnChangeTempoSubscriber {
     public static final String POWER_ID = TimeEaterMod.makeID(PivotPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static boolean active = true;
-    private static int triggersLeft;
+    private static int triggersLeft = 0;
 
     public PivotPower(int amount){
         this(adp(), amount);
@@ -25,7 +26,7 @@ public class PivotPower extends AbstractTimeEaterPower implements CloneablePower
     public PivotPower(AbstractCreature owner, int amount) {
         super(NAME, POWER_ID, PowerType.BUFF, owner, amount, false);
         loadRegion("time");
-        triggersLeft = amount;
+        triggersLeft += amount;
     }
 
     @Override
@@ -33,8 +34,9 @@ public class PivotPower extends AbstractTimeEaterPower implements CloneablePower
         triggersLeft = amount;
     }
 
-    public void giveEnergyIfActive(){
-        if (triggersLeft >= 1 && active) {
+    @Override
+    public void OnChangeTempo(TheTimeEater.tempos tempo){
+        if (triggersLeft >= 1) {
             AbstractPlayer p = (AbstractPlayer) owner;
             p.gainEnergy(1);
             triggersLeft--;
@@ -47,6 +49,7 @@ public class PivotPower extends AbstractTimeEaterPower implements CloneablePower
         this.amount += amount;
     }
 
+    @Override
     public void updateDescription() {
         if (this.amount == 1) {
             this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + DESCRIPTIONS[3];
