@@ -85,6 +85,15 @@
       "Whenever you draw, gain #b", " [E] ."
     ]
   },
+  "timeeatermod:MetronomePower": {
+    "NAME": "Metronome",
+    "DESCRIPTIONS": [
+      "At the start of your turn, you can choose to enter either timeeatermod:Forward or timeeatermod:Rewind_Tempo.",
+      "Enter timeeatermod:Rewind_Tempo.",
+      "Do nothing.",
+      "Enter timeeatermod:Forward_Tempo."
+    ]
+  },
 
 
 

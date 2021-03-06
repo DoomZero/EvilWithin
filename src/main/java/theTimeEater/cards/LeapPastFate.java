@@ -31,7 +31,7 @@ public class LeapPastFate extends AbstractTimeEaterCard {
 
     private void updateDesc(){
         this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.UPGRADE_DESCRIPTION;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

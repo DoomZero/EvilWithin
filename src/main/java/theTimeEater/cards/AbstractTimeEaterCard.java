@@ -32,7 +32,7 @@ import static theTimeEater.util.Wiz.*;
 
 public abstract class AbstractTimeEaterCard extends CustomCard {
 
-    protected final CardStrings cardStrings;
+    public final CardStrings cardStrings;
 
     public int secondMagic;
     public int baseSecondMagic;

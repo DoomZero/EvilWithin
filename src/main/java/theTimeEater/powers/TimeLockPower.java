@@ -28,7 +28,8 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
     private int baseDamage = 0;
     private boolean exploding = false;
 
-    public static Color myColor = new Color(0.710F, 1, 0.659F, 1);
+    public static Color normalColor = new Color(0.710F, 1, 0.659F, 1);
+    public static Color explodeColor = new Color(0.659F, 1, 1, 1);
 //    public static Color myColor = TimeEaterMod.characterColor;
 
     public TimeLockPower(AbstractCreature owner, int duration) {
@@ -46,18 +47,19 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
 
     @Override
     public int getHealthBarAmount() {
-        if (amount <= 1 || exploding)
-            return amount2;
-        return 0;
+        return amount2;
     }
 
     @Override
     public Color getColor() {
-        return myColor.cpy();
+        if (amount <= 1 || exploding)
+            return explodeColor.cpy();
+        return normalColor.cpy();
     }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        //lets damage through if the damage is the explosion itself
         if (exploding) return damageAmount;
 
         if (damageAmount > 0) {
