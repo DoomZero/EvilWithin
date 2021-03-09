@@ -1,1 +1,8 @@
-{}
+{
+  "timeeatermod:TempoSwitchPotion": {
+    "NAME": "Tempo Switch",
+    "DESCRIPTIONS": [
+      "Change Tempo."
+    ]
+  }
+}

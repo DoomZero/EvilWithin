@@ -66,7 +66,7 @@
   },
   "timeeatermod:Desync": {
     "NAME": "Desync",
-    "DESCRIPTION": "Gain 1 timeeatermod:Time_Lock. Whenever your timeeatermod:Time_Lock wears off, gain 1 timeeatermod:Time_Lock."
+    "DESCRIPTION": "Gain 1 timeeatermod:Time_Lock. NL Whenever your timeeatermod:Time_Lock wears off, gain 1 timeeatermod:Time_Lock."
   },
   "timeeatermod:KnockOutPunch": {
     "NAME": "Knock Out Punch",
@@ -128,8 +128,8 @@
     "NAME": "Head Slam",
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   },
-  "timeeatermod:Reverberate": {
-    "NAME": "Reverberate",
+  "timeeatermod:Reverb": {
+    "NAME": "Reverb",
     "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
   "timeeatermod:Haste": {
@@ -181,7 +181,7 @@
   },
   "timeeatermod:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "Put !M! card from your discard pile into your hand, then discard !M! card."
+    "DESCRIPTION": "Put 1 card from your discard pile into your hand, then discard 1 card."
   },
   "timeeatermod:EdgeOfTomorrow": {
     "NAME": "Edge Of Tomorrow",
@@ -212,8 +212,8 @@
   },
   "timeeatermod:FastForward": {
     "NAME": "Fast Forward",
-    "DESCRIPTION": "Enter timeeatermod:Forward_Tempo. NL Discard your hand, then draw 5 cards. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter timeeatermod:Forward_Tempo. NL Discard your hand, then draw 5 cards."
+    "DESCRIPTION": "Enter timeeatermod:Forward_Tempo. NL Discard your hand, then draw 5 cards. NL Refund this card's cost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter timeeatermod:Forward_Tempo. NL Discard your hand, then draw 5 cards. NL Refund this card's cost."
   },
   "timeeatermod:InstantReplay": {
     "NAME": "Instant Replay",

@@ -15,7 +15,7 @@ import theTimeEater.TheTimeEater.tempos;
 
 import java.util.ArrayList;
 
-public class SwitchTempoAction extends AbstractGameAction {
+public class SwitchTempoActionOld extends AbstractGameAction {
 
     TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
     static final DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;

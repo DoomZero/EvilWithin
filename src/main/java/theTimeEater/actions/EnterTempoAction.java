@@ -21,11 +21,26 @@ import theTimeEater.util.OnChangeTempoSubscriber;
 import static theTimeEater.util.Wiz.atb;
 
 public class EnterTempoAction extends AbstractGameAction {
-
+    //consider renaming to "ChangeTempoAction"
     TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
     DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
     DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
     tempos direction;
+
+    //no argument means invert the current tempo
+    public EnterTempoAction(){
+        switch (p.tempo) {
+            case FORWARD:
+                this.direction = tempos.REWIND;
+                break;
+            case REWIND:
+                this.direction = tempos.FORWARD;
+                break;
+            case PAUSE:
+                this.direction = tempos.PAUSE;
+                break;
+        }
+    }
 
     public EnterTempoAction(tempos tempo) {
         this.direction = tempo;

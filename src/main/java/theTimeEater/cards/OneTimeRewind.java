@@ -21,7 +21,7 @@ public class OneTimeRewind extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer pp, AbstractMonster m) {
-//        atb(new SwitchTempoAction());
+//        atb(new SwitchTempoActionOld());
         TheTimeEater p = (TheTimeEater) pp;
         if (p.tempo == TheTimeEater.tempos.REWIND)  atb(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
         if (p.tempo == TheTimeEater.tempos.FORWARD) atb(new EnterTempoAction(TheTimeEater.tempos.REWIND));
