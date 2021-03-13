@@ -18,10 +18,10 @@ public class Hiccup extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToEnemy(m, new TimeLockPower(m, 1));
-        dmg(m, AbstractGameAction.AttackEffect.NONE);
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     public void upp() {
-        upgradeDamage(3);
+        upgradeDamage(5);
     }
 }

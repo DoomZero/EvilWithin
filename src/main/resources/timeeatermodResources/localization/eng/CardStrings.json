@@ -229,6 +229,14 @@
     "DESCRIPTION": "At the start of your turn, choose to enter either timeeatermod:Forward or timeeatermod:Rewind_Tempo.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, choose to enter either timeeatermod:Forward or timeeatermod:Rewind_Tempo."
   },
+  "timeeatermod:QuickSlash": {
+    "NAME": "Quick Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card."
+  },
+  "timeeatermod:SlugItOff": {
+    "NAME": "Slug It Off",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL timeeatermod:Forget 5 damage."
+  },
 
 
 

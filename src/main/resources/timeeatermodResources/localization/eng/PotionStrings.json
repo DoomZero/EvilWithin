@@ -2,7 +2,19 @@
   "timeeatermod:TempoSwitchPotion": {
     "NAME": "Tempo Switch",
     "DESCRIPTIONS": [
-      "Change Tempo."
+      "Switch Tempo."
+    ]
+  },
+  "timeeatermod:TimeLockSelfPotion": {
+    "NAME": "Time Lock Self",
+    "DESCRIPTIONS": [
+      "Gain #b1 Time Lock."
+    ]
+  },
+  "timeeatermod:TimeLockEnemyPotion": {
+    "NAME": "Time Lock Enemy",
+    "DESCRIPTIONS": [
+      "Apply #b1 Time Lock."
     ]
   }
 }

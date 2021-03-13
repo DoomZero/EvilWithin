@@ -5,6 +5,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,6 +22,9 @@ import javassist.NotFoundException;
 import org.clapper.util.classutil.*;
 import theTimeEater.cards.cardvars.SecondDamage;
 import theTimeEater.cards.cardvars.SillyVariable;
+import theTimeEater.potions.TempoSwitchPotion;
+import theTimeEater.potions.TimeLockEnemyPotion;
+import theTimeEater.potions.TimeLockSelfPotion;
 import theTimeEater.powers.TimeLockPower;
 import theTimeEater.relics.TodoItem;
 import theTimeEater.util.CardArtRoller;
@@ -179,8 +183,23 @@ public class TimeEaterMod implements
         }
     }
 
+    public void addPotions() {
+
+        BaseMod.addPotion(TempoSwitchPotion.class, Color.CHARTREUSE, Color.CORAL, Color.MAROON, TempoSwitchPotion.POTION_ID);
+        BaseMod.addPotion(TimeLockSelfPotion.class, Color.CYAN, Color.CORAL, Color.MAROON, TimeLockSelfPotion.POTION_ID);
+        BaseMod.addPotion(TimeLockEnemyPotion.class, Color.RED, Color.CORAL, Color.MAROON, TimeLockEnemyPotion.POTION_ID);
+
+        if (Loader.isModLoaded("widepotions")) {
+            WidePotionsMod.whitelistSimplePotion(TempoSwitchPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(TimeLockSelfPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(TimeLockEnemyPotion.POTION_ID);
+        }
+    }
+
     @Override
     public void receivePostInitialize() {
+        addPotions();
+
         String prefsLoc = (Settings.isBeta ? "betaPreferences" : "Preferences") + File.separator + modID + "colorCardsInfo";
         if (!Gdx.files.local(prefsLoc).exists()) {
             try {

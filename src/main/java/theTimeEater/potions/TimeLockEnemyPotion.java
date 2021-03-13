@@ -5,23 +5,24 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.actions.EnterTempoAction;
+import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.*;
 
-public class TempoSwitchPotion extends CustomPotion {
-    public static final String POTION_ID = makeID(TempoSwitchPotion.class.getSimpleName());
+public class TimeLockEnemyPotion extends CustomPotion {
+    public static final String POTION_ID = makeID(TimeLockEnemyPotion.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
 
-    public TempoSwitchPotion() {
-        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.BOLT, PotionColor.ANCIENT);
-        this.isThrown = false;
-        this.targetRequired = false;
+    public TimeLockEnemyPotion() {
+        super(NAME, POTION_ID, PotionRarity.COMMON, PotionSize.SPHERE, PotionColor.BLUE);
+        this.isThrown = true;
+        this.targetRequired = true;
         this.labOutlineColor = TimeEaterMod.characterColor;
     }
 
@@ -36,12 +37,12 @@ public class TempoSwitchPotion extends CustomPotion {
 
     @Override
     public void use(AbstractCreature target) {
-        atb(new EnterTempoAction());
+        applyToEnemy((AbstractMonster) target, new TimeLockPower(target, 1));
     }
 
     @Override
     public CustomPotion makeCopy() {
-        return new TempoSwitchPotion();
+        return new TimeLockEnemyPotion();
     }
 
     public int getPotency(int ascensionLevel) {
