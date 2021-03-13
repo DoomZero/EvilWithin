@@ -9,7 +9,7 @@ import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.*;
 
 public class Sludge extends AbstractAwakenedCard {
-    public final static String ID = makeID("Sludge");
+    public final static String ID = makeID(Sludge.class.getSimpleName());
     private static final int DAMAGE = 11;
     private static final int UPG_DAMAGE = 5;
 

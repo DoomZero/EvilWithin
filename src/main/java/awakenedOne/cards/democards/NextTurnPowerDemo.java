@@ -10,7 +10,7 @@ import static awakenedOne.util.Wiz.applyToSelfNextTurn;
 
 public class NextTurnPowerDemo extends AbstractAwakenedCard {
 
-    public final static String ID = makeID("NextTurnPowerDemo");
+    public final static String ID = makeID(NextTurnPowerDemo.class.getSimpleName());
     // intellij stuff skill, self, uncommon
 
     private static final int MAGIC = 6;

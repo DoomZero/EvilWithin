@@ -18,7 +18,7 @@ import static awakenedOne.util.Wiz.makeInHand;
 
 public class MultiPreviewDemoCard extends AbstractAwakenedCard {
 
-    public final static String ID = makeID("MultiPreviewDemoCard");
+    public final static String ID = makeID(MultiPreviewDemoCard.class.getSimpleName());
     // intellij stuff skill, self, uncommon
 
 

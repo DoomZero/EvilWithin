@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 import static awakenedOne.AwakenedOneMod.makeID;
 
 public class HexCard extends AbstractAwakenedCard {
-    public static final String ID = makeID("HexCard");
+    public static final String ID = makeID(HexCard.class.getSimpleName());
     private static final CardStrings cardStrings;
 
     public HexCard() {

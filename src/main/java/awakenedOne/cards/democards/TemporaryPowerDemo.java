@@ -10,7 +10,7 @@ import static awakenedOne.util.Wiz.applyToSelfTemp;
 
 public class TemporaryPowerDemo extends AbstractAwakenedCard {
 
-    public final static String ID = makeID("TemporaryPowerDemo");
+    public final static String ID = makeID(TemporaryPowerDemo.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int MAGIC = 6;

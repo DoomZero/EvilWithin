@@ -11,7 +11,7 @@ import static awakenedOne.util.Wiz.*;
 import static awakenedOne.AwakenedOneMod.makeID;
 
 public class AwakenedXCostDemo extends AbstractAwakenedCard {
-    public final static String ID = makeID("AwakenedXCostDemo");
+    public final static String ID = makeID(AwakenedXCostDemo.class.getSimpleName());
     // intellij stuff attack, enemy, rare, , , , , 0, 1
 
     public AwakenedXCostDemo() {

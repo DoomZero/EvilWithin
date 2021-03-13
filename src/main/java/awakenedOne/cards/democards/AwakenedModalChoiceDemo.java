@@ -15,7 +15,7 @@ import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.*;
 
 public class AwakenedModalChoiceDemo extends AbstractAwakenedCard {
-    public final static String ID = makeID("AwakenedModalChoiceDemo");
+    public final static String ID = makeID(AwakenedModalChoiceDemo.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , , 
 
     public AwakenedModalChoiceDemo() {

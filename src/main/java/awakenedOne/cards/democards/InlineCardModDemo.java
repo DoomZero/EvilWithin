@@ -17,7 +17,7 @@ import static awakenedOne.util.Wiz.returnTrulyRandomPrediCardInCombat;
 
 public class InlineCardModDemo extends AbstractAwakenedCard {
 
-    public final static String ID = makeID("InlineCardModDemo");
+    public final static String ID = makeID(InlineCardModDemo.class.getSimpleName());
     // intellij stuff skill, self, uncommon
 
     public InlineCardModDemo() {

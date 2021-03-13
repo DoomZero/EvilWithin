@@ -10,7 +10,7 @@ import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.applyToEnemy;
 
 public class SwiftFeather extends AbstractFeather{
-    public final static String ID = makeID("SwiftFeather");
+    public final static String ID = makeID(SwiftFeather.class.getSimpleName());
     private static final int MAGIC = 2;
     public final static String DESCRIPTION = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
 

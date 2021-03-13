@@ -10,7 +10,7 @@ import static awakenedOne.AwakenedOneMod.makeID;
 import static awakenedOne.util.Wiz.*;
 
 public class BarbedFeather extends AbstractFeather{
-    public final static String ID = makeID("BarbedFeather");
+    public final static String ID = makeID(BarbedFeather.class.getSimpleName());
     private static final int MAGIC = 1;
     public final static String DESCRIPTION = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
 

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static awakenedOne.AwakenedOneMod.*;
 
 public class ShieldingStrike extends AbstractAwakenedCard {
-    public final static String ID = makeID("ShieldingStrike");
+    public final static String ID = makeID(ShieldingStrike.class.getSimpleName());
     private static final int DAMAGE = 7;
     private static final int UPG_DAMAGE = 2;
     private static final int BLOCK = 10;

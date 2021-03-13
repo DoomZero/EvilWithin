@@ -12,7 +12,7 @@ import static awakenedOne.AwakenedOneMod.*;
 import static awakenedOne.util.Wiz.*;
 
 public class DiveBomb extends AbstractAwakenedCard implements OnAwakenSubscriber {
-    public final static String ID = makeID("DiveBomb");
+    public final static String ID = makeID(DiveBomb.class.getSimpleName());
     private static final int DAMAGE = 18;
     private static final int UPG_DAMAGE = 4;
 

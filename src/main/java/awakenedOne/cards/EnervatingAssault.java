@@ -11,7 +11,7 @@ import static awakenedOne.util.Wiz.applyToEnemy;
 import static awakenedOne.util.Wiz.atb;
 
 public class EnervatingAssault extends AbstractAwakenedCard {
-    public final static String ID = makeID("EnervatingAssault");
+    public final static String ID = makeID(EnervatingAssault.class.getSimpleName());
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 1;

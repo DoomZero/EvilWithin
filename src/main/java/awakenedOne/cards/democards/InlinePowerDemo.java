@@ -15,7 +15,7 @@ import static awakenedOne.util.Wiz.atb;
 
 public class InlinePowerDemo extends AbstractAwakenedCard {
 
-    public final static String ID = makeID("InlinePowerDemo");
+    public final static String ID = makeID(InlinePowerDemo.class.getSimpleName());
     // intellij stuff power, self, uncommon
 
     private static final int MAGIC = 4;
