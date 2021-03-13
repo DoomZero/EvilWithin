@@ -2,22 +2,11 @@ package champ.stances;
 
 import champ.ChampChar;
 import champ.ChampMod;
-import champ.actions.FatigueHpLossAction;
-import champ.cards.AbstractChampCard;
-import champ.powers.ResolvePower;
 import champ.util.OnTechniqueSubscriber;
-import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
-import slimebound.SlimeboundMod;
 
 public abstract class AbstractChampStance extends AbstractStance {
 
@@ -83,11 +72,11 @@ public abstract class AbstractChampStance extends AbstractStance {
         ChampMod.techniquesThisTurn++;
     }
 
-    public abstract void technique();
+    abstract void technique();
 
     public void fisher() {
         finisher();
     }
 
-    public abstract void finisher();
+    abstract void finisher();
 }

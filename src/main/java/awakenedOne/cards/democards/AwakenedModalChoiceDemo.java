@@ -19,7 +19,7 @@ public class AwakenedModalChoiceDemo extends AbstractAwakenedCard {
     // intellij stuff skill, self, uncommon, , , , , , 
 
     public AwakenedModalChoiceDemo() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = 3;
         baseSilly = silly = 1;
     }

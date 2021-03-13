@@ -15,7 +15,7 @@ public class AwakenedXCostDemo extends AbstractAwakenedCard {
     // intellij stuff attack, enemy, rare, , , , , 0, 1
 
     public AwakenedXCostDemo() {
-        super(ID, -1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, -1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 0;
         baseDamage = 5;
         exhaust = true;

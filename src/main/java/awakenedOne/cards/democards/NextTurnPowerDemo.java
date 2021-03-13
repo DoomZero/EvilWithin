@@ -17,7 +17,7 @@ public class NextTurnPowerDemo extends AbstractAwakenedCard {
     private static final int UPG_MAGIC = 3;
 
     public NextTurnPowerDemo() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
     }
 

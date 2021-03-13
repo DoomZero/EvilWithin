@@ -4,8 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static awakenedOne.AwakenedOneMod.AWAKENED;
-import static awakenedOne.AwakenedOneMod.makeID;
+import static awakenedOne.AwakenedOneMod.*;
 
 public class ShieldingStrike extends AbstractAwakenedCard {
     public final static String ID = makeID("ShieldingStrike");
@@ -22,7 +21,7 @@ public class ShieldingStrike extends AbstractAwakenedCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (isAwakened())
+        if (isAwakened)
             blck();
         dmg(m, AbstractGameAction.AttackEffect.NONE);
     }

@@ -1,18 +1,15 @@
 package awakenedOne;
 
 
-import awakenedOne.powers.RitePower;
 import awakenedOne.stances.AbstractAwakenedStance;
 import basemod.BaseMod;
 import basemod.interfaces.*;
-import champ.StanceHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,7 +19,6 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import downfall.util.CardIgnore;
-import guardian.powers.ModeShiftPower;
 import javassist.CtClass;
 import javassist.Modifier;
 import javassist.NotFoundException;
@@ -52,7 +48,9 @@ public class AwakenedOneMod implements
         EditCharactersSubscriber,
 //        OnStartBattleSubscriber,
         PostInitializeSubscriber,
-        PostBattleSubscriber{
+        PostBattleSubscriber,
+        OnStartBattleSubscriber
+{
 
     public static Prefs colorCardsPrefs = new Prefs();
 
@@ -87,7 +85,7 @@ public class AwakenedOneMod implements
     public AwakenedOneMod() {
         BaseMod.subscribe(this);
 
-        BaseMod.addColor(AwakenedOneChar.Enums.BLUE_AWAKENED, characterColor, characterColor, characterColor,
+        BaseMod.addColor(AwakenedOneChar.Enums.AWAKENED_BLUE, characterColor, characterColor, characterColor,
                 characterColor, characterColor, characterColor, characterColor,
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
@@ -134,7 +132,7 @@ public class AwakenedOneMod implements
 
     @Override
     public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new TodoItem(), AwakenedOneChar.Enums.BLUE_AWAKENED);
+        BaseMod.addRelicToCustomPool(new TodoItem(), AwakenedOneChar.Enums.AWAKENED_BLUE);
     }
 
     @Override
@@ -192,6 +190,11 @@ public class AwakenedOneMod implements
     }
 
     @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom){
+        isAwakened = false;
+    }
+
+    @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         if (AbstractDungeon.player instanceof AwakenedOneChar) {
             if (AbstractDungeon.player.stance instanceof AbstractAwakenedStance) {
@@ -200,6 +203,7 @@ public class AwakenedOneMod implements
 //                c.switchStanceVisual(NeutralStance.STANCE_ID);
             }
         }
+        isAwakened = false;
     }
 
 

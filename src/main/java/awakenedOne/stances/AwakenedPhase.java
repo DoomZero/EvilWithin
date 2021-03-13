@@ -1,4 +1,5 @@
 package awakenedOne.stances;
+import awakenedOne.util.OnAwakenSubscriber;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -14,7 +15,12 @@ import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 import guardian.characters.GuardianCharacter;
 import guardian.vfx.DefensiveModeStanceParticleEffect;
 
+
+import java.util.ArrayList;
+
 import static awakenedOne.AwakenedOneMod.AWAKENED;
+import static awakenedOne.AwakenedOneMod.isAwakened;
+import static awakenedOne.util.Wiz.*;
 
 public class AwakenedPhase extends AbstractStance {
     public static final String STANCE_ID = "awakened:AwakenedPhase";
@@ -34,6 +40,17 @@ public class AwakenedPhase extends AbstractStance {
     @Override
     public void onEnterStance() {
         super.onEnterStance();
+        ArrayList<AbstractCard> allCards = new ArrayList<AbstractCard>();
+        allCards.addAll(AbstractDungeon.player.drawPile.group);
+        allCards.addAll(AbstractDungeon.player.discardPile.group);
+        allCards.addAll(AbstractDungeon.player.hand.group);
+        allCards.addAll(AbstractDungeon.player.exhaustPile.group);
+
+        for (AbstractCard c : allCards) {
+            if (c instanceof OnAwakenSubscriber) ((OnAwakenSubscriber) c).onAwaken();
+        }
+
+        isAwakened = true;
     }
 
     @Override
@@ -55,10 +72,12 @@ public class AwakenedPhase extends AbstractStance {
         }
     }
 
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 10));
+    @Override
+//    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onPlayCard(AbstractCard card){
+        atb(new GainBlockAction(adp(), adp(), 10));
         if (card.hasTag(AWAKENED)) {
-            action.exhaustCard = true;
+            card.exhaust = true; //don't know if this line is why it works, tbh
         }
     }
 

@@ -1,11 +1,8 @@
 package awakenedOne.cards;
 
 import awakenedOne.powers.AbstractFeatherPower;
-import awakenedOne.powers.SwiftFeatherPower;
-import awakenedOne.stances.AwakenedPhase;
+import awakenedOne.util.OnAwakenSubscriber;
 import basemod.abstracts.CustomCard;
-import champ.stances.BerserkerStance;
-import champ.stances.UltimateStance;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
@@ -29,11 +26,12 @@ import java.util.Iterator;
 
 import static awakenedOne.AwakenedOneMod.*;
 import static awakenedOne.util.Wiz.*;
-import static champ.ChampMod.enteredBerserkerThisTurn;
 
 public abstract class AbstractAwakenedCard extends CustomCard {
 
     protected final CardStrings cardStrings;
+
+//    public static boolean isAwakened;
 
     public int silly;
     public int baseSilly;
@@ -52,12 +50,13 @@ public abstract class AbstractAwakenedCard extends CustomCard {
     private boolean needsArtRefresh = false;
 
     public AbstractAwakenedCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, cost, type, rarity, target, AwakenedOneChar.Enums.BLUE_AWAKENED);
+        this(cardID, cost, type, rarity, target, AwakenedOneChar.Enums.AWAKENED_BLUE);
     }
 
     public AbstractAwakenedCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
         super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
+        if (isAwakened && this instanceof OnAwakenSubscriber) ((OnAwakenSubscriber) this).onAwaken(); //make sure created cards are generated in awakened phase correctly
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
         name = originalName = cardStrings.NAME;
@@ -98,10 +97,11 @@ public abstract class AbstractAwakenedCard extends CustomCard {
         return textureString;
     }
 
-    public static boolean isAwakened() {
-//        return (AbstractDungeon.player.stance.ID.equals(AwakenedPhase.STANCE_ID));
-        return AbstractDungeon.player.stance instanceof AwakenedPhase;
-    }
+//    public static boolean isAwakened() {
+////        return (AbstractDungeon.player.stance.ID.equals(AwakenedPhase.STANCE_ID));
+////        return AbstractDungeon.player.stance instanceof AwakenedPhase;
+//        return isAwakened;
+//    }
 
     @Override
     public void applyPowers() {

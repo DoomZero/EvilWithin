@@ -5,8 +5,7 @@ import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static awakenedOne.AwakenedOneMod.AWAKENED;
-import static awakenedOne.AwakenedOneMod.makeID;
+import static awakenedOne.AwakenedOneMod.*;
 
 public class WingedRiposte extends AbstractAwakenedCard {
     public final static String ID = makeID("WingedRiposte");
@@ -26,7 +25,7 @@ public class WingedRiposte extends AbstractAwakenedCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        if (isAwakened())
+        if (isAwakened)
             for(int i = 0; i < magicNumber; ++i) {
                 this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }

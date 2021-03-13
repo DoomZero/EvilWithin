@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static awakenedOne.AwakenedOneMod.makeID;
 
 public class SoulStrike extends AbstractAwakenedCard {
-    public final static String ID = makeID("Soul Strike");
+    public final static String ID = makeID("SoulStrike");
     private static final int DAMAGE = 3;
     private static final int MAGIC = 4;
 

@@ -24,11 +24,10 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import awakenedOne.cards.Defend;
 import awakenedOne.cards.Strike;
 import awakenedOne.relics.TodoItem;
-import guardian.powers.ModeShiftPower;
 
 import java.util.ArrayList;
 
-import static awakenedOne.AwakenedOneChar.Enums.BLUE_AWAKENED;
+import static awakenedOne.AwakenedOneChar.Enums.AWAKENED_BLUE;
 import static awakenedOne.AwakenedOneMod.*;
 
 public class AwakenedOneChar extends CustomPlayer {
@@ -113,7 +112,7 @@ public class AwakenedOneChar extends CustomPlayer {
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return BLUE_AWAKENED;
+        return AWAKENED_BLUE;
     }
 
     @Override
@@ -180,7 +179,7 @@ public class AwakenedOneChar extends CustomPlayer {
         @SpireEnum
         public static PlayerClass THE_AWAKENED_ONE;
         @SpireEnum(name = "THE_AWAKENED_ONE")
-        public static AbstractCard.CardColor BLUE_AWAKENED;
+        public static AbstractCard.CardColor AWAKENED_BLUE;
         @SpireEnum(name = "THE_AWAKENED_ONE")
         @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
