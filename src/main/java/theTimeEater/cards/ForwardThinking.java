@@ -2,7 +2,6 @@ package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
 import theTimeEater.actions.EnterTempoAction;
@@ -10,11 +9,11 @@ import theTimeEater.actions.EnterTempoAction;
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.atb;
 
-public class GlimpseBeyond extends AbstractTimeEaterCard {
-    public final static String ID = makeID(GlimpseBeyond.class.getSimpleName());
+public class ForwardThinking extends AbstractTimeEaterCard {
+    public final static String ID = makeID(ForwardThinking.class.getSimpleName());
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
-    public GlimpseBeyond()  {
+    public ForwardThinking()  {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
     }
 

@@ -80,8 +80,8 @@
     "NAME": "Relive The Past",
     "DESCRIPTION": "If in timeeatermod:Rewind_Tempo: Draw 2 Cards. NL Otherwise, enter timeeatermod:Rewind_Tempo."
   },
-  "timeeatermod:GlimpseBeyond": {
-    "NAME": "Glimpse Beyond",
+  "timeeatermod:ForwardThinking": {
+    "NAME": "Forward Thinking",
     "DESCRIPTION": "If in timeeatermod:Forward_Tempo: Draw 2 Cards. NL Otherwise, enter timeeatermod:Forward_Tempo."
   },
   "timeeatermod:TimeLockWeak": {
