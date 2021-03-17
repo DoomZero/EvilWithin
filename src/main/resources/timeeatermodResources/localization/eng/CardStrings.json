@@ -165,7 +165,7 @@
   },
   "timeeatermod:AfterImage": {
     "NAME": "After Image",
-    "DESCRIPTION": "Whenever you play a card, gain 1 Block."
+    "DESCRIPTION": "Whenever you play a card, gain !M! Block."
   },
   "timeeatermod:FleetingStrength": {
     "NAME": "Fleeting Strength",
@@ -231,11 +231,20 @@
   },
   "timeeatermod:QuickSlash": {
     "NAME": "Quick Slash",
-    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card."
   },
   "timeeatermod:SlugItOff": {
     "NAME": "Slug It Off",
-    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL timeeatermod:Forget 5 damage."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card. NL timeeatermod:Forget 5 damage."
+  },
+  "timeeatermod:ChannelSurfing": {
+    "NAME": "Channel Surfing",
+    "DESCRIPTION": "Shuffle !M! *Waste *Time into your draw pile."
+  },
+  "timeeatermod:WastingTime": {
+    "NAME": "Wasting Time",
+    "DESCRIPTION": "Draw 1 card. NL Exhaust.",
+    "UPGRADED_DESCRIPTION": "Draw !M! cards. NL Exhaust."
   },
 
 

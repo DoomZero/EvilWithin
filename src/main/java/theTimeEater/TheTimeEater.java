@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import theTimeEater.cards.*;
 import theTimeEater.relics.TodoItem;
+import theTimeEater.util.Wiz;
 
 import java.util.ArrayList;
 
@@ -79,8 +80,8 @@ public class TheTimeEater extends CustomPlayer {
         }
 
         startingDeck.add(ChangeOfPace.ID);
-        startingDeck.add(Hiccup.ID);
-        startingDeck.add(HoldYourBreath.ID);
+//        startingDeck.add(Hiccup.ID);
+//        startingDeck.add(HoldYourBreath.ID);
         return startingDeck;
     }
 

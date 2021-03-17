@@ -24,7 +24,7 @@ public class SlugItOff extends AbstractTimeEaterCard {
         atb(new DrawCardAction(this.magicNumber));
         TimeLockPower tl = (TimeLockPower) p.getPower(TimeLockPower.POWER_ID);
         if (tl != null && tl.getBaseDamage() > 0){
-            tl.increaseBaseDamage(-5);h
+            tl.increaseBaseDamage(-5);
         }
     }
 

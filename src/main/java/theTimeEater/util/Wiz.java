@@ -3,6 +3,7 @@ package theTimeEater.util;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -173,6 +174,14 @@ public class Wiz {
 
     public static void applyToSelfTop(AbstractPower po) {
         att(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
+    }
+
+    public static void gainBlock(int amount){
+        atb(new GainBlockAction(adp(), amount));
+    }
+
+    public static void gainBlockTop(int amount){
+        att(new GainBlockAction(adp(), amount));
     }
 
     public static void applyToSelfTemp(AbstractPower po) {
