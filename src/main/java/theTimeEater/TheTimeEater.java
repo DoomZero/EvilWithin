@@ -45,7 +45,7 @@ public class TheTimeEater extends CustomPlayer {
     static final String[] NAMES = characterStrings.NAMES;
     static final String[] TEXT = characterStrings.TEXT;
 
-    public tempos tempo = tempos.FORWARD;
+//    public static tempos tempo = tempos.FORWARD;
 
     public TheTimeEater(String name, PlayerClass setClass) {
         super(name, setClass, new CustomEnergyOrb(orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null), new SpriterAnimation(
@@ -172,11 +172,11 @@ public class TheTimeEater extends CustomPlayer {
         return TEXT[2];
     }
 
-    public enum tempos {
+/*    public enum tempos {
         FORWARD,
         REWIND,
         PAUSE
-    }
+    }*/
 
     public static class Enums {
         @SpireEnum

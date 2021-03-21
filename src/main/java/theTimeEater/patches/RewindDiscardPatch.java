@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.powers.ReversePower;
 
 import java.util.ArrayList;
@@ -21,19 +22,9 @@ import java.util.ArrayList;
 public class RewindDiscardPatch {
     @SpirePostfixPatch
     public static void discardToDraw(AbstractCard __instance){
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p instanceof TheTimeEater){
-            TheTimeEater tp = (TheTimeEater) p;
-            if (tp.tempo == TheTimeEater.tempos.REWIND){
-                //this is the only line that is important:
-                __instance.target_x = CardGroup.DRAW_PILE_X;
-            }
-        }
-        else {
-            AbstractPower revPower = p.getPower(ReversePower.POWER_ID);
-            if (revPower != null && revPower.amount >= 1){
-                __instance.target_x = CardGroup.DRAW_PILE_X;
-            }
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND){
+            //this is the only line that is important:
+            __instance.target_x = CardGroup.DRAW_PILE_X;
         }
     }
 

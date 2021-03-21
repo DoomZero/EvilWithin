@@ -14,10 +14,11 @@ import java.util.ArrayList;
 
 import static theTimeEater.util.Wiz.adp;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 
 public class SoulPatch {
     private static boolean isInRewind(){
-        return adp() instanceof TheTimeEater && ((TheTimeEater) adp()).tempo == TheTimeEater.tempos.REWIND;
+        return TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND;
     }
     
     @SpirePatch(

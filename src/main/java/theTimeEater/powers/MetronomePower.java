@@ -27,9 +27,9 @@ public class MetronomePower extends AbstractTimeEaterPower {
     }
 
     public static ArrayList<Runnable> effects = new ArrayList<Runnable>(Arrays.asList(
-            () -> att(new EnterTempoAction(TheTimeEater.tempos.REWIND)),
+            () -> att(new EnterTempoAction(TimeEaterMod.tempos.REWIND)),
             () -> {},
-            () -> att(new EnterTempoAction(TheTimeEater.tempos.FORWARD))
+            () -> att(new EnterTempoAction(TimeEaterMod.tempos.FORWARD))
     ));
 
     @Override

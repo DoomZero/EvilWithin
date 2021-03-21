@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 import theTimeEater.powers.ReversePower;
 
@@ -23,8 +24,8 @@ public class OneTimeRewind extends AbstractTimeEaterCard {
     public void use(AbstractPlayer pp, AbstractMonster m) {
 //        atb(new SwitchTempoActionOld());
         TheTimeEater p = (TheTimeEater) pp;
-        if (p.tempo == TheTimeEater.tempos.REWIND)  atb(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
-        if (p.tempo == TheTimeEater.tempos.FORWARD) atb(new EnterTempoAction(TheTimeEater.tempos.REWIND));
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND)  atb(new EnterTempoAction(TimeEaterMod.tempos.FORWARD));
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.FORWARD) atb(new EnterTempoAction(TimeEaterMod.tempos.REWIND));
 //        applyToSelf(new ReversePower());
 //        atb(new MoveDrawAndDiscardPileAction());
 //        atb(new DrawCardAction(p, 1));

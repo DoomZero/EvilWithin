@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 
 import static theTimeEater.TimeEaterMod.makeID;
@@ -22,7 +23,7 @@ public class FastForward extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
+        atb(new EnterTempoAction(TimeEaterMod.tempos.FORWARD));
         atb(new DiscardAction(p,p,p.hand.size(),true));
         atb(new DrawCardAction(p,5));
         atb(new RefundAction(this));

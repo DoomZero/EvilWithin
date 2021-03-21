@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.powers.ReversePower;
 
 import java.util.ArrayList;
@@ -25,19 +26,8 @@ public class DrawFromDiscardPatch {
         localvars= {"c"}
     )
     public static void drawFromDiscard(AbstractPlayer __instance, int drawNum, @ByRef AbstractCard[] c){
-        AbstractPlayer p = AbstractDungeon.player;
-        if (p instanceof TheTimeEater){
-            TheTimeEater tp = (TheTimeEater) p;
-            if (tp.tempo == TheTimeEater.tempos.REWIND){
-                c[0].current_x = CardGroup.DISCARD_PILE_X;
-            }
-        }
-        else {
-            AbstractPower revPower = p.getPower(ReversePower.POWER_ID);
-            if (revPower != null && revPower.amount >= 1){
-                c[0].current_x = CardGroup.DISCARD_PILE_X;
-//                c[0].current_y = CardGroup.DISCARD_PILE_Y;
-            }
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND){
+            c[0].current_x = CardGroup.DISCARD_PILE_X;
         }
     }
 

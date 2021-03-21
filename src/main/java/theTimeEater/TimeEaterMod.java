@@ -80,6 +80,8 @@ public class TimeEaterMod implements
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
 
+
+
     public TimeEaterMod() {
         BaseMod.subscribe(this);
 
@@ -225,9 +227,7 @@ public class TimeEaterMod implements
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        if (adp() instanceof TheTimeEater){
-            ((TheTimeEater) AbstractDungeon.player).tempo = TheTimeEater.tempos.FORWARD;
-        }
+        tempo = tempos.FORWARD;
     }
 
     @Override
@@ -237,4 +237,12 @@ public class TimeEaterMod implements
             q.explode();
         }
     }
+
+    public enum tempos {
+        FORWARD,
+        REWIND,
+        PAUSE
+    }
+
+    public static tempos tempo = tempos.FORWARD;
 }

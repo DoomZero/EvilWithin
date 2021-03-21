@@ -1,7 +1,6 @@
 package theTimeEater.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,27 +8,27 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.DiscardPilePanel;
 import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import theTimeEater.TheTimeEater;
-import theTimeEater.TheTimeEater.tempos;
-import theTimeEater.cards.DejaVu;
-import theTimeEater.powers.PivotPower;
+import theTimeEater.TimeEaterMod;
+import theTimeEater.TimeEaterMod.tempos;
+import theTimeEater.powers.InvisiblePausePower;
+import theTimeEater.powers.InvisibleNoDrawPower;
 import theTimeEater.util.OnChangeTempoSubscriber;
 
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
 public class EnterTempoAction extends AbstractGameAction {
     //consider renaming to "ChangeTempoAction"
-    TheTimeEater p = (TheTimeEater) AbstractDungeon.player;
+    AbstractPlayer p = adp();
     DrawPilePanel drawPile = AbstractDungeon.overlayMenu.combatDeckPanel;
     DiscardPilePanel discardPile = AbstractDungeon.overlayMenu.discardPilePanel;
     tempos direction;
 
     //no argument means invert the current tempo
     public EnterTempoAction(){
-        switch (p.tempo) {
+        switch (TimeEaterMod.tempo) {
             case FORWARD:
                 this.direction = tempos.REWIND;
                 break;
@@ -49,33 +48,38 @@ public class EnterTempoAction extends AbstractGameAction {
     @Override
     public void update() {
         //Don't do anything if trying to enter the tempo you're already in
-        if (p.tempo == this.direction) {
-            isDone = true;
+        if (TimeEaterMod.tempo == this.direction) {
+                isDone = true;
             return;
         }
 
-        ArrayList<AbstractCard> allCards = new ArrayList<AbstractCard>();
-        allCards.addAll(AbstractDungeon.player.drawPile.group);
-        allCards.addAll(AbstractDungeon.player.discardPile.group);
-        allCards.addAll(AbstractDungeon.player.hand.group);
-        allCards.addAll(AbstractDungeon.player.exhaustPile.group);
+        ArrayList<AbstractCard> allCards = getAllCardsInCombat();
 
         for (AbstractCard c : allCards) {
             if (c instanceof OnChangeTempoSubscriber) ((OnChangeTempoSubscriber) c).OnChangeTempo(this.direction);
         }
 
         for (AbstractPower p : AbstractDungeon.player.powers) {
-            if (p instanceof OnChangeTempoSubscriber) ((OnChangeTempoSubscriber) p).OnChangeTempo(this.direction);
+            if (p instanceof OnChangeTempoSubscriber) {
+                ((OnChangeTempoSubscriber) p).OnChangeTempo(this.direction);
+            }
         }
 
-        if (p.tempo == tempos.PAUSE) return;
+        if (TimeEaterMod.tempo == tempos.PAUSE && adp().hasPower(InvisiblePausePower.POWER_ID)) {
+            isDone = true;
+            return;
+        }
 
-        //change the contents
-        ArrayList<AbstractCard> tmp = p.discardPile.group;
-        p.discardPile.group = p.drawPile.group;
-        p.drawPile.group = tmp;
+        if (TimeEaterMod.tempo == tempos.FORWARD && this.direction == tempos.PAUSE ||
+            TimeEaterMod.tempo == tempos.PAUSE   && this.direction == tempos.FORWARD
+        ){
+            TimeEaterMod.tempo = this.direction;
+            //we don't need to do anything to the piles if the switch is from forward to pause or vice versa
+            isDone = true;
+            return;
+        }
 
-        p.tempo = this.direction;
+        TimeEaterMod.tempo = this.direction;
 
         //flip the icons
         float temp_x = drawPile.target_x;
@@ -84,6 +88,12 @@ public class EnterTempoAction extends AbstractGameAction {
         drawPile.target_y = drawPile.current_y = discardPile.target_y;
         discardPile.target_x = discardPile.current_x = temp_x;
         discardPile.target_y = discardPile.current_y = temp_y;
+
+        //change the contents
+        AbstractPlayer p = adp();
+        ArrayList<AbstractCard> tmp = p.discardPile.group;
+        p.discardPile.group = p.drawPile.group;
+        p.drawPile.group = tmp;
 
         isDone = true;
     }

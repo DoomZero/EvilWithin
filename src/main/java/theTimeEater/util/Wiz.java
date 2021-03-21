@@ -202,4 +202,13 @@ public class Wiz {
         for (AbstractGameAction a: queue) att(a);
     }
 
+    public static ArrayList<AbstractCard> getAllCardsInCombat(){
+        ArrayList<AbstractCard> allCards = new ArrayList<AbstractCard>();
+        allCards.addAll(AbstractDungeon.player.drawPile.group);
+        allCards.addAll(AbstractDungeon.player.discardPile.group);
+        allCards.addAll(AbstractDungeon.player.hand.group);
+        allCards.addAll(AbstractDungeon.player.exhaustPile.group);
+        return allCards;
+    }
+
 }

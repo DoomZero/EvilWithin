@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 
 import static theTimeEater.TimeEaterMod.makeID;
@@ -18,10 +19,10 @@ public class ReliveThePast extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (((TheTimeEater) p).tempo == TheTimeEater.tempos.REWIND){
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND){
             atb(new DrawCardAction(p, 2));
         } else {
-            atb(new EnterTempoAction(TheTimeEater.tempos.REWIND));
+            atb(new EnterTempoAction(TimeEaterMod.tempos.REWIND));
         }
     }
 

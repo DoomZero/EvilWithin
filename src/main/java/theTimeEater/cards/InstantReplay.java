@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 import theTimeEater.powers.InstantReplayPower;
 
@@ -22,7 +23,7 @@ public class InstantReplay extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new EnterTempoAction(TheTimeEater.tempos.REWIND));
+        atb(new EnterTempoAction(TimeEaterMod.tempos.REWIND));
         atb(new ApplyPowerAction(p, p, new InstantReplayPower()));
     }
 

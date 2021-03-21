@@ -239,12 +239,16 @@
   },
   "timeeatermod:ChannelSurfing": {
     "NAME": "Channel Surfing",
-    "DESCRIPTION": "Shuffle !M! *Waste *Time into your draw pile."
+    "DESCRIPTION": "Shuffle !M! *Wasting *Time into your draw pile."
   },
   "timeeatermod:WastingTime": {
     "NAME": "Wasting Time",
     "DESCRIPTION": "Draw 1 card. NL Exhaust.",
     "UPGRADED_DESCRIPTION": "Draw !M! cards. NL Exhaust."
+  },
+  "timeeatermod:Pause": {
+    "NAME": "Pause",
+    "DESCRIPTION": "Enter Pause Tempo. NL Exhaust."
   },
 
 

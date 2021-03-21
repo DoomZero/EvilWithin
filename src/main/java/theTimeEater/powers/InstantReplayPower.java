@@ -25,7 +25,7 @@ public class InstantReplayPower extends AbstractTimeEaterPower implements NonSta
 
     @Override
     public void atEndOfTurnPreEndTurnCards(boolean unused) {
-        atb(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
+        atb(new EnterTempoAction(TimeEaterMod.tempos.FORWARD));
         this.remove();
     }
 

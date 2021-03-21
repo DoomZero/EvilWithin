@@ -20,6 +20,7 @@ import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.powers.ReversePower;
 
 import static theTimeEater.util.Wiz.adp;
@@ -28,15 +29,15 @@ public class PileRenderFlipPatch {
 
     public static class draw {
         //copied from DrawPilePanel
-//        static final float COUNT_CIRCLE_W = 128.0F * Settings.scale; //no change
+        //static final float COUNT_CIRCLE_W = 128.0F * Settings.scale; //no change
         static final float DECK_X = 76.0F * Settings.scale - 64.0F;
         static final float DECK_Y = 74.0F * Settings.scale - 64.0F;
         static final float COUNT_X = 118.0F * Settings.scale;
-//        static final float COUNT_Y = 48.0F * Settings.scale; //no change
+        //static final float COUNT_Y = 48.0F * Settings.scale; //no change
         static final float COUNT_OFFSET_X = 54.0F * Settings.scale;
-//        static final float COUNT_OFFSET_Y = -18.0F * Settings.scale; //no change
+        //static final float COUNT_OFFSET_Y = -18.0F * Settings.scale; //no change
         static final float DECK_TIP_X = 50.0F * Settings.scale;
-//        static final float DECK_TIP_Y = 470.0F * Settings.scale; //no change
+        //static final float DECK_TIP_Y = 470.0F * Settings.scale; //no change
         static final float HITBOX_W = 120.0F * Settings.scale; //no change
         static final float HITBOX_W2 = 450.0F * Settings.scale;
 
@@ -45,30 +46,25 @@ public class PileRenderFlipPatch {
 
     public static class discard {
         //copied from DiscardPilePanel
-//        static final float COUNT_CIRCLE_W = 128.0F * Settings.scale;
+        //static final float COUNT_CIRCLE_W = 128.0F * Settings.scale;
         static final float DECK_X = 180.0F * Settings.scale - 64.0F;
         static final float DECK_Y = 70.0F * Settings.scale - 64.0F;
         static final float COUNT_X = 134.0F * Settings.scale;
-//        static final float COUNT_Y = 48.0F * Settings.scale;
+        //static final float COUNT_Y = 48.0F * Settings.scale;
         static final float COUNT_OFFSET_X = 70.0F * Settings.scale;
-//        static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
+        //static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
         static final float DECK_TIP_X = 1550.0F * Settings.xScale;
-//        static final float DECK_TIP_Y = 470.0F * Settings.scale;
+        //static final float DECK_TIP_Y = 470.0F * Settings.scale;
         static final float HITBOX_W = 120.0F * Settings.scale;
         static final float HITBOX_W2 = 450.0F * Settings.xScale;
 
         static final float HITBOX_X = Settings.WIDTH - HITBOX_W / 2;
     }
 
-    discard active = new discard();
+//    discard active = new discard();
 
     public static boolean check(){
-        if (adp() instanceof TheTimeEater){
-            TheTimeEater tp = (TheTimeEater) adp();
-            return tp.tempo == TheTimeEater.tempos.FORWARD;
-        }
-        ReversePower pow = (ReversePower) AbstractDungeon.player.getPower(ReversePower.POWER_ID);
-        return (pow != null && pow.amount >= 0);
+        return TimeEaterMod.tempo == TimeEaterMod.tempos.FORWARD || TimeEaterMod.tempo == TimeEaterMod.tempos.PAUSE;
     }
 
     public static double adjustDrawParticles(){
@@ -97,7 +93,7 @@ public class PileRenderFlipPatch {
                         String patchName = PileRenderFlipPatch.class.getName();
                         //this is currently on line 194 for future reference
                         m.replace("{" +
-//                                "$2 = this.current_x + " + patchName+".getDrawAdj();" +
+                                //"$2 = this.current_x + " + patchName+".getDrawAdj();" +
                                 "$15 = " + patchName+".check();" +
                                 "$proceed($$);" +
                                 "}");
@@ -107,6 +103,8 @@ public class PileRenderFlipPatch {
             };
         }
     }
+
+//    note: entering pause while in rewind does weird things
 
     @SpirePatch(
             clz=DiscardPilePanel.class,
@@ -126,7 +124,7 @@ public class PileRenderFlipPatch {
                         System.out.println("DEBUG - PERFORMING DISCARD FLIP PATCH");
                         String patchName = PileRenderFlipPatch.class.getName();
                         m.replace("{" +
-//                                "$2 = this.current_x + " + patchName+".getDiscardAdj();" +
+                                //"$2 = this.current_x + " + patchName+".getDiscardAdj();" +
                                 "$15 = " + patchName+".check();" +
                                 "$proceed($$);" +
                                 "}");
@@ -209,16 +207,7 @@ public class PileRenderFlipPatch {
                                               @ByRef float[] ___HITBOX_W2,
                                               @ByRef Hitbox[] ___hb
                                               ){
-            if (!check()) {
-                ___DECK_X[0] = discard.DECK_X;
-                ___DECK_Y[0] = discard.DECK_Y;
-                ___COUNT_X[0] = discard.COUNT_X;
-                ___COUNT_OFFSET_X[0] = discard.COUNT_OFFSET_X;
-                ___DECK_TIP_X[0] = discard.DECK_TIP_X;
-                ___HITBOX_W2[0] = discard.HITBOX_W2;
-
-                ___hb[0].moveX(discard.HITBOX_X);
-            } else {
+            if (check()) {
                 ___DECK_X[0] = draw.DECK_X;
                 ___DECK_Y[0] = draw.DECK_Y;
                 ___COUNT_X[0] = draw.COUNT_X;
@@ -227,6 +216,15 @@ public class PileRenderFlipPatch {
                 ___HITBOX_W2[0] = draw.HITBOX_W2;
 
                 ___hb[0].moveX(draw.HITBOX_X);
+            } else {
+                ___DECK_X[0] = discard.DECK_X;
+                ___DECK_Y[0] = discard.DECK_Y;
+                ___COUNT_X[0] = discard.COUNT_X;
+                ___COUNT_OFFSET_X[0] = discard.COUNT_OFFSET_X;
+                ___DECK_TIP_X[0] = discard.DECK_TIP_X;
+                ___HITBOX_W2[0] = discard.HITBOX_W2;
+
+                ___hb[0].moveX(discard.HITBOX_X);
             }
         }
     }
@@ -247,16 +245,7 @@ public class PileRenderFlipPatch {
                                                  @ByRef float[] ___HITBOX_W2,
                                                  @ByRef Hitbox[] ___hb
         ){
-            if (!check()) {
-                ___DECK_X[0] = draw.DECK_X;
-                ___DECK_Y[0] = draw.DECK_Y;
-                ___COUNT_X[0] = draw.COUNT_X;
-                ___COUNT_OFFSET_X[0] = draw.COUNT_OFFSET_X;
-                ___DECK_TIP_X[0] = draw.DECK_TIP_X;
-                ___HITBOX_W2[0] = draw.HITBOX_W2;
-
-                ___hb[0].moveX(draw.HITBOX_X);
-            } else {
+            if (check()) {
                 ___DECK_X[0] = discard.DECK_X;
                 ___DECK_Y[0] = discard.DECK_Y;
                 ___COUNT_X[0] = discard.COUNT_X;
@@ -265,6 +254,15 @@ public class PileRenderFlipPatch {
                 ___HITBOX_W2[0] = discard.HITBOX_W2;
 
                 ___hb[0].moveX(discard.HITBOX_X);
+            } else {
+                ___DECK_X[0] = draw.DECK_X;
+                ___DECK_Y[0] = draw.DECK_Y;
+                ___COUNT_X[0] = draw.COUNT_X;
+                ___COUNT_OFFSET_X[0] = draw.COUNT_OFFSET_X;
+                ___DECK_TIP_X[0] = draw.DECK_TIP_X;
+                ___HITBOX_W2[0] = draw.HITBOX_W2;
+
+                ___hb[0].moveX(draw.HITBOX_X);
             }
         }
     }

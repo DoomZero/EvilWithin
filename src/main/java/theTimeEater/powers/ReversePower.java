@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
 
-import static theTimeEater.TheTimeEater.tempos.FORWARD;
+import static theTimeEater.TimeEaterMod.tempos;
 import static theTimeEater.util.Wiz.*;
 
 public class ReversePower extends AbstractTimeEaterPower {
@@ -20,15 +20,15 @@ public class ReversePower extends AbstractTimeEaterPower {
 
     public ReversePower()
     {
-        this(FORWARD,1);
+        this(TimeEaterMod.tempos.FORWARD,1);
     }
 
     public ReversePower(int amount)
     {
-        this(FORWARD, amount);
+        this(TimeEaterMod.tempos.FORWARD, amount);
     }
 
-    public ReversePower(TheTimeEater.tempos tempo, int amount){
+    public ReversePower(TimeEaterMod.tempos tempo, int amount){
         super(NAME, POWER_ID, PowerType.BUFF, amount);
         loadRegion("time");
     }

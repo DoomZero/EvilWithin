@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 
 import static theTimeEater.TimeEaterMod.makeID;
@@ -20,7 +21,7 @@ public class SpringForward extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        atb(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
+        atb(new EnterTempoAction(TimeEaterMod.tempo.FORWARD));
     }
 
     public void upp() {

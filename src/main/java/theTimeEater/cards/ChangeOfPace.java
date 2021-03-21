@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import downfall.util.OctopusCard;
 import theTimeEater.TheTimeEater;
+import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.TimeEaterModalChoiceAction;
 import theTimeEater.actions.EnterTempoAction;
 
@@ -23,11 +24,11 @@ public class ChangeOfPace extends AbstractTimeEaterCard {
     }
 
     public static Runnable forward = () -> {
-        att(new EnterTempoAction(TheTimeEater.tempos.FORWARD));
+        att(new EnterTempoAction(TimeEaterMod.tempos.FORWARD));
     };
 
     public static Runnable rewind = () -> {
-        att(new EnterTempoAction(TheTimeEater.tempos.REWIND));
+        att(new EnterTempoAction(TimeEaterMod.tempos.REWIND));
     };
 
     public static Runnable doNothing = () -> {};

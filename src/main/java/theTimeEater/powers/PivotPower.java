@@ -35,7 +35,7 @@ public class PivotPower extends AbstractTimeEaterPower implements CloneablePower
     }
 
     @Override
-    public void OnChangeTempo(TheTimeEater.tempos tempo){
+    public void OnChangeTempo(TimeEaterMod.tempos tempo){
         if (triggersLeft >= 1) {
             AbstractPlayer p = (AbstractPlayer) owner;
             p.gainEnergy(1);

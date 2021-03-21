@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.DiscardPilePanel;
 import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
 import theTimeEater.TheTimeEater;
-import theTimeEater.TheTimeEater.tempos;
+import theTimeEater.TimeEaterMod;
+import theTimeEater.TimeEaterMod.tempos;
 
 import java.util.ArrayList;
 
@@ -41,8 +42,8 @@ public class SwitchTempoActionOld extends AbstractGameAction {
         p.drawPile.group = tmp;
 
         //flip the icons
-        if (p.tempo == tempos.REWIND){
-            p.tempo = tempos.FORWARD;
+        if (TimeEaterMod.tempo == tempos.REWIND){
+            TimeEaterMod.tempo = tempos.FORWARD;
 
             drawPile.target_x = drawPile.current_x = originalDrawPileX;
             drawPile.target_y = drawPile.current_y = originalDrawPileY;
@@ -50,8 +51,8 @@ public class SwitchTempoActionOld extends AbstractGameAction {
             discardPile.target_y = discardPile.current_y = originalDiscardPileY;
 
         }
-        if (p.tempo == tempos.FORWARD){
-            p.tempo = tempos.REWIND;
+        if (TimeEaterMod.tempo == tempos.FORWARD){
+            TimeEaterMod.tempo = tempos.REWIND;
 
 //            drawPile.target_x = drawPile.current_x = originalDrawPileX + DECK_X * 2;
             drawPile.target_y = drawPile.current_y = originalDrawPileY;
