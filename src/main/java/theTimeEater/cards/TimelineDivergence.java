@@ -13,7 +13,7 @@ public class TimelineDivergence extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, 5, 3,  , , ,
 
     public TimelineDivergence() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 5;
     }
 

@@ -134,8 +134,7 @@
   },
   "timeeatermod:Haste": {
     "NAME": "Haste",
-    "DESCRIPTION": "placeholder, no effect yet",
-    "UPGRADE_DESCRIPTION": "?"
+    "DESCRIPTION": "placeholder, no effect yet"
   },
   "timeeatermod:DiscardAllAttack": {
     "NAME": "DiscardAllAttack",
@@ -243,12 +242,16 @@
   },
   "timeeatermod:WastingTime": {
     "NAME": "Wasting Time",
-    "DESCRIPTION": "Draw 1 card. NL Exhaust.",
-    "UPGRADED_DESCRIPTION": "Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Draw !M! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust."
   },
   "timeeatermod:Pause": {
     "NAME": "Pause",
     "DESCRIPTION": "Enter Pause Tempo. NL Exhaust."
+  },
+  "timeeatermod:TimeWarp": {
+    "NAME": "Time Warp",
+    "DESCRIPTION": "Gain !M! Strength for every 12th card you draw."
   },
 
 

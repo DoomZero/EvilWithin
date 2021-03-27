@@ -14,7 +14,7 @@ public class Recall extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public Recall() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 1;
     }
 

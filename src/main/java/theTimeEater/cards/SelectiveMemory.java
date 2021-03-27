@@ -15,7 +15,7 @@ public class SelectiveMemory extends AbstractTimeEaterCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public SelectiveMemory() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 3;
     }
 

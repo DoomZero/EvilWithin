@@ -94,6 +94,14 @@
       "Enter timeeatermod:Forward_Tempo."
     ]
   },
+  "timeeatermod:TimeEaterWarpPower": {
+    "NAME": "TimeWarp",
+    "DESCRIPTIONS": [
+      "After drawing #b",
+      " more cards, gain #b",
+      " #yStrength."
+    ]
+  },
 
 
 
