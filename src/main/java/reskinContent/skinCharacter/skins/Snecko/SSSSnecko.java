@@ -8,16 +8,12 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import guardian.GuardianMod;
 import reskinContent.patches.CharacterSelectScreenPatches;
 import reskinContent.reskinContent;
 import reskinContent.skinCharacter.AbstractSkin;
 import reskinContent.vfx.PortraitIntimidateEffect;
-import reskinContent.vfx.ReskinUnlockedTextEffect;
 import sneckomod.TheSnecko;
-import theHexaghost.TheHexaghost;
 
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
@@ -45,10 +41,16 @@ public class SSSSnecko extends AbstractSkin {
         this.portraitAnimation_IMG = ImageMaster.loadImage(reskinContent.assetPath("img/SneckoMod/SSSSnecko/portrait_waifu2.png"));
 
         this.NAME = CardCrawlGame.languagePack.getUIString("reskinContent:ReSkinSnecko").TEXT[0];
-
+        this.DESCRIPTION = CardCrawlGame.languagePack.getUIString("reskinContent:ReSkinSnecko").EXTRA_TEXT[0];
         this.portraitAtlasPath = reskinContent.assetPath("img/SneckoMod/SSSSnecko/animation/Snecko_portrait");
-    }
 
+        this.SHOULDER1 = "reskinContent/img/SneckoMod/SSSSnecko/shoulder2.png";
+        this.SHOULDER2 = "reskinContent/img/SneckoMod/SSSSnecko/shoulder.png";
+        this.CORPSE = "reskinContent/img/SneckoMod/SSSSnecko/corpse.png";
+        this.atlasURL = "reskinContent/img/SneckoMod/SSSSnecko/animation/Snecko_waifu.atlas";
+        this.jsonURL = "reskinContent/img/SneckoMod/SSSSnecko/animation/Snecko_waifu.json";
+        this.renderscale = 1.2f;
+    }
 
 
     @Override

@@ -5,20 +5,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import guardian.GuardianMod;
 import reskinContent.helpers.PortraitHexaghostOrb;
 import reskinContent.patches.CharacterSelectScreenPatches;
 import reskinContent.reskinContent;
 import reskinContent.skinCharacter.AbstractSkin;
 import reskinContent.vfx.PortraitScreenOnFireEffect;
-import reskinContent.vfx.ReskinUnlockedTextEffect;
-import slimebound.patches.SlimeboundEnum;
 import theHexaghost.TheHexaghost;
 
 import java.util.ArrayList;
@@ -49,8 +44,16 @@ public class Hexago extends AbstractSkin {
         this.hexaghostTextureMask = ImageMaster.loadImage(reskinContent.assetPath("img/HexaghostMod/Hexago/portrait_waifu_m.png"));
 
         this.NAME = CardCrawlGame.languagePack.getUIString("reskinContent:ReSkinHexaghost").TEXT[0];
+        this.DESCRIPTION = CardCrawlGame.languagePack.getUIString("reskinContent:ReSkinHexaghost").EXTRA_TEXT[0];
 
         this.portraitAtlasPath = reskinContent.assetPath("img/HexaghostMod/Hexago/animation/Hexaghost_portrait");
+
+        this.SHOULDER1 =  "reskinContent/img/HexaghostMod/Hexago/shoulder2.png";
+        this.SHOULDER2 = "reskinContent/img/HexaghostMod/Hexago/shoulder.png";
+        this.CORPSE = "hexamodResources/images/char/mainChar/corpse.png";
+        this.atlasURL = "reskinContent/img/HexaghostMod/Hexago/animation/Hexaghost_self_downfall.atlas";
+        this.jsonURL = "reskinContent/img/HexaghostMod/Hexago/animation/Hexaghost_self_downfall.json";
+        this.renderscale = 1.0F;
 
         hexaghostMaskHitBox = new Hitbox(250.0f * Settings.scale, 350.0f * Settings.scale);
         hexaghostMaskHitBox.move(1350.0F * Settings.scale, 780.0F * Settings.scale);
@@ -58,6 +61,23 @@ public class Hexago extends AbstractSkin {
         orbs.clear();
     }
 
+    @Override
+    public String getSHOULDER1() {
+        if(reskinContent.hexaghostMask){
+            return "reskinContent/img/HexaghostMod/Hexago/shoulder2.png";
+        }else {
+            return "reskinContent/img/HexaghostMod/Hexago/shoulderMask2.png";
+        }
+    }
+
+    @Override
+    public String getSHOULDER2() {
+        if(reskinContent.hexaghostMask){
+            return "reskinContent/img/HexaghostMod/Hexago/shoulder.png";
+        }else {
+            return "reskinContent/img/HexaghostMod/Hexago/shoulderMask.png";
+        }
+    }
 
     @Override
     public void loadPortraitAnimation() {
@@ -245,10 +265,10 @@ public class Hexago extends AbstractSkin {
 
     @Override
     public Boolean extraHitboxClickCheck() {
-        if(maskClicked){
+        if (maskClicked) {
             maskClicked = false;
             return true;
-        }else {
+        } else {
             return false;
         }
     }
