@@ -136,6 +136,11 @@
     "NAME": "Haste",
     "DESCRIPTION": "placeholder, no effect yet"
   },
+  "timeeatermod:ManipulateTime": {
+    "NAME": "Manipulate Time",
+    "DESCRIPTION": "Gain !B! Block. NL Trigger all effects that happen at the start of your turn. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Trigger all effects that happen at the start of your turn."
+  },
   "timeeatermod:DiscardAllAttack": {
     "NAME": "DiscardAllAttack",
     "DESCRIPTION": "Deal !D! damage. Discard ALL copies of this card in your hand and deck."

@@ -102,6 +102,13 @@
       " #yStrength."
     ]
   },
+  "timeeatermod:HastePower": {
+    "NAME": "Haste",
+    "DESCRIPTIONS": [
+      "At the start of your turn, deal #b",
+      " damage to ALL enemies, then increase this damage by #b"
+    ]
+  },
 
 
 

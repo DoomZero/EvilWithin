@@ -15,8 +15,6 @@ public class LeapPastFate extends AbstractTimeEaterCard {
     public LeapPastFate() {
         super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 0;
-//        this.retain = true;
-//        this.exhaust = true;
     }
 
     private void calcDam(){

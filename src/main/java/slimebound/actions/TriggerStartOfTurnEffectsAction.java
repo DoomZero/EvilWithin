@@ -1,9 +1,7 @@
 package slimebound.actions;
 
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-
 
 public class TriggerStartOfTurnEffectsAction extends AbstractGameAction {
 
@@ -11,8 +9,6 @@ public class TriggerStartOfTurnEffectsAction extends AbstractGameAction {
 
     public TriggerStartOfTurnEffectsAction(AbstractPlayer p) {
         this.p = p;
-
-
     }
 
     public void update() {
