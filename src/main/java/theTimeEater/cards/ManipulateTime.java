@@ -16,7 +16,7 @@ public class ManipulateTime extends AbstractTimeEaterCard {
     private static final int UPGRADE_BLOCK = 4;
 
     public ManipulateTime() {
-        super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
 
         baseBlock = BLOCK;
         this.exhaust = true;
@@ -26,8 +26,8 @@ public class ManipulateTime extends AbstractTimeEaterCard {
         CardCrawlGame.sound.play("POWER_TIME_WARP", 0.05F);
         AbstractDungeon.effectsQueue.add(new com.megacrit.cardcrawl.vfx.BorderFlashEffect(com.badlogic.gdx.graphics.Color.GOLD, true));
         AbstractDungeon.topLevelEffectsQueue.add(new com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect());
-        atb(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
 
+        blck();
         atb(new TriggerStartOfTurnEffectsAction(p));
     }
 

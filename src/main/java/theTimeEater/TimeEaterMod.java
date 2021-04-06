@@ -25,6 +25,7 @@ import theTimeEater.cards.cardvars.SillyVariable;
 import theTimeEater.potions.TempoSwitchPotion;
 import theTimeEater.potions.TimeLockEnemyPotion;
 import theTimeEater.potions.TimeLockSelfPotion;
+import theTimeEater.powers.ClockPower;
 import theTimeEater.powers.TimeLockPower;
 import theTimeEater.relics.TodoItem;
 import theTimeEater.util.CardArtRoller;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import static theTimeEater.util.Wiz.adp;
+import static theTimeEater.util.Wiz.applyToSelf;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -228,6 +230,7 @@ public class TimeEaterMod implements
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         tempo = tempos.FORWARD;
+        applyToSelf(new ClockPower());
     }
 
     @Override

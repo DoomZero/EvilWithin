@@ -16,7 +16,7 @@ public class Haste extends AbstractTimeEaterCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new HastePower());
+        applyToSelf(new HastePower(1,1));
     }
 
     public void upp() {

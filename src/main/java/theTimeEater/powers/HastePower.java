@@ -24,10 +24,6 @@ public class HastePower extends AbstractTimeEaterPower implements CloneablePower
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public HastePower(){
-        this(1,1);
-    }
-
     public HastePower(int rate, int start) {
         super(NAME, POWER_ID, PowerType.BUFF, adp(), rate, start,false);
 
@@ -37,7 +33,7 @@ public class HastePower extends AbstractTimeEaterPower implements CloneablePower
     }
 
     @Override
-    public void atEndOfTurn(boolean unused){
+    public void atStartOfTurn(){
         atb(new DamageAllEnemiesAction(adp(), this.amount2, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         HastePower thisPow = this;
