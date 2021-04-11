@@ -233,8 +233,8 @@
     "DESCRIPTION": "At the start of your turn, choose to enter either timeeatermod:Forward or timeeatermod:Rewind_Tempo.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, choose to enter either timeeatermod:Forward or timeeatermod:Rewind_Tempo."
   },
-  "timeeatermod:QuickSlash": {
-    "NAME": "Quick Slash",
+  "timeeatermod:QuickSlap": {
+    "NAME": "Quick Slap",
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! card."
   },
   "timeeatermod:SlugItOff": {
@@ -257,6 +257,14 @@
   "timeeatermod:TimeWarp": {
     "NAME": "Time Warp",
     "DESCRIPTION": "Gain !M! Strength for every 12th card you draw."
+  },
+  "timeeatermod:AntiVoid": {
+    "NAME": "AntiVoid",
+    "DESCRIPTION": "Unplayable. Ethereal. Whenever this card is drawn, gain 1 [E]."
+  },
+  "timeeatermod:SpawnAntiVoid": {
+    "NAME": "Spawn AntiVoid",
+    "DESCRIPTION": "Shuffle !M! *AntiVoid into your draw pile."
   },
 
 
