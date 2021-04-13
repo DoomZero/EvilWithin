@@ -5,5 +5,19 @@
       "fired"
     ],
     "DESCRIPTION": "Only Ammo can be fired. Firing Ammo activates its effect and discards it."
+  },
+  {
+    "PROPER_NAME": "Exhume",
+    "NAMES": [
+      "exhume"
+    ],
+    "DESCRIPTION": "Put a card from your exhaust pile into your hand."
+  },
+  {
+    "PROPER_NAME": "Reclaim",
+    "NAMES": [
+      "reclaim"
+    ],
+    "DESCRIPTION": "Put a card from your exhaust pile into your discard pile."
   }
 ]
