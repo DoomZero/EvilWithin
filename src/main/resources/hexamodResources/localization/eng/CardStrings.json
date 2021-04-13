@@ -9,7 +9,7 @@
   },
   "hexamod:Sear": {
     "NAME": "Sear",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Apply !burny! hexamod:Soulburn."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Apply !burny! hexamod:Soulburn."
   },
   "hexamod:Float": {
     "NAME": "Float",
@@ -114,23 +114,23 @@
   },
   "hexamod:SpectersWail": {
     "NAME": "Specter's Wail",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Deal !D! damage to ALL enemies."
   },
   "hexamod:Hexaguard": {
     "NAME": "Hexaguard",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Gain !B! Block. NL Draw 1 card."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Gain !B! Block. NL Draw 1 card."
   },
   "hexamod:GhostLash": {
     "NAME": "Ghost Lash",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Deal !D! damage. NL If you Exhausted a card last turn, deal !D! damage."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Deal !D! damage. NL If you Exhausted a card last turn, deal !D! damage."
   },
   "hexamod:GhostShield": {
     "NAME": "Ghost Shield",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Gain !B! Block. NL If you Exhausted a card last turn, gain !M! bronze:Blur."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Gain !B! Block. NL If you Exhausted a card last turn, gain !M! downfall:Blur."
   },
   "hexamod:Haunt": {
     "NAME": "Haunted Hand",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Draw !M! cards. NL All cards in your hand become Ethereal. NL Exhaust."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Draw !M! cards. NL All cards in your hand become Ethereal. NL Exhaust."
   },
   "hexamod:RecurringNightmare": {
     "NAME": "Nightmare Vision",
@@ -189,8 +189,8 @@
   },
   "hexamod:PowerFromBeyond": {
     "NAME": "Power from Beyond",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Gain [E] and draw !M! card next turn.",
-    "UPGRADE_DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Gain [E] and draw !M! cards next turn."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Gain [E] and draw !M! card next turn.",
+    "UPGRADE_DESCRIPTION": "Ethereal. downfall:Afterlife. NL Gain [E] and draw !M! cards next turn."
   },
   "hexamod:BurningTouch": {
     "NAME": "Burning Touch",
@@ -266,7 +266,7 @@
   },
   "hexamod:FlamesFromBeyond": {
     "NAME": "Flames from Beyond",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Apply !burny! hexamod:Soulburn to ALL enemies."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Apply !burny! hexamod:Soulburn to ALL enemies."
   },
   "hexamod:PhantomFireball": {
     "NAME": "Phantom Fireball",

@@ -227,8 +227,8 @@
   },
   "Guardian:ConstructionForm": {
     "NAME": "Construction Form",
-    "DESCRIPTION": "Ethereal. NL Gain !M! guardianmod:Buffer. NL At the start of each turn, if you have guardianmod:Buffer, gain 1 Strength.",
-    "UPGRADE_DESCRIPTION": "Gain !M! guardianmod:Buffer. NL At the start of each turn, if you have guardianmod:Buffer, gain 1 Strength."
+    "DESCRIPTION": "Ethereal. NL Gain !M! downfall:Buffer. NL At the start of each turn, if you have downfall:Buffer, gain 1 Strength.",
+    "UPGRADE_DESCRIPTION": "Gain !M! downfall:Buffer. NL At the start of each turn, if you have downfall:Buffer, gain 1 Strength."
   },
   "Guardian:RollAttack": {
     "NAME": "Roll Attack",

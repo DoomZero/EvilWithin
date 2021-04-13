@@ -5,5 +5,70 @@
       "fired"
     ],
     "DESCRIPTION": "Only Ammo can be fired. Firing Ammo activates its effect and discards it."
+  },
+  {
+    "PROPER_NAME": "Exhume",
+    "NAMES": [
+      "exhume"
+    ],
+    "DESCRIPTION": "Put a card from your exhaust pile into your hand."
+  },
+  {
+    "PROPER_NAME": "Buffer",
+    "NAMES": [
+      "buffer"
+    ],
+    "DESCRIPTION": "Prevent the next time you would lose HP."
+  },
+  {
+    "PROPER_NAME": "Blur",
+    "NAMES": [
+      "blur"
+    ],
+    "DESCRIPTION": "Do not lose Block at the end of the turn."
+  },
+  {
+    "PROPER_NAME": "Insert",
+    "NAMES": [
+      "insert"
+    ],
+    "DESCRIPTION": "Shuffle a card into your draw pile."
+  },
+  {
+    "PROPER_NAME": "Cycle",
+    "NAMES": [
+      "cycle"
+    ],
+    "DESCRIPTION": "Discard a card, drawing a new card to replace it."
+  },
+  {
+    "PROPER_NAME": "Counter",
+    "NAMES": [
+      "counter"
+    ],
+    "DESCRIPTION": "The next time you take #yAttack damage, deal damage back."
+  },
+  {
+    "PROPER_NAME": "Fatigue",
+    "NAMES": [
+      "fatigue",
+      "fatigued"
+    ],
+    "DESCRIPTION": "Lose HP. Restore #yFatigued HP at the end of combat."
+  },
+  {
+    "PROPER_NAME": "Afterlife",
+    "NAMES": [
+      "afterlife"
+    ],
+    "DESCRIPTION": "If this card is Exhausted, its effects activate."
+  },
+  {
+    "PROPER_NAME": "Muddle",
+    "NAMES": [
+      "muddle",
+      "muddled"
+    ],
+    "DESCRIPTION": "Muddling a card changes its cost to between 0 and 3."
   }
 ]

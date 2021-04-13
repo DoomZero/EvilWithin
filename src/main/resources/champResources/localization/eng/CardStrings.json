@@ -45,7 +45,7 @@
   },
   "champ:FlashCut": {
     "NAME": "Flash Strike",
-    "DESCRIPTION": "Deal !D! damage. NL *Defensive champ:Combo: Gain !M! champ:Counter and !B! Block. NL Enter champ:Defensive."
+    "DESCRIPTION": "Deal !D! damage. NL *Defensive champ:Combo: Gain !M! downfall:Counter and !B! Block. NL Enter champ:Defensive."
   },
   "champ:Balance": {
     "NAME": "Balance",
@@ -60,8 +60,8 @@
   },
   "champ:DefensiveShout": {
     "NAME": "Defensive Shout",
-    "DESCRIPTION": "Enter champ:Defensive. NL Gain !M! champ:Counter.",
-    "UPGRADE_DESCRIPTION": "Enter champ:Defensive. NL Gain !M! champ:Counter. NL Draw a card."
+    "DESCRIPTION": "Enter champ:Defensive. NL Gain !M! downfall:Counter.",
+    "UPGRADE_DESCRIPTION": "Enter champ:Defensive. NL Gain !M! downfall:Counter. NL Draw a card."
   },
   "champ:ShieldSigil": {
     "NAME": "Chain Lash",
@@ -133,12 +133,12 @@
   },
   "champ:Circumvent": {
     "NAME": "Circumvent",
-    "DESCRIPTION": "Gain !B! Block. NL *Defensive champ:Combo: Gain Block equal to your champ:Counter.",
-    "UPGRADE_DESCRIPTION": "Gain !M! champ:Counter. NL Gain !B! Block. NL *Defensive champ:Combo: Gain Block equal to your champ:Counter."
+    "DESCRIPTION": "Gain !B! Block. NL *Defensive champ:Combo: Gain Block equal to your downfall:Counter.",
+    "UPGRADE_DESCRIPTION": "Gain !M! downfall:Counter. NL Gain !B! Block. NL *Defensive champ:Combo: Gain Block equal to your downfall:Counter."
   },
   "champ:SkillfulDodge": {
     "NAME": "Skillful Dodge",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! champ:Counter. NL *Defensive champ:Combo: Increase this card's effects by !cool! this combat."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! downfall:Counter. NL *Defensive champ:Combo: Increase this card's effects by !cool! this combat."
   },
   "champ:TornadoPunch": {
     "NAME": "Tornado Punch",
@@ -156,14 +156,14 @@
   },
   "champ:EnchantShield": {
     "NAME": "Enchant Shield",
-    "DESCRIPTION": "champ:Fatigue 5. NL Choose a card in hand. Increase its Block by !M! for this combat. NL Exhaust.",
+    "DESCRIPTION": "downfall:Fatigue 5. NL Choose a card in hand. Increase its Block by !M! for this combat. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "A poor time for that move."
     ]
   },
   "champ:BringItOn": {
     "NAME": "Bring It On",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! champ:Counter.",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! downfall:Counter.",
     "EXTENDED_DESCRIPTION": [
       "I am not in a Stance."
     ]
@@ -175,8 +175,8 @@
   },
   "champ:FalseCounter": {
     "NAME": "False Counter",
-    "DESCRIPTION": "The next time champ:Counter activates, lose only half.",
-    "UPGRADE_DESCRIPTION": "Gain !M! champ:Counter. NL The next time champ:Counter activates, lose only half.",
+    "DESCRIPTION": "The next time downfall:Counter activates, lose only half.",
+    "UPGRADE_DESCRIPTION": "Gain !M! downfall:Counter. NL The next time downfall:Counter activates, lose only half.",
     "EXTENDED_DESCRIPTION": [
       "A poor time for that move."
     ]
@@ -193,7 +193,7 @@
   },
   "champ:HoldFirm": {
     "NAME": "Hold Firm",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! champ:Counter. NL Gain 1 bronze:Blur."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! downfall:Counter. NL Gain 1 downfall:Blur."
   },
   "champ:ShieldWall": {
     "NAME": "Iron Fortress",
@@ -237,7 +237,7 @@
   },
   "champ:EnchantSword": {
     "NAME": "Enchant Sword",
-    "DESCRIPTION": "champ:Fatigue 5. NL Choose a card in hand. Increase its damage by !M! for this combat. Exhaust.",
+    "DESCRIPTION": "downfall:Fatigue 5. NL Choose a card in hand. Increase its damage by !M! for this combat. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "A poor time for that move."
     ]
@@ -321,12 +321,12 @@
   },
   "champ:IgnorePain": {
     "NAME": "Ignore Pain",
-    "DESCRIPTION": "champ:Fatigue 5. Your HP cannot be reduced until your next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL champ:Fatigue 5. Your HP cannot be reduced until your next turn. NL Exhaust."
+    "DESCRIPTION": "downfall:Fatigue 5. Your HP cannot be reduced until your next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL downfall:Fatigue 5. Your HP cannot be reduced until your next turn. NL Exhaust."
   },
   "champ:DeathBlow": {
     "NAME": "Death Blow",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! Vigor. NL champ:Fatigue 10. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! Vigor. NL downfall:Fatigue 10. NL Exhaust."
   },
   "champ:ArenaPreparation": {
     "NAME": "Arena Preparation",
@@ -387,17 +387,17 @@
   },
   "champ:DefensiveStyle": {
     "NAME": "Defensive Style",
-    "DESCRIPTION": "Enter champ:Defensive. NL champ:Fatigue 5. NL champ:Defensive *Techniques grant !M! more champ:Counter.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Enter champ:Defensive. NL champ:Defensive *Techniques grant !M! more champ:Counter."
+    "DESCRIPTION": "Enter champ:Defensive. NL downfall:Fatigue 5. NL champ:Defensive *Techniques grant !M! more downfall:Counter.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Enter champ:Defensive. NL champ:Defensive *Techniques grant !M! more downfall:Counter."
   },
   "champ:GladiatorStyle": {
     "NAME": "Good Clean Fight",
-    "DESCRIPTION": "champ:Fatigue 10. NL Gain !M! Strength and Dexterity."
+    "DESCRIPTION": "downfall:Fatigue 10. NL Gain !M! Strength and Dexterity."
   },
   "champ:BerserkerStyle": {
     "NAME": "Berserker Style",
-    "DESCRIPTION": "Enter champ:Berserker. NL champ:Fatigue 5. NL champ:Berserker champ:Techniques grant !M! more Vigor.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Enter champ:Berserker. NL champ:Fatigue 5. NL champ:Berserker champ:Techniques grant !M! more Vigor."
+    "DESCRIPTION": "Enter champ:Berserker. NL downfall:Fatigue 5. NL champ:Berserker champ:Techniques grant !M! more Vigor.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Enter champ:Berserker. NL downfall:Fatigue 5. NL champ:Berserker champ:Techniques grant !M! more Vigor."
   },
   "champ:Riposte": {
     "NAME": "Riposte",
@@ -410,7 +410,7 @@
   },
   "champ:PreemptiveStrike": {
     "NAME": "Preemptive Strike",
-    "DESCRIPTION": "Deal damage equal to your champ:Counter to ALL enemies. NL Lose half of your champ:Counter.",
+    "DESCRIPTION": "Deal damage equal to your downfall:Counter to ALL enemies. NL Lose half of your downfall:Counter.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !D! damage)",
       "A poor time for that move."
@@ -418,12 +418,12 @@
   },
   "champ:Parry": {
     "NAME": "Parry",
-    "DESCRIPTION": "Gain !M! champ:Counter. NL If your champ:Counter is used this turn, add *Riposte to your hand.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to the amount of champ:Counter used. NL Exhaust."
+    "DESCRIPTION": "Gain !M! downfall:Counter. NL If your downfall:Counter is used this turn, add *Riposte to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the amount of downfall:Counter used. NL Exhaust."
   },
   "champ:EnchantCrown": {
     "NAME": "Enchant Crown",
-    "DESCRIPTION": "champ:Fatigue 5. NL Choose a card in hand. It costs 0 this combat. NL Exhaust.",
+    "DESCRIPTION": "downfall:Fatigue 5. NL Choose a card in hand. It costs 0 this combat. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "A poor time for that move."
     ]

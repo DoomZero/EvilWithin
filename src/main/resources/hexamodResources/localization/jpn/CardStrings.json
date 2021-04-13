@@ -127,11 +127,11 @@
   },
   "hexamod:SpectersWail": {
     "NAME": "Specter's Wail",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Deal !D! damage to ALL enemies."
   },
   "hexamod:Hexaguard": {
     "NAME": "Hexaguard",
-    "DESCRIPTION": "Ethereal. hexamod:Afterlife. NL Gain !B! Block. NL Draw 1 card."
+    "DESCRIPTION": "Ethereal. downfall:Afterlife. NL Gain !B! Block. NL Draw 1 card."
   },
   "hexamod:GhostLash": {
     "NAME": "Ghost Lash",
@@ -155,8 +155,8 @@
   },
   "hexamod:GiftsFromTheDead": {
     "NAME": "Gifts From Beyond",
-    "DESCRIPTION": "Unplayable. NL Ethereal. hexamod:Afterlife. NL Whenever an Ethereal card is Exhausted, draw 1 card next turn.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. hexamod:Afterlife. NL Whenever an Ethereal card is Exhausted, gain [E] and draw 1 card next turn."
+    "DESCRIPTION": "Unplayable. NL Ethereal. downfall:Afterlife. NL Whenever an Ethereal card is Exhausted, draw 1 card next turn.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. downfall:Afterlife. NL Whenever an Ethereal card is Exhausted, gain [E] and draw 1 card next turn."
   },
   "hexamod:Ghostwalk": {
     "NAME": "Ghostwalk",
@@ -198,8 +198,8 @@
   },
   "hexamod:PowerFromBeyond": {
     "NAME": "Power from Beyond",
-    "DESCRIPTION": "Unplayable. NL Ethereal. hexamod:Afterlife. NL Gain [E] and draw !M! card next turn.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. hexamod:Afterlife. NL Gain [E] and draw !M! cards next turn.",
+    "DESCRIPTION": "Unplayable. NL Ethereal. downfall:Afterlife. NL Gain [E] and draw !M! card next turn.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Ethereal. downfall:Afterlife. NL Gain [E] and draw !M! cards next turn.",
     "EXTENDED_DESCRIPTION": ["This power is too distant to directly channel."]
   },
   "hexamod:BurningTouch": {
@@ -276,7 +276,7 @@
   },
   "hexamod:FlamesFromBeyond": {
     "NAME": "Flames from Beyond",
-    "DESCRIPTION": "Unplayable. NL Ethereal, hexamod:Afterlife. NL Apply !burny! hexamod:Soulburn to ALL enemies at the start of your next turn.",
+    "DESCRIPTION": "Unplayable. NL Ethereal, downfall:Afterlife. NL Apply !burny! hexamod:Soulburn to ALL enemies at the start of your next turn.",
     "EXTENDED_DESCRIPTION": ["It's too hot to touch!"]
   },
   "hexamod:PhantomFireball": {

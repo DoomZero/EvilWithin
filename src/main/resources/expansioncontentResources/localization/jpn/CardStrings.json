@@ -22,7 +22,7 @@
   },
   "expansioncontent:SuperHexaguard": {
     "NAME": "Ghost Guard",
-    "DESCRIPTION": "expansioncontent:Boss - Hexaghost. Ethereal. hexamod:Afterlife. NL Gain !B! Block. NL Draw 1 card."
+    "DESCRIPTION": "expansioncontent:Boss - Hexaghost. Ethereal. downfall:Afterlife. NL Gain !B! Block. NL Draw 1 card."
   },
   "expansioncontent:HyperBeam": {
     "NAME": "Automa-Beam",

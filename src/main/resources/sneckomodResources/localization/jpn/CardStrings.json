@@ -9,8 +9,8 @@
   },
   "sneckomod:SnekBite": {
     "NAME": "Snek Bite",
-    "DESCRIPTION": "Deal !D! damage. NL sneckomod:Muddle the highest-cost card in your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL sneckomod:Muddle the !M! highest-cost cards in your hand."
+    "DESCRIPTION": "Deal !D! damage. NL downfall:Muddle the highest-cost card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL downfall:Muddle the !M! highest-cost cards in your hand."
   },
   "sneckomod:TailWhip": {
     "NAME": "Tail Whip",
@@ -55,8 +55,8 @@
   },
   "sneckomod:SoulRoll": {
     "NAME": "Soul Roll",
-    "DESCRIPTION": "sneckomod:Snekproof. NL sneckomod:Muddle your hand.",
-    "UPGRADE_DESCRIPTION": "sneckomod:Snekproof. NL sneckomod:Muddle your hand. NL Draw 1 card."
+    "DESCRIPTION": "sneckomod:Snekproof. NL downfall:Muddle your hand.",
+    "UPGRADE_DESCRIPTION": "sneckomod:Snekproof. NL downfall:Muddle your hand. NL Draw 1 card."
   },
   "sneckomod:PerplexingStare": {
     "NAME": "Perplexing Stare",
@@ -128,8 +128,8 @@
   },
   "sneckomod:SoulCleanse": {
     "NAME": "Soul Cleanse",
-    "DESCRIPTION": "sneckomod:Snekproof. NL sneckomod:Muddle your hand. Cards sneckomod:Muddled this way cannot cost 3. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "sneckomod:Snekproof. NL sneckomod:Muddle your hand. Cards sneckomod:Muddled this way cannot cost 3."
+    "DESCRIPTION": "sneckomod:Snekproof. NL downfall:Muddle your hand. Cards downfall:Muddled this way cannot cost 3. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "sneckomod:Snekproof. NL downfall:Muddle your hand. Cards downfall:Muddled this way cannot cost 3."
   },
   "sneckomod:SoulExchange": {
     "NAME": "Soul Exchange",
@@ -156,20 +156,20 @@
   },
   "sneckomod:ImprovisedAttack": {
     "NAME": "Improvised Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Add a random sneckomod:Offclass Attack into your hand and sneckomod:Muddle it."
+    "DESCRIPTION": "Deal !D! damage. NL Add a random sneckomod:Offclass Attack into your hand and downfall:Muddle it."
   },
   "sneckomod:ImprovisedGuard": {
     "NAME": "Improvised Guard",
-    "DESCRIPTION": "Gain !B! Block. NL Add a random sneckomod:Offclass Skill into your hand and sneckomod:Muddle it."
+    "DESCRIPTION": "Gain !B! Block. NL Add a random sneckomod:Offclass Skill into your hand and downfall:Muddle it."
   },
   "sneckomod:QuickMove": {
     "NAME": "Quick Move",
-    "DESCRIPTION": "Gain !B! Block. NL sneckomod:Muddle the highest-cost card in your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL sneckomod:Muddle the !M! highest-cost cards in your hand."
+    "DESCRIPTION": "Gain !B! Block. NL downfall:Muddle the highest-cost card in your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL downfall:Muddle the !M! highest-cost cards in your hand."
   },
   "sneckomod:QuickBite": {
     "NAME": "Snake Rake",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! - 2 cards. NL sneckomod:Muddle the highest-cost card in your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! - 2 cards. NL downfall:Muddle the highest-cost card in your hand."
   },
   "sneckomod:Rotation": {
     "NAME": "Rotation",
@@ -256,7 +256,7 @@
   },
   "sneckomod:RainOfDice": {
     "NAME": "Rain of Dice",
-    "DESCRIPTION": "Deal !qqq! - !D! damage to a random enemy 2 - !M! times. NL sneckomod:Muddle the next 2 - !M! cards you draw."
+    "DESCRIPTION": "Deal !qqq! - !D! damage to a random enemy 2 - !M! times. NL downfall:Muddle the next 2 - !M! cards you draw."
   },
   "sneckomod:DiceCrush": {
     "NAME": "Dice Crush",
@@ -276,8 +276,8 @@
   },
   "sneckomod:Mudshield": {
     "NAME": "Mud Shield",
-    "DESCRIPTION": "Whenever you sneckomod:Muddle a card, gain 1 Block next turn.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you sneckomod:Muddle a card, gain 1 Block next turn."
+    "DESCRIPTION": "Whenever you downfall:Muddle a card, gain 1 Block next turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you downfall:Muddle a card, gain 1 Block next turn."
   },
   "sneckomod:WideSting": {
     "NAME": "Wide Sting",
@@ -285,6 +285,6 @@
   },
   "sneckomod:Bewildered": {
     "NAME": "Bewildered",
-    "DESCRIPTION": "When you play another card, sneckomod:Muddle your hand, then discard this. NL Exhaust."
+    "DESCRIPTION": "When you play another card, downfall:Muddle your hand, then discard this. NL Exhaust."
   }
 }

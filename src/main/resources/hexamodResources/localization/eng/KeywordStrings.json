@@ -63,13 +63,6 @@
     "DESCRIPTION": "If all #b6 Seals have been played this combat, obtain #pThe #pBroken #pSeal and remove the Seals from your deck."
   },
   {
-    "PROPER_NAME": "Afterlife",
-    "NAMES": [
-      "afterlife"
-    ],
-    "DESCRIPTION": "If this card is Exhausted, its effects activate."
-  },
-  {
     "PROPER_NAME": "Crushing",
     "NAMES": [
       "crushing"

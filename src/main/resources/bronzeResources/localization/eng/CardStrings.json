@@ -1,7 +1,7 @@
 {
   "bronze:DazingPulse": {
     "NAME": "Dazing Pulse",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block NL bronze:Compile *Error - bronze:Insert !M! *Dazed.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block NL bronze:Compile *Error - downfall:Insert !M! *Dazed.",
     "EXTENDED_DESCRIPTION": [
       "dazing",
       "Pulse"
@@ -17,7 +17,7 @@
   },
   "bronze:Explode": {
     "NAME": "Explode",
-    "DESCRIPTION": "Apply !M! hexamod:Soulburn to ALL enemies. NL bronze:Compile *Error - bronze:Insert !bauto! *Burn.",
+    "DESCRIPTION": "Apply !M! hexamod:Soulburn to ALL enemies. NL bronze:Compile *Error - downfall:Insert !bauto! *Burn.",
     "EXTENDED_DESCRIPTION": [
       "unstable",
       "Bomb"
@@ -33,7 +33,7 @@
   },
   "bronze:DecaBeam": {
     "NAME": "Proto-Shield",
-    "DESCRIPTION": "Gain !B! Block. NL bronze:Compile - Gain !M! Plated Armor and bronze:Insert !bauto! *Dazed.",
+    "DESCRIPTION": "Gain !B! Block. NL bronze:Compile - Gain !M! Plated Armor and downfall:Insert !bauto! *Dazed.",
     "EXTENDED_DESCRIPTION": [
       "jagged",
       "Barrier"
@@ -146,7 +146,7 @@
   },
   "bronze:DarkDash": {
     "NAME": "Dark Dash",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL bronze:Compile *Error - bronze:Insert a *Void.",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL bronze:Compile *Error - downfall:Insert a *Void.",
     "EXTENDED_DESCRIPTION": [
       "dark",
       "Dash"
@@ -154,7 +154,7 @@
   },
   "bronze:OilSpill": {
     "NAME": "Oil Spill",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Poison. NL bronze:Compile *Error - bronze:Insert a *Slimed.",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Poison. NL bronze:Compile *Error - downfall:Insert a *Slimed.",
     "EXTENDED_DESCRIPTION": [
       "oily",
       "Spill"
@@ -162,7 +162,7 @@
   },
   "bronze:WildBeam": {
     "NAME": "Wild Beam",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile *Error - bronze:Insert a *Wound.",
+    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile *Error - downfall:Insert a *Wound.",
     "EXTENDED_DESCRIPTION": [
       "wild",
       "Beam"
@@ -186,7 +186,7 @@
   },
   "bronze:Shield": {
     "NAME": "Sticky Shield",
-    "DESCRIPTION": "Gain !B! Block. NL bronze:Insert a *Slimed.",
+    "DESCRIPTION": "Gain !B! Block. NL downfall:Insert a *Slimed.",
     "EXTENDED_DESCRIPTION": [
       "sticky",
       "Shield"
@@ -210,8 +210,8 @@
   },
   "bronze:Shell": {
     "NAME": "Blockchain",
-    "DESCRIPTION": "Gain !M! bronze:Blur.",
-    "UPGRADE_DESCRIPTION": "Gain !M! bronze:Blur. NL bronze:Compile - Gain !M! bronze:Blur.",
+    "DESCRIPTION": "Gain !M! downfall:Blur.",
+    "UPGRADE_DESCRIPTION": "Gain !M! downfall:Blur. NL bronze:Compile - Gain !M! downfall:Blur.",
     "EXTENDED_DESCRIPTION": [
       "block",
       "Chain"
@@ -353,7 +353,7 @@
   },
   "bronze:MaxOutput": {
     "NAME": "Max Output",
-    "DESCRIPTION": "Draw !M! cards. NL At the start of each turn, draw 1 additional card and bronze:Insert 1 *Dazed."
+    "DESCRIPTION": "Draw !M! cards. NL At the start of each turn, draw 1 additional card and downfall:Insert 1 *Dazed."
   },
   "bronze:Mutator": {
     "NAME": "Mutator",
@@ -450,7 +450,7 @@
   },
   "bronze:BurnOut": {
     "NAME": "Burn Out",
-    "DESCRIPTION": "Deal !D! damage to a random enemy for ALL of your Status cards, then Exhaust them. NL bronze:Insert 3 *Burns.",
+    "DESCRIPTION": "Deal !D! damage to a random enemy for ALL of your Status cards, then Exhaust them. NL downfall:Insert 3 *Burns.",
     "EXTENDED_DESCRIPTION": [
       " NL (Hits ",
       " times.)"
@@ -462,7 +462,7 @@
   },
   "bronze:Break": {
     "NAME": "Break",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile *Error - bronze:Insert !M! random Status cards.",
+    "DESCRIPTION": "Deal !D! damage. NL bronze:Compile *Error - downfall:Insert !M! random Status cards.",
     "EXTENDED_DESCRIPTION": [
       "broken",
       "Smash"
@@ -597,8 +597,8 @@
   },
   "bronze:BugBarrage": {
     "NAME": "Bug Barrage",
-    "DESCRIPTION": "Add 1 *Wound to your hand. NL bronze:Cycle each Status in your hand, dealing !D! damage for each.",
-    "UPGRADE_DESCRIPTION": "Add !M! *Wounds to your hand. NL bronze:Cycle each Status in your hand, dealing !D! damage for each.",
+    "DESCRIPTION": "Add 1 *Wound to your hand. NL downfall:Cycle each Status in your hand, dealing !D! damage for each.",
+    "UPGRADE_DESCRIPTION": "Add !M! *Wounds to your hand. NL downfall:Cycle each Status in your hand, dealing !D! damage for each.",
     "EXTENDED_DESCRIPTION": [
       " NL (Hits ",
       " times.)"
@@ -606,7 +606,7 @@
   },
   "bronze:BuggyMess": {
     "NAME": "Buggy Mess",
-    "DESCRIPTION": "bronze:Insert random Status. NL Gain !M! [E] .",
+    "DESCRIPTION": "downfall:Insert random Status. NL Gain !M! [E] .",
     "EXTENDED_DESCRIPTION": [
       "buggy",
       "Mess"
@@ -630,8 +630,8 @@
   },
   "bronze:AlphaBuild": {
     "NAME": "Early Access",
-    "DESCRIPTION": "Deal !D! damage. NL bronze:Insert random Status. NL bronze:Compile - bronze:Insert *Beta *Build.",
-    "UPGRADE_DESCRIPTION": "Innate. NL \u00A0 Deal !D! damage. NL bronze:Insert random Status. NL bronze:Compile - bronze:Insert *Beta *Build.",
+    "DESCRIPTION": "Deal !D! damage. NL downfall:Insert random Status. NL bronze:Compile - downfall:Insert *Beta *Build.",
+    "UPGRADE_DESCRIPTION": "Innate. NL \u00A0 Deal !D! damage. NL downfall:Insert random Status. NL bronze:Compile - downfall:Insert *Beta *Build.",
     "EXTENDED_DESCRIPTION": [
       "rough",
       "Alpha"
@@ -639,7 +639,7 @@
   },
   "bronze:BetaBuild": {
     "NAME": "Beta Build",
-    "DESCRIPTION": "Gain !B! Block. NL bronze:Insert random Status. NL bronze:Compile - bronze:Insert *Full *Release.",
+    "DESCRIPTION": "Gain !B! Block. NL downfall:Insert random Status. NL bronze:Compile - downfall:Insert *Full *Release.",
     "EXTENDED_DESCRIPTION": [
       "early",
       "Beta"

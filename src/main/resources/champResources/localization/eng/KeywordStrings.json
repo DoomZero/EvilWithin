@@ -27,13 +27,6 @@
     "DESCRIPTION": "Requires being in a Stance. NL After playing a Finisher, if you are in a #yStance, exit it and trigger its Finisher bonus."
   },
   {
-    "PROPER_NAME": "Counter",
-    "NAMES": [
-      "counter"
-    ],
-    "DESCRIPTION": "The next time you take #yAttack damage, deal damage back."
-  },
-  {
     "PROPER_NAME": "Defensive",
     "NAMES": [
       "defensive",
@@ -64,13 +57,5 @@
       "ultimate."
     ],
     "DESCRIPTION": "#yStance. Counts as both #yDefensive and #yBerserker #yStances. NL Finishers do not exit the Stance. NL You can't change to any other #yStance."
-  },
-  {
-    "PROPER_NAME": "Fatigue",
-    "NAMES": [
-      "fatigue",
-      "fatigued"
-    ],
-    "DESCRIPTION": "Lose HP. Restore #yFatigued HP at the end of combat."
   }
 ]

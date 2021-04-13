@@ -62,13 +62,6 @@
   },
   {
     "NAMES": [
-      "buffer"
-    ],
-    "PROPER_NAME": "Buffer",
-    "DESCRIPTION": "Prevent the next time you would lose HP."
-  },
-  {
-    "NAMES": [
       "brace"
     ],
     "PROPER_NAME": "Brace",
