@@ -1,22 +1,13 @@
 package theTimeEater.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theTimeEater.TimeEaterMod;
-
-import java.util.ArrayList;
 
 import static theTimeEater.util.Wiz.*;
 
@@ -37,7 +28,7 @@ public class DrawVoidPower extends AbstractTimeEaterPower implements CloneablePo
         loadRegion("time");
     }*/
 
-    public DrawVoidPower(AbstractCreature owner, int amount){
+    public DrawVoidPower(AbstractCreature owner, int amount) {
         super(NAME, POWER_ID, PowerType.DEBUFF, owner, amount, false);
         loadRegion("time");
     }
@@ -49,23 +40,22 @@ public class DrawVoidPower extends AbstractTimeEaterPower implements CloneablePo
     }
 
     @Override
-    public void onCardDraw(AbstractCard notUsed){
-        if (this.amount <= 0){
-            atb(new RemoveSpecificPowerAction(this.owner, this.owner,this));
+    public void onCardDraw(AbstractCard notUsed) {
+        if (this.amount <= 0) {
+            atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
 
     @Override
-    public void atEndOfTurn(boolean notUsed){
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner,this));
+    public void atEndOfTurn(boolean notUsed) {
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount <= 1){
+        if (this.amount <= 1) {
             description = DESCRIPTIONS[0];
-        }
-        else {
+        } else {
             description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
         }
     }

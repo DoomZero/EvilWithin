@@ -1,12 +1,10 @@
 package theTimeEater.powers;
 
-import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 
@@ -18,7 +16,7 @@ public class InstantReplayPower extends AbstractTimeEaterPower implements NonSta
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public InstantReplayPower(){
+    public InstantReplayPower() {
         super(NAME, POWER_ID, PowerType.BUFF, AbstractDungeon.player);
         loadRegion("time");
     }

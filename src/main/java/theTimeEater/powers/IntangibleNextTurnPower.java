@@ -1,9 +1,6 @@
 package theTimeEater.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -36,10 +33,9 @@ public class IntangibleNextTurnPower extends AbstractTimeEaterPower implements C
     @Override
     public void atStartOfTurn() {
         this.flash();// 35
-        if (owner == adp()){
+        if (owner == adp()) {
             applyToSelf(new IntangiblePlayerPower(this.owner, 1));
-        }
-        else {
+        } else {
             applyToEnemy((AbstractMonster) this.owner, new IntangiblePower(this.owner, 1));
         }
         decrement();
@@ -50,7 +46,7 @@ public class IntangibleNextTurnPower extends AbstractTimeEaterPower implements C
         if (amount == 1)
             description = DESCRIPTIONS[0] + DESCRIPTIONS[1];
         else
-            description = DESCRIPTIONS[0] + "#b"+amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + "#b" + amount + DESCRIPTIONS[2];
     }
 
     @Override

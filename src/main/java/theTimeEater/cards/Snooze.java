@@ -18,7 +18,7 @@ public class Snooze extends AbstractTimeEaterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new TimeLockPower(p, 1));
         TimeLockPower tl = (TimeLockPower) p.getPower(TimeLockPower.POWER_ID);
-        if (tl != null && tl.getBaseDamage() > 0){
+        if (tl != null && tl.getBaseDamage() > 0) {
             tl.increaseBaseDamage(-10);
         }
     }

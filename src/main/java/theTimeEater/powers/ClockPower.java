@@ -5,12 +5,9 @@ import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
-import sneckomod.actions.RandomDamageAction;
 import theTimeEater.TimeEaterMod;
 
 import static theTimeEater.util.Wiz.*;
@@ -31,13 +28,13 @@ public class ClockPower extends AbstractTimeEaterPower {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card){
+    public void onCardDraw(AbstractCard card) {
 //        if (!AbstractDungeon.player.hasPower(NoDrawPower.POWER_ID)) {
 //            gainBlock(blockToGain));
 //            applyToSelf(new VigorPower(adp(), vigorToGain));
 //        }
 
-        switch((amount-1) / 3){
+        switch ((amount - 1) / 3) {
             case 1:
                 applyToSelf(new VigorPower(adp(), vigorToGain));
                 break;

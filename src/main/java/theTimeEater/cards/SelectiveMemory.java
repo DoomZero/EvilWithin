@@ -1,6 +1,5 @@
 package theTimeEater.cards;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +21,7 @@ public class SelectiveMemory extends AbstractTimeEaterCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        atb(new SelectCardsAction(p.drawPile.group, this.magicNumber, "Choose cards to discard", (cards) -> {
         atb(new SelectCardsAction(p.drawPile.group, 3, "Choose cards to discard", true, (c) -> true, (cards) -> {
-            for (AbstractCard c : cards){
+            for (AbstractCard c : cards) {
                 att(new DiscardSpecificCardAction(c, p.drawPile));
             }
         }));

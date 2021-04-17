@@ -4,8 +4,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import theTimeEater.powers.FleetingStrengthPower;
-import theTimeEater.powers.IntangibleNextTurnPower;
-import theTimeEater.powers.TakeDoubleDamagePower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 

@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static theTimeEater.TimeEaterMod.makeID;
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
 public class HeadSlam extends AbstractTimeEaterCard {
     public final static String ID = makeID(HeadSlam.class.getSimpleName());

@@ -24,7 +24,7 @@ public class ClockBlockPower extends AbstractTimeEaterPower {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card){
+    public void onCardDraw(AbstractCard card) {
         if (!AbstractDungeon.player.hasPower(NoDrawPower.POWER_ID)) {
             gainBlock(blockToGain);
         }

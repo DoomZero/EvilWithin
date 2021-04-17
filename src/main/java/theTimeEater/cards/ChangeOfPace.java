@@ -3,11 +3,9 @@ package theTimeEater.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import downfall.util.OctopusCard;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.actions.TimeEaterModalChoiceAction;
 import theTimeEater.actions.EnterTempoAction;
+import theTimeEater.actions.TimeEaterModalChoiceAction;
 
 import java.util.ArrayList;
 
@@ -31,11 +29,12 @@ public class ChangeOfPace extends AbstractTimeEaterCard {
         att(new EnterTempoAction(TimeEaterMod.tempos.REWIND));
     };
 
-    public static Runnable doNothing = () -> {};
+    public static Runnable doNothing = () -> {
+    };
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choiceList = new ArrayList<>();
-        choiceList.add(new TimeEaterModalChoiceCard("Rewind",  cardStrings.EXTENDED_DESCRIPTION[0], rewind));
+        choiceList.add(new TimeEaterModalChoiceCard("Rewind", cardStrings.EXTENDED_DESCRIPTION[0], rewind));
         choiceList.add(new TimeEaterModalChoiceCard("Nothing", cardStrings.EXTENDED_DESCRIPTION[1], doNothing));
         choiceList.add(new TimeEaterModalChoiceCard("Forward", cardStrings.EXTENDED_DESCRIPTION[2], forward));
         atb(new TimeEaterModalChoiceAction(choiceList));

@@ -1,16 +1,10 @@
 package theTimeEater.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import theTimeEater.powers.TimeLockPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
 import static theTimeEater.util.Wiz.*;
@@ -29,7 +23,7 @@ public class ExhaustDraw extends AbstractTimeEaterCard {
         atb(new SelectCardsInHandAction(this.magicNumber, "Exhaust.", true, true, (c) -> true, (cards) -> {
             if (cards.size() == 0) return;
             int cardDraw = 1;
-            for (AbstractCard c : cards){
+            for (AbstractCard c : cards) {
                 if (c.cost >= 0) cardDraw += c.cost;
                 else if (c.cost == -1) cardDraw += adp().energy.energy;
                 adp().hand.moveToExhaustPile(c);

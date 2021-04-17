@@ -18,7 +18,7 @@ public class SpareTime extends AbstractTimeEaterCard {
         baseMagicNumber = magicNumber = 1;
     }
 
-    private void fixDescription(){
+    private void fixDescription() {
         //extended desc does not have any [E] in it. magic starts at 1, and increased to 2 on first draw.
         String en = String.join("", Collections.nCopies(this.magicNumber, " [E]"));
         this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + en + cardStrings.EXTENDED_DESCRIPTION[1];

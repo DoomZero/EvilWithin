@@ -1,12 +1,9 @@
 package theTimeEater.cards;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
@@ -29,7 +26,7 @@ public class CarpeDiem extends AbstractTimeEaterCard {
             AbstractCard keepCard = cards.get(0);
             adp().hand.moveToHand(keepCard);
             cards.remove(keepCard);
-            while(adp().hand.group.size() > 1){
+            while (adp().hand.group.size() > 1) {
                 AbstractCard c = adp().hand.getBottomCard();
                 adp().hand.moveToDiscardPile(c);
                 c.triggerOnManualDiscard();

@@ -18,7 +18,7 @@ public class TimeShock extends AbstractTimeEaterCard {
         TimeLockPower tl = (TimeLockPower) m.getPower(TimeLockPower.POWER_ID);
         if (tl == null) return;
 
-        tl.setBaseDamage(tl.getBaseDamage()*2);
+        tl.setBaseDamage(tl.getBaseDamage() * 2);
     }
 
     public void upp() {

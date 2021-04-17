@@ -1,6 +1,5 @@
 package theTimeEater.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,7 +22,7 @@ public class SlugItOff extends AbstractTimeEaterCard {
         blck();
         atb(new DrawCardAction(this.magicNumber));
         TimeLockPower tl = (TimeLockPower) p.getPower(TimeLockPower.POWER_ID);
-        if (tl != null && tl.getBaseDamage() > 0){
+        if (tl != null && tl.getBaseDamage() > 0) {
             tl.increaseBaseDamage(-5);
         }
     }

@@ -17,7 +17,7 @@ public class EchoingGuard extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        if (p.hasPower(TimeLockPower.POWER_ID)){
+        if (p.hasPower(TimeLockPower.POWER_ID)) {
             blck();
         }
     }

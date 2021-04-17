@@ -13,9 +13,7 @@ import downfall.util.TextureLoader;
 import expansioncontent.expansionContentMod;
 import theTimeEater.TimeEaterMod;
 
-import static theTimeEater.util.Wiz.adp;
-import static theTimeEater.util.Wiz.applyToSelf;
-
+import static theTimeEater.util.Wiz.*;
 
 public class TimeEaterWarpPower extends TwoAmountPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(TimeEaterWarpPower.class.getSimpleName());
@@ -57,7 +55,7 @@ public class TimeEaterWarpPower extends TwoAmountPower implements CloneablePower
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (12 - (amount2)) + DESCRIPTIONS[1] +amount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + (12 - (amount2)) + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
 }

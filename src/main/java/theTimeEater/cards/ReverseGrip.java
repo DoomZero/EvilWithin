@@ -14,7 +14,7 @@ public class ReverseGrip extends AbstractTimeEaterCard {
     public final static String ID = makeID(ReverseGrip.class.getSimpleName());
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
-    public ReverseGrip()  {
+    public ReverseGrip() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 8;
     }
@@ -22,7 +22,7 @@ public class ReverseGrip extends AbstractTimeEaterCard {
     public void use(AbstractPlayer pp, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         TheTimeEater p = (TheTimeEater) pp;
-        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND)  atb(new EnterTempoAction(TimeEaterMod.tempos.FORWARD));
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND) atb(new EnterTempoAction(TimeEaterMod.tempos.FORWARD));
         if (TimeEaterMod.tempo == TimeEaterMod.tempos.FORWARD) atb(new EnterTempoAction(TimeEaterMod.tempos.REWIND));
     }
 

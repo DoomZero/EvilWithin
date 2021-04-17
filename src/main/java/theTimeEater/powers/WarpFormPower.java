@@ -1,17 +1,9 @@
 package theTimeEater.powers;
 
-import com.badlogic.gdx.graphics.Color;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theTimeEater.TimeEaterMod;
 
 import java.util.ArrayList;
@@ -38,7 +30,7 @@ public class WarpFormPower extends AbstractTimeEaterPower {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card){
+    public void onCardDraw(AbstractCard card) {
         flash();
 
     }

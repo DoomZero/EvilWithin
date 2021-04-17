@@ -1,28 +1,19 @@
 package theTimeEater.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import javassist.CannotCompileException;
-import javassist.CtBehavior;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.powers.ReversePower;
-
-import java.util.ArrayList;
 
 @SpirePatch(
-        clz=AbstractCard.class,
-        method="moveToDiscardPile"
+        clz = AbstractCard.class,
+        method = "moveToDiscardPile"
 )
 public class RewindDiscardPatch {
     @SpirePostfixPatch
-    public static void discardToDraw(AbstractCard __instance){
-        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND){
+    public static void discardToDraw(AbstractCard __instance) {
+        if (TimeEaterMod.tempo == TimeEaterMod.tempos.REWIND) {
             //this is the only line that is important:
             __instance.target_x = CardGroup.DRAW_PILE_X;
         }

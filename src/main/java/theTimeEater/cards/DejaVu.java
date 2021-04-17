@@ -1,15 +1,10 @@
 package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
-import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
-import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.utility.ExhaustToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.actions.DrawToHandAction;
 import theTimeEater.util.OnChangeTempoSubscriber;
 
 import static theTimeEater.TimeEaterMod.makeID;
@@ -31,12 +26,8 @@ public class DejaVu extends AbstractTimeEaterCard implements OnChangeTempoSubscr
     }
 
     @Override
-    public void OnChangeTempo(TimeEaterMod.tempos tempo){
-//        att(new DiscardToHandAction(this));
-//        att(new DrawToHandAction(this));
-
+    public void OnChangeTempo(TimeEaterMod.tempos tempo) {
         atb(new ExhaustToHandAction(this));
-//        atb(new ExhaustToHandAction(this));
     }
 
     @Override

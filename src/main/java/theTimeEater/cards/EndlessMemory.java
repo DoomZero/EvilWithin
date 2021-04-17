@@ -18,7 +18,7 @@ public class EndlessMemory extends AbstractTimeEaterCard {
     }
 
     @Override
-    public void update(){
+    public void update() {
         super.update();
         if (this.cost >= 1 && this.costForTurn >= 1) return;
         this.cost = this.costForTurn = 1;

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 
@@ -21,13 +20,13 @@ public class InvisiblePausePower extends AbstractTimeEaterPower implements NonSt
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public InvisiblePausePower(){
+    public InvisiblePausePower() {
         super(NAME, POWER_ID, PowerType.BUFF, AbstractDungeon.player);
         loadRegion("time");
     }
 
     @Override
-    public void onInitialApplication(){
+    public void onInitialApplication() {
         applyToSelf(new InvisibleNoDrawPower());
         /*for(AbstractCard c : adp().hand.group){
             if (c.costForTurn == 0)
@@ -38,7 +37,7 @@ public class InvisiblePausePower extends AbstractTimeEaterPower implements NonSt
     }
 
     @Override
-    public boolean canPlayCard(AbstractCard c){
+    public boolean canPlayCard(AbstractCard c) {
         if (c.costForTurn == -1 && EnergyPanel.getCurrentEnergy() < 1) {
             c.cantUseMessage = "Can't play cost X cards in Pause Tempo!";
             return false;
@@ -47,10 +46,10 @@ public class InvisiblePausePower extends AbstractTimeEaterPower implements NonSt
     }
 
     @Override
-    public void update(int slot){
+    public void update(int slot) {
         super.update(slot);
 
-        for(AbstractCard c : adp().hand.group){
+        for (AbstractCard c : adp().hand.group) {
             if (c.costForTurn == 0)
                 c.setCostForTurn(1);
             /*if (c.costForTurn >= 1 && !c.returnToHand)
@@ -78,7 +77,7 @@ public class InvisiblePausePower extends AbstractTimeEaterPower implements NonSt
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.returnToHand){
+        if (!card.returnToHand) {
             card.returnToHand = true;
             addToBot(new AbstractGameAction() {
                 @Override

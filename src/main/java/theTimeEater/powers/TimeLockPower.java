@@ -37,7 +37,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
     }
 
     public TimeLockPower(AbstractCreature owner, int duration, int damage) {
-        super(NAME, POWER_ID, PowerType.BUFF, owner, duration, damage,true);
+        super(NAME, POWER_ID, PowerType.BUFF, owner, duration, damage, true);
         increaseBaseDamage(damage);
         loadRegion("time");
         if (owner == adp()) justApplied = true;
@@ -116,7 +116,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
         }
     }
 
-    public void explode(){
+    public void explode() {
         //note: this is also called in TimeEaterMod.java to facilitate end of combat explosion
         this.flashWithoutSound();
         exploding = true;
@@ -125,12 +125,12 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
         d.applyEnemyPowersOnly(owner);
         amount2 = d.output;
 
-        if (amount2 > 0){
+        if (amount2 > 0) {
 //            actionList.add(new VFXAction(new ExplosionSmallEffectGreen(this.owner.hb.cX, this.owner.hb.cY), 0.1F));
 
-            if (AbstractDungeon.player.hasPower(ButterflyEffectPower.POWER_ID)){
-                for (AbstractMonster m: AbstractDungeon.getCurrRoom().monsters.monsters){
-                    if (!m.isDeadOrEscaped()){
+            if (AbstractDungeon.player.hasPower(ButterflyEffectPower.POWER_ID)) {
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    if (!m.isDeadOrEscaped()) {
                         att(new DamageAction(m, new DamageInfo(m, amount2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                     }
                 }
@@ -139,28 +139,25 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
             }
         }
 
-
         att(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-
-//        att(actionList);
     }
 
     @Override
-    public void onRemove(){
+    public void onRemove() {
         //reapply Time Lock after explosion if player has Desync power
-        if (owner.hasPower(DesynchronizePower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
+        if (owner.hasPower(DesynchronizePower.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             atb(new ApplyPowerAction(this.owner, this.owner, new TimeLockPower(this.owner, 1)));
         }
     }
 
-    public void changeDuration(int changeAmount){
+    public void changeDuration(int changeAmount) {
         setDuration(amount + changeAmount);
     }
 
-    public void setDuration(int durAmount){
+    public void setDuration(int durAmount) {
         this.fontScale = 8.0F;
         amount = durAmount;
-        if (amount <= 0){
+        if (amount <= 0) {
             explode();
         }
     }
@@ -169,14 +166,14 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
         return this.baseDamage;
     }
 
-    public void setBaseDamage(int damageAmount){
+    public void setBaseDamage(int damageAmount) {
         this.fontScale = 8.0F;
         baseDamage = damageAmount;
         if (baseDamage < 0) baseDamage = 0;
         updateDamage();
     }
 
-    public void increaseBaseDamage(int damageAmount){
+    public void increaseBaseDamage(int damageAmount) {
         setBaseDamage(damageAmount + baseDamage);
     }
 
@@ -187,7 +184,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
     }
 
     @Override
-    public boolean onReceivePower(AbstractPower pow, AbstractCreature target, AbstractCreature source){
+    public boolean onReceivePower(AbstractPower pow, AbstractCreature target, AbstractCreature source) {
         //skip non-owner targets
         if (target != owner) return true;
 
@@ -196,7 +193,7 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
         return true;
     }
 
-    public void updateDamage(){
+    public void updateDamage() {
         DamageInfo d = new DamageInfo(adp(), baseDamage);
         d.applyEnemyPowersOnly(owner);
         amount2 = d.output;

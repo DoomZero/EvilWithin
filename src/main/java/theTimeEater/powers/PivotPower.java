@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
 import theTimeEater.util.OnChangeTempoSubscriber;
 
@@ -19,7 +18,7 @@ public class PivotPower extends AbstractTimeEaterPower implements CloneablePower
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static int triggersLeft = 0;
 
-    public PivotPower(int amount){
+    public PivotPower(int amount) {
         this(adp(), amount);
     }
 
@@ -30,12 +29,12 @@ public class PivotPower extends AbstractTimeEaterPower implements CloneablePower
     }
 
     @Override
-    public void atStartOfTurn(){
+    public void atStartOfTurn() {
         triggersLeft = amount;
     }
 
     @Override
-    public void OnChangeTempo(TimeEaterMod.tempos tempo){
+    public void OnChangeTempo(TimeEaterMod.tempos tempo) {
         if (triggersLeft >= 1) {
             AbstractPlayer p = (AbstractPlayer) owner;
             p.gainEnergy(1);

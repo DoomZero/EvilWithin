@@ -1,6 +1,5 @@
 package theTimeEater.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,7 +8,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.util.Wiz;
 
 import static theTimeEater.util.Wiz.*;
 
@@ -28,7 +26,7 @@ public class ClockVigorPower extends AbstractTimeEaterPower {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card){
+    public void onCardDraw(AbstractCard card) {
         if (!AbstractDungeon.player.hasPower(NoDrawPower.POWER_ID)) {
 //            gainBlock(blockToGain));
             applyToSelf(new VigorPower(adp(), vigorToGain));

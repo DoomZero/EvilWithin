@@ -1,17 +1,12 @@
 package theTimeEater.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import theTimeEater.TimeEaterMod;
-
-import static theTimeEater.util.Wiz.*;
 
 public class TakeDoubleDamagePower extends AbstractTimeEaterPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(TakeDoubleDamagePower.class.getSimpleName());

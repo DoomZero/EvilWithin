@@ -4,19 +4,13 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import downfall.util.LocalizeHelper;
-import theHexaghost.cards.seals.ThirdSeal;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.util.OnChangeTempoSubscriber;
 
-import static theTimeEater.util.Wiz.adp;
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
 public class HastePower extends AbstractTimeEaterPower implements CloneablePowerInterface {
     public static final String POWER_ID = TimeEaterMod.makeID(HastePower.class.getSimpleName());
@@ -25,7 +19,7 @@ public class HastePower extends AbstractTimeEaterPower implements CloneablePower
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public HastePower(int rate, int start) {
-        super(NAME, POWER_ID, PowerType.BUFF, adp(), rate, start,false);
+        super(NAME, POWER_ID, PowerType.BUFF, adp(), rate, start, false);
 
         this.amount = rate;
         this.amount2 = start;
@@ -33,7 +27,7 @@ public class HastePower extends AbstractTimeEaterPower implements CloneablePower
     }
 
     @Override
-    public void atStartOfTurn(){
+    public void atStartOfTurn() {
         atb(new DamageAllEnemiesAction(adp(), this.amount2, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
         HastePower thisPow = this;

@@ -2,7 +2,6 @@ package theTimeEater.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -27,7 +26,7 @@ public class FleetingStrengthPower extends AbstractTimeEaterPower implements Clo
 
     @Override
     public int onLoseHp(int damageAmount) {
-        if (!triggered){
+        if (!triggered) {
             atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -amount), -amount));
             this.remove();
             triggered = true;

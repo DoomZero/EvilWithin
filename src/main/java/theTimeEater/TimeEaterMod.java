@@ -42,8 +42,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static theTimeEater.util.Wiz.adp;
-import static theTimeEater.util.Wiz.applyToSelf;
+import static theTimeEater.util.Wiz.*;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -54,8 +53,7 @@ public class TimeEaterMod implements
 //        EditKeywordsSubscriber,
         PostInitializeSubscriber,
         PostBattleSubscriber,
-        OnStartBattleSubscriber
-{
+        OnStartBattleSubscriber {
 
     public static Prefs colorCardsPrefs = new Prefs();
 
@@ -81,7 +79,6 @@ public class TimeEaterMod implements
     private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
-
 
 
     public TimeEaterMod() {
@@ -236,7 +233,7 @@ public class TimeEaterMod implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         TimeLockPower q = (TimeLockPower) AbstractDungeon.player.getPower(TimeLockPower.POWER_ID);
-        if (q != null){
+        if (q != null) {
             q.explode();
         }
     }

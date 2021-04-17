@@ -1,16 +1,10 @@
 package theTimeEater.patches;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.Soul;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.ui.panels.DiscardPilePanel;
 import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
@@ -19,11 +13,7 @@ import com.megacrit.cardcrawl.vfx.GameDeckGlowEffect;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
-import theTimeEater.powers.ReversePower;
-
-import static theTimeEater.util.Wiz.adp;
 
 public class PileRenderFlipPatch {
 
@@ -63,21 +53,21 @@ public class PileRenderFlipPatch {
 
 //    discard active = new discard();
 
-    public static boolean check(){
+    public static boolean check() {
         return TimeEaterMod.tempo == TimeEaterMod.tempos.FORWARD || TimeEaterMod.tempo == TimeEaterMod.tempos.PAUSE;
     }
 
-    public static double adjustDrawParticles(){
-        return check()? 0 : -discard.DECK_X;
+    public static double adjustDrawParticles() {
+        return check() ? 0 : -discard.DECK_X;
     }
 
-    public static double adjustDiscardParticles(){
-        return check()? 0 : -draw.DECK_X;
+    public static double adjustDiscardParticles() {
+        return check() ? 0 : -draw.DECK_X;
     }
 
     @SpirePatch(
-            clz=DrawPilePanel.class,
-            method="render"
+            clz = DrawPilePanel.class,
+            method = "render"
     )
     public static class DrawPileRenderFlipPatch {
 
@@ -94,7 +84,7 @@ public class PileRenderFlipPatch {
                         //this is currently on line 194 for future reference
                         m.replace("{" +
                                 //"$2 = this.current_x + " + patchName+".getDrawAdj();" +
-                                "$15 = " + patchName+".check();" +
+                                "$15 = " + patchName + ".check();" +
                                 "$proceed($$);" +
                                 "}");
                         done = true;
@@ -107,8 +97,8 @@ public class PileRenderFlipPatch {
 //    note: entering pause while in rewind does weird things
 
     @SpirePatch(
-            clz=DiscardPilePanel.class,
-            method="renderButton"
+            clz = DiscardPilePanel.class,
+            method = "renderButton"
     )
     public static class DiscardPileRenderFlipPatch {
 
@@ -125,7 +115,7 @@ public class PileRenderFlipPatch {
                         String patchName = PileRenderFlipPatch.class.getName();
                         m.replace("{" +
                                 //"$2 = this.current_x + " + patchName+".getDiscardAdj();" +
-                                "$15 = " + patchName+".check();" +
+                                "$15 = " + patchName + ".check();" +
                                 "$proceed($$);" +
                                 "}");
                         done = true;
@@ -136,8 +126,8 @@ public class PileRenderFlipPatch {
     }
 
     @SpirePatch(
-            clz=DrawPilePanel.class,
-            method="render"
+            clz = DrawPilePanel.class,
+            method = "render"
     )
     public static class DrawPileEffectFlipPatch {
 
@@ -153,7 +143,7 @@ public class PileRenderFlipPatch {
                         String patchName = PileRenderFlipPatch.class.getName();
                         //this is currently on line 194 for future reference
                         m.replace("{" +
-                                "$2 = this.current_x + " + patchName+".adjustDrawParticles();" +
+                                "$2 = this.current_x + " + patchName + ".adjustDrawParticles();" +
                                 "$proceed($$);" +
                                 "}");
                         done = true;
@@ -164,8 +154,8 @@ public class PileRenderFlipPatch {
     }
 
     @SpirePatch(
-            clz=DiscardPilePanel.class,
-            method="renderButton"
+            clz = DiscardPilePanel.class,
+            method = "renderButton"
     )
     public static class DiscardPileEffectFlipPatch {
 
@@ -181,7 +171,7 @@ public class PileRenderFlipPatch {
                         System.out.println("DEBUG - PERFORMING DISCARD EFFECT FLIP PATCH");
                         String patchName = PileRenderFlipPatch.class.getName();
                         m.replace("{" +
-                                "$2 = this.current_x - 1664.0F * " + Settings.class.getName() + ".scale + " + patchName+".adjustDiscardParticles();" +
+                                "$2 = this.current_x - 1664.0F * " + Settings.class.getName() + ".scale + " + patchName + ".adjustDiscardParticles();" +
                                 "$proceed($$);" +
                                 "}");
                         done = true;
@@ -192,8 +182,8 @@ public class PileRenderFlipPatch {
     }
 
     @SpirePatch(
-            clz=DrawPilePanel.class,
-            method="render"
+            clz = DrawPilePanel.class,
+            method = "render"
     )
     public static class DrawPileCountFlipPatch {
         @SpirePrefixPatch
@@ -206,7 +196,7 @@ public class PileRenderFlipPatch {
                                               @ByRef float[] ___DECK_TIP_X,
                                               @ByRef float[] ___HITBOX_W2,
                                               @ByRef Hitbox[] ___hb
-                                              ){
+        ) {
             if (check()) {
                 ___DECK_X[0] = draw.DECK_X;
                 ___DECK_Y[0] = draw.DECK_Y;
@@ -230,8 +220,8 @@ public class PileRenderFlipPatch {
     }
 
     @SpirePatch(
-            clz=DiscardPilePanel.class,
-            method="render"
+            clz = DiscardPilePanel.class,
+            method = "render"
     )
     public static class DiscardPileCountFlipPatch {
         @SpirePrefixPatch
@@ -244,7 +234,7 @@ public class PileRenderFlipPatch {
                                                  @ByRef float[] ___DECK_TIP_X,
                                                  @ByRef float[] ___HITBOX_W2,
                                                  @ByRef Hitbox[] ___hb
-        ){
+        ) {
             if (check()) {
                 ___DECK_X[0] = discard.DECK_X;
                 ___DECK_Y[0] = discard.DECK_Y;

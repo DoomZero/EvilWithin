@@ -2,7 +2,6 @@ package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -20,7 +19,7 @@ public class Recall extends AbstractTimeEaterCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new BetterDiscardPileToHandAction(this.magicNumber));
-        atb(new DiscardAction(p,p,this.magicNumber,false));
+        atb(new DiscardAction(p, p, this.magicNumber, false));
     }
 
     public void upp() {

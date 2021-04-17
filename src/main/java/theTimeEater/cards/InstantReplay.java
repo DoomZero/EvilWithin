@@ -1,23 +1,20 @@
 package theTimeEater.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import theTimeEater.TheTimeEater;
 import theTimeEater.TimeEaterMod;
 import theTimeEater.actions.EnterTempoAction;
 import theTimeEater.powers.InstantReplayPower;
 
 import static theTimeEater.TimeEaterMod.makeID;
-import static theTimeEater.util.Wiz.atb;
+import static theTimeEater.util.Wiz.*;
 
 public class InstantReplay extends AbstractTimeEaterCard {
     public final static String ID = makeID(InstantReplay.class.getSimpleName());
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
-    public InstantReplay()  {
+    public InstantReplay() {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.exhaust = true;
     }
