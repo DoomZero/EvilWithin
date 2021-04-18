@@ -134,7 +134,7 @@
   },
   "timeeatermod:Haste": {
     "NAME": "Haste",
-    "DESCRIPTION": "placeholder, no effect yet"
+    "DESCRIPTION": "Remove all Debuffs. NL Gain !M! Regen."
   },
   "timeeatermod:ManipulateTime": {
     "NAME": "Manipulate Time",
@@ -265,6 +265,16 @@
   "timeeatermod:SpawnAntiVoid": {
     "NAME": "Spawn AntiVoid",
     "DESCRIPTION": "Shuffle !M! *AntiVoid into your draw pile."
+  },
+  "timeeatermod:Pressure": {
+    "NAME": "Pressure",
+    "DESCRIPTION": "At the start of your turn, deal 2 damage to ALL enemies, then increase this damage by 2.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, deal 2 damage to ALL enemies, then increase this damage by 2."
+  },
+  "timeeatermod:DiscardDraw": {
+    "NAME": "DiscardDraw",
+    "DESCRIPTION": "Draw the top card of your discard pile.",
+    "UPGRADE_DESCRIPTION": ""
   },
 
 

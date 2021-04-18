@@ -3,8 +3,8 @@
     "NAME": "Time Lock",
     "DESCRIPTIONS": [
       "All damage received is reduced to 0. In #b",
-      " turns, takes #b",
       " turn, takes #b",
+      " turns, takes #b",
       " damage ( [REMOVE_SPACE]#b",
       " base damage), then #yTime #yLock is removed."
     ]
@@ -102,8 +102,8 @@
       " #yStrength."
     ]
   },
-  "timeeatermod:HastePower": {
-    "NAME": "Haste",
+  "timeeatermod:PressurePower": {
+    "NAME": "Pressure",
     "DESCRIPTIONS": [
       "At the start of your turn, deal #b",
       " damage to ALL enemies, then increase this damage by #b"

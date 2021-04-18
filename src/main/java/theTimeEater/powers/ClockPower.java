@@ -18,8 +18,8 @@ public class ClockPower extends AbstractTimeEaterPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private final int blockToGain = 4;
-    private final int vigorToGain = 4;
+    private final int blockToGain = 1;
+    private final int vigorToGain = 1;
 //    private int count = 0;
 
     public ClockPower() {

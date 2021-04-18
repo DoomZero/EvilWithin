@@ -12,14 +12,14 @@ import theTimeEater.TimeEaterMod;
 
 import static theTimeEater.util.Wiz.*;
 
-public class HastePower extends AbstractTimeEaterPower implements CloneablePowerInterface {
-    public static final String POWER_ID = TimeEaterMod.makeID(HastePower.class.getSimpleName());
+public class PressurePower extends AbstractTimeEaterPower implements CloneablePowerInterface {
+    public static final String POWER_ID = TimeEaterMod.makeID(PressurePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public HastePower(int rate, int start) {
-        super(NAME, POWER_ID, PowerType.BUFF, adp(), rate, start, false);
+    public PressurePower(int rate, int start) {
+        super(NAME, POWER_ID, PowerType.BUFF, adp(), rate, start, true);
 
         this.amount = rate;
         this.amount2 = start;
@@ -30,7 +30,7 @@ public class HastePower extends AbstractTimeEaterPower implements CloneablePower
     public void atStartOfTurn() {
         atb(new DamageAllEnemiesAction(adp(), this.amount2, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        HastePower thisPow = this;
+        PressurePower thisPow = this;
         atb(new AbstractGameAction() {
             @Override
             public void update() {
@@ -54,6 +54,6 @@ public class HastePower extends AbstractTimeEaterPower implements CloneablePower
 
     @Override
     public AbstractPower makeCopy() {
-        return new HastePower(this.amount, this.amount2);
+        return new PressurePower(this.amount, this.amount2);
     }
 }

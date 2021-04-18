@@ -18,25 +18,38 @@ public class DiscardDraw extends AbstractTimeEaterCard {
         this.baseMagicNumber = this.magicNumber = 1;
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        atb(new AbstractGameAction() {
+    public void drawFromDiscardPile(AbstractPlayer p){
+        if (p.discardPile.group.size() < 1) return; //do nothing if discard pile is empty
+
+        AbstractCard c = p.discardPile.getTopCard();
+        att(new DiscardToHandAction(c));
+        att(new AbstractGameAction() {
             @Override
             public void update() {
-                AbstractCard c = p.discardPile.getTopCard();
-                att(new DiscardToHandAction(c));
-                att(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        c.triggerWhenDrawn();
-                        this.isDone = true;
-                    }
-                });
+                c.triggerWhenDrawn();
                 this.isDone = true;
             }
         });
     }
 
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                this.isDone = true;
+                drawFromDiscardPile(p);
+            }
+        });
+        if(this.upgraded) atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                this.isDone = true;
+                drawFromDiscardPile(p);
+            }
+        });
+    }
+
     public void upp() {
-        upgradeMagicNumber(1);
+        uDesc();
     }
 }

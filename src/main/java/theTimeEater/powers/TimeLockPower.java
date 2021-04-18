@@ -204,9 +204,9 @@ public class TimeLockPower extends AbstractTimeEaterPower implements HealthBarRe
     public void updateDescription() {
         final String PLURAL_BIT;
         if (amount == 1)
-            PLURAL_BIT = DESCRIPTIONS[2];
-        else
             PLURAL_BIT = DESCRIPTIONS[1];
+        else
+            PLURAL_BIT = DESCRIPTIONS[2];
 
         description = DESCRIPTIONS[0] + amount + PLURAL_BIT + amount2 + DESCRIPTIONS[3] + baseDamage + DESCRIPTIONS[4];
     }
