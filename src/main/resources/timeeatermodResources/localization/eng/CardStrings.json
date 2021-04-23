@@ -276,6 +276,15 @@
     "DESCRIPTION": "Draw the top card of your discard pile.",
     "UPGRADE_DESCRIPTION": ""
   },
+  "timeeatermod:Record": {
+    "NAME": "Record",
+    "DESCRIPTION": "Shuffle a Playback into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Shuffle a Playback+ into your draw pile. NL Exhaust."
+  },
+  "timeeatermod:Playback": {
+    "NAME": "Playback",
+    "DESCRIPTION": "Set every living creature's HP to its value when Record was last played. NL Exhaust."
+  },
 
 
 

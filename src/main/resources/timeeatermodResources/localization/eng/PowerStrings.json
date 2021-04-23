@@ -109,6 +109,12 @@
       " damage to ALL enemies, then increase this damage by #b"
     ]
   },
+  "timeeatermod:RecordPower": {
+    "NAME": "Recorded HP",
+    "DESCRIPTIONS": [
+      "When Playback is played, current HP becomes #b"
+    ]
+  },
 
 
 
