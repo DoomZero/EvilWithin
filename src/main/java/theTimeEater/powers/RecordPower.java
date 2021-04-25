@@ -17,21 +17,24 @@ public class RecordPower extends AbstractTimeEaterPower implements CloneablePowe
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public static int hp;
+    private int hp;
 
     public RecordPower(AbstractCreature owner) {
         super(NAME, POWER_ID, PowerType.BUFF, owner, -1, false);
         loadRegion("time");
-        hp = owner.currentHealth;
+        this.hp = owner.currentHealth;
+        this.updateDescription();
     }
 
     public void setHP(){
+        RecordPower thisPower = this;
         atb(new AbstractGameAction() {
             @Override
             public void update() {
                 isDone = true;
-                owner.currentHealth = hp;
-                owner.healthBarUpdatedEvent();
+                thisPower.owner.currentHealth = thisPower.hp;
+                thisPower.owner.healthBarUpdatedEvent();
+                thisPower.removeTop();
             }
         });
     }

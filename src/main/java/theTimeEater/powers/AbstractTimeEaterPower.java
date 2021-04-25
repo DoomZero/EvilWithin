@@ -64,6 +64,10 @@ public abstract class AbstractTimeEaterPower extends TwoAmountPower implements C
         atb(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
+    public void removeTop() {
+        att(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+    }
+
     public void decrement() {
         decrement(1);
     }
