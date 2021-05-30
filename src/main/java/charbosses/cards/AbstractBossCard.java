@@ -66,6 +66,7 @@ public abstract class AbstractBossCard extends AbstractCard {
     public int energyGeneratedIfPlayed = 0;
     public int strengthGeneratedIfPlayed = 0;
     public int damageMultGeneratedIfPlayed = 1;
+    public int damageMultIfPlayed = 1;
     public int focusGeneratedIfPlayed = 0;
     public int vulnGeneratedIfPlayed = 0;
     public int artifactConsumedIfPlayed = 0;
@@ -78,7 +79,7 @@ public abstract class AbstractBossCard extends AbstractCard {
     public int newPrio = 0;
 
     public int manualCustomDamageModifier = 0;
-    public float manualCustomDamageModifierMult = 1;
+    public float manualCustomDamageModifierMult = 1.0f;
     public boolean manualCustomVulnModifier = false;
     public static boolean fakeStormPower = false;
     //TODO - Does Vuln get actually calculated anywhere?  this variable does not appear to be referenced
@@ -97,7 +98,6 @@ public abstract class AbstractBossCard extends AbstractCard {
     private Texture intentBg;
     private PowerTip intentTip = new PowerTip();
     public int intentDmg;
-    public int intentBaseDmg;
     protected int intentMultiAmt;
     private Color intentColor = Color.WHITE.cpy();
     private float intentParticleTimer;
@@ -261,7 +261,6 @@ public abstract class AbstractBossCard extends AbstractCard {
         }
         this.damage = MathUtils.floor(tmp);
 
-        multiDamageCardCalculate();
         this.initializeDescription();
         if (this.intent != null) {
             if (!this.bossDarkened) {
@@ -306,39 +305,55 @@ public abstract class AbstractBossCard extends AbstractCard {
             this.owner = (AbstractCharBoss) mo;
         }
         if (mo != null) {
-            float tmp = (float) this.baseDamage;
-            for (final AbstractRelic r : this.owner.relics) {
-                tmp = r.atDamageModify(tmp, this);
-                if (this.baseDamage != (int) tmp) {
-                    this.isDamageModified = true;
-                }
-            }
-            for (final AbstractPower p : this.owner.powers) {
-                tmp = p.atDamageGive(tmp, this.damageTypeForTurn, this);
-            }
-            tmp = this.owner.stance.atDamageGive(tmp, this.damageTypeForTurn, this);
+            this.damage = MathUtils.floor(calculateDamage(mo, player, this.baseDamage));
+            this.intentDmg = MathUtils.floor(manualCustomDamageModifierMult * calculateDamage(mo, player, this.baseDamage + customIntentModifiedDamage() + manualCustomDamageModifier));
+        }
+        this.initializeDescription();
+    }
+
+    private float calculateDamage(AbstractMonster mo, AbstractPlayer player, float tmp) {
+        for (final AbstractRelic r : this.owner.relics) {
+            tmp = r.atDamageModify(tmp, this);
             if (this.baseDamage != (int) tmp) {
                 this.isDamageModified = true;
             }
+        }
+        for (final AbstractPower p : this.owner.powers) {
+            tmp = p.atDamageGive(tmp, this.damageTypeForTurn, this);
+        }
+        tmp = this.owner.stance.atDamageGive(tmp, this.damageTypeForTurn, this);
+        if (this.baseDamage != (int) tmp) {
+            this.isDamageModified = true;
+        }
+        if (mo == this.owner) {
             for (final AbstractPower p : player.powers) {
                 tmp = p.atDamageReceive(tmp, this.damageTypeForTurn, this);
             }
             tmp = player.stance.atDamageReceive(tmp, this.damageTypeForTurn);
-            for (final AbstractPower p : this.owner.powers) {
-                tmp = p.atDamageFinalGive(tmp, this.damageTypeForTurn, this);
+        } else {
+            for (final AbstractPower p : mo.powers) {
+                tmp = p.atDamageReceive(tmp, this.damageTypeForTurn, this);
             }
+        }
+        for (final AbstractPower p : this.owner.powers) {
+            tmp = p.atDamageFinalGive(tmp, this.damageTypeForTurn, this);
+        }
+        if (mo == this.owner) {
             for (final AbstractPower p : player.powers) {
                 tmp = p.atDamageFinalReceive(tmp, this.damageTypeForTurn, this);
             }
-            if (tmp < 0.0f) {
-                tmp = 0.0f;
+        } else {
+            for (final AbstractPower p : mo.powers) {
+                tmp = p.atDamageFinalReceive(tmp, this.damageTypeForTurn, this);
             }
-            if (this.baseDamage != MathUtils.floor(tmp)) {
-                this.isDamageModified = true;
-            }
-            this.damage = MathUtils.floor(tmp);
         }
-        this.initializeDescription();
+        if (tmp < 0.0f) {
+            tmp = 0.0f;
+        }
+        if (this.baseDamage != MathUtils.floor(tmp)) {
+            this.isDamageModified = true;
+        }
+        return tmp;
     }
 
     public void triggerOnEndOfPlayerTurn() {
@@ -712,33 +727,15 @@ public abstract class AbstractBossCard extends AbstractCard {
         }
     }
 
-
-    public void multiDamageCardCalculate() {
-    }
-
     public void createIntent() {
         if (this.intent == null) return;
 
-
-        if (!lockIntentValues) multiDamageCardCalculate();
         //bossLighten();
         refreshIntentHbLocation();
         if (!intentActive) this.intentParticleTimer = 0.5F;
         if (!lockIntentValues) calculateCardDamage(null);
-        if (AbstractDungeon.player != null) {
-            if (AbstractDungeon.player.hasPower(IntangiblePower.POWER_ID)) {
-                this.intentBaseDmg = 1;
-            } else if (!lockIntentValues)
-                this.intentBaseDmg = this.intentDmg = Math.round(((this.damage + customIntentModifiedDamage() + manualCustomDamageModifier) * manualCustomDamageModifierMult));
-        }
-
-        // //SlimeboundMod.logger.info(this.name + " intent being created: damage = " + this.intentDmg);
-
-        // //SlimeboundMod.logger.info(this.name + " intent being created: custom damage = " + customIntentModifiedDamage());
-        // //SlimeboundMod.logger.info(this.name + " intent being created: custom manual damage = " + manualCustomDamageModifier * manualCustomDamageModifierMult);
 
         if ((!lockIntentValues) && this.damage > -1) {
-            this.calculateCardDamage(null);
             if (this.isMultiDamage) {
                 this.intentMultiAmt = this.magicNumber;
             } else {
@@ -769,7 +766,6 @@ public abstract class AbstractBossCard extends AbstractCard {
             this.intentAlphaTarget = 0F;
             this.showIntent = false;
             this.intentParticleTimer = 0F;
-            this.intentBaseDmg = 0;
             this.tipIntent = null;
             //SlimeboundMod.logger.info(this.name + " intent destroyed.");
         }

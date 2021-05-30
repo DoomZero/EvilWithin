@@ -1,6 +1,8 @@
 package theHexaghost.cards;
 
+import basemod.devcommands.draw.Draw;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sneckomod.SneckoMod;
@@ -8,6 +10,7 @@ import theHexaghost.GhostflameHelper;
 import theHexaghost.HexaMod;
 import theHexaghost.actions.AdvanceAction;
 import theHexaghost.actions.ChargeCurrentFlameAction;
+import theHexaghost.ghostflames.AbstractGhostflame;
 import theHexaghost.ghostflames.SearingGhostflame;
 
 public class StepThrough extends AbstractHexaCard {
@@ -16,7 +19,7 @@ public class StepThrough extends AbstractHexaCard {
 
     //stupid intellij stuff ATTACK, SELF_AND_ENEMY, UNCOMMON
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 3;
 
     public StepThrough() {
@@ -32,10 +35,10 @@ public class StepThrough extends AbstractHexaCard {
             @Override
             public void update() {
                 isDone = true;
-                if (GhostflameHelper.activeGhostFlame.charged) {
-                    att(new AdvanceAction(false));
-                } else {
-                    att(new ChargeCurrentFlameAction());
+                for (AbstractGhostflame g : GhostflameHelper.hexaGhostFlames) {
+                    if (g.charged) {
+                        att(new DrawCardAction(1));
+                    }
                 }
             }
         });

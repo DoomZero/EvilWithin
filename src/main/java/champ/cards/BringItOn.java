@@ -23,15 +23,7 @@ public class BringItOn extends AbstractChampCard {
         baseBlock = 10;
         //exhaust = true;
         tags.add(ChampMod.FINISHER);
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if ((AbstractDungeon.player.stance instanceof NeutralStance)) {
-            cantUseMessage = ChampChar.characterStrings.TEXT[61];
-            return false;
-        }
-        return super.canUse(p, m);
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

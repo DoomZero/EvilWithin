@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.powers.BarricadePower;
 import java.util.ArrayList;
 
 public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
+    public static final int FORTIFICATION_AMOUNT = 10;
 
     public ArchetypeAct3BlockNewAge() {
         super("IC_BLOCK_ARCHETYPE", "Block");
@@ -77,7 +78,7 @@ public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
                     turn++;
                     break;
                 case 1:
-                    addToList(cardsList, new EnFlameBarrier());
+                    addToList(cardsList, new EnFlameBarrier(), extraUpgrades);
                     addToList(cardsList, new EnBodySlam());
                     addToList(cardsList, new EnClumsy());
                     turn++;
@@ -89,7 +90,7 @@ public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
                     turn++;
                     break;
                 case 3:
-                    addToList(cardsList, new EnMetallicize(), extraUpgrades);
+                    addToList(cardsList, new EnMetallicize());
                     addToList(cardsList, new EnBodySlam());
                     addToList(cardsList, new EnDecay());
                     turn++;
@@ -113,11 +114,11 @@ public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
                 case 0:
                     addToList(cardsList, new EnPowerThrough());
                     addToList(cardsList, new EnSecondWind());
-                    addToList(cardsList, new EnBodySlam(), true);
+                    addToList(cardsList, new EnBodySlam());
                     turn++;
                     break;
                 case 1:
-                    addToList(cardsList, new EnFlameBarrier());
+                    addToList(cardsList, new EnFlameBarrier(), extraUpgrades);
                     addToList(cardsList, new EnBodySlam());
                     addToList(cardsList, new EnDecay());
                     turn++;
@@ -136,6 +137,6 @@ public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
 
     @Override
     public void initializeBonusRelic() {
-        addRelic(new CBR_Calipers());
+        addRelic(new CBR_SelfFormingClay());
     }
 }

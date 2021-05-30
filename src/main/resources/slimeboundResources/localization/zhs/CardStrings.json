@@ -105,8 +105,8 @@
   },
   "Slimebound:Recollect": {
     "NAME": "重新收集",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 随机将1张已 消耗 的0费牌放回你的手牌。",
-    "UPGRADE_DESCRIPTION": "得 !B! 点 格挡 。 NL 随机将2张已 消耗 的0费牌放回你的手牌。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL expansioncontent:发掘 随机1张0耗能牌。",
+    "UPGRADE_DESCRIPTION": "得 !B! 点 格挡 。 NL expansioncontent:发掘 随机1张0耗能牌。",
     "EXTENDED_DESCRIPTION": [
       "没有…… 已消耗的…… 0费牌……"
     ]
@@ -125,8 +125,8 @@
   },
   "Slimebound:Recycling": {
     "NAME": "循环再生",
-    "DESCRIPTION": "在你的回合开始时，随机将1张已 消耗 的0费牌放回你的手牌。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 在你的回合开始时，随机将1张已 消耗 的0费牌放回你的手牌。"
+    "DESCRIPTION": "在你的回合开始时， expansioncontent:发掘 随机1张0耗能牌。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 在你的回合开始时， expansioncontent:发掘 随机1张0耗能牌。"
   },
   "Slimebound:Repurpose": {
     "NAME": "重新考虑",
@@ -191,7 +191,7 @@
   },
   "Slimebound:WasteNot": {
     "NAME": "别浪费",
-    "DESCRIPTION": "将所有已 消耗 的0费牌加入手牌。 NL 消耗 。",
+    "DESCRIPTION": "expansioncontent:发掘 所有0耗能牌。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "没有……已消耗的……0费牌……"
     ]
@@ -273,7 +273,7 @@
   },
   "Slimebound:LeechLife": {
     "NAME": "吸取生命",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL slimeboundmod:消耗黏液 -回复等于敌人 slimeboundmod:黏液 层数的生命。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL slimeboundmod:消耗黏液 -回复等于敌人 slimeboundmod:黏液 层数的生命。（至多 !M! 点） NL 消耗 。"
   },
   "Slimebound:Equalize": {
     "NAME": "均质化",
@@ -285,12 +285,13 @@
   },
   "Slimebound:PrepareCrush": {
     "NAME": "准备：猛撞",
-    "DESCRIPTION": "在下个回合获得 [E] [E] [E] 和 !M! 点 力量 ，并将 *史莱姆撞击 加入手牌。",
-    "UPGRADE_DESCRIPTION": "在你的下个回合获得 [E] [E] [E] [E] 和 !M! 点 力量 ，并将 *史莱姆撞击 加入手牌。"
+    "DESCRIPTION": "在下个回合获得 [E] [E] [E] 和 !SlimeboundSlimed! 点 力量 ，并将 *史莱姆撞击 加入手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "在你的下个回合获得 [E] [E] [E] [E] 和 !SlimeboundSlimed! 点 力量 ，并将 *史莱姆撞击+ 加入手牌。 NL 消耗 。"
   },
   "Slimebound:SlimeCrush": {
     "NAME": "史莱姆撞击！！！",
-    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 对所有敌人造成 !D! 点伤害。 NL 消耗 。"
   },
   "Slimebound:DivideAndConquer": {
     "NAME": "分而治之",

@@ -28,7 +28,7 @@ public class ArchetypeAct2CalmNewAge extends ArchetypeBaseWatcher {
     public void addedPreBattle() {
         super.addedPreBattle();
         AbstractCreature p = AbstractCharBoss.boss;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WatcherCripplePower(p, 120), 100));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WatcherCripplePower(p, 150), 100));
 
     }
 
@@ -55,9 +55,11 @@ public class ArchetypeAct2CalmNewAge extends ArchetypeBaseWatcher {
             switch (turn) {
                 case 0:
                     if (AbstractDungeon.ascensionLevel >= 19) {
-                        AbstractCard c = new EnLikeWater();
+                        AbstractBossCard c = new EnLikeWater();
                         c.freeToPlayOnce = true;
-                        addToList(cardsList, new EnLikeWater(), false);  //removed
+                        c.costForTurn = 0;
+//                        c.energyGeneratedIfPlayed = 1;
+                        addToList(cardsList, c, false);  //removed
                     }
                     addToList(cardsList, new EnLikeWater(), false);  //removed
                     addToList(cardsList, new EnDefendPurple(), false);
@@ -66,7 +68,7 @@ public class ArchetypeAct2CalmNewAge extends ArchetypeBaseWatcher {
                     break;
                 case 1:
                     addToList(cardsList, new EnStrikePurple(), false);
-                    addToList(cardsList, new EnFollowUp(), extraUpgrades);
+                    addToList(cardsList, new EnFollowUp(), true);
                     addToList(cardsList, new EnDefendPurple(), false);  //not used
                     turn++;
                     break;
@@ -88,6 +90,7 @@ public class ArchetypeAct2CalmNewAge extends ArchetypeBaseWatcher {
                     break;
                 case 4:
                     theVeryImportantBlasphemy.newPrio = -2;
+                    theVeryImportantBlasphemy.lockIntentValues = false;
                     theVeryImportantFlyingSleeves.newPrio = 0;
                     theVeryImportantFlyingSleeves.lockIntentValues = false;
                     AbstractBossCard c = new EnWish();
@@ -118,7 +121,7 @@ public class ArchetypeAct2CalmNewAge extends ArchetypeBaseWatcher {
                     turn++;
                     break;
                 case 1:
-                    addToList(cardsList, new EnFollowUp(), extraUpgrades);
+                    addToList(cardsList, new EnFollowUp(), true);
                     addToList(cardsList, new EnFlyingSleeves(), true);
                     addToList(cardsList, new EnStrikePurple(), false);
                     turn++;

@@ -39,6 +39,7 @@ import theHexaghost.cards.*;
 import theHexaghost.events.*;
 import theHexaghost.ghostflames.AbstractGhostflame;
 import theHexaghost.ghostflames.BolsteringGhostflame;
+import theHexaghost.patches.ExhaustCardTickPatch;
 import theHexaghost.potions.DoubleChargePotion;
 import theHexaghost.potions.EctoCoolerPotion;
 import theHexaghost.potions.InfernoChargePotion;
@@ -241,7 +242,6 @@ public class HexaMod implements
         BaseMod.addPotion(SoulburnPotion.class, Color.GRAY, Color.GRAY, Color.BLACK, SoulburnPotion.POTION_ID);
         BaseMod.addPotion(DoubleChargePotion.class, Color.BLUE, Color.PURPLE, Color.MAROON, DoubleChargePotion.POTION_ID, TheHexaghost.Enums.THE_SPIRIT);
         BaseMod.addPotion(InfernoChargePotion.class, Color.PURPLE, Color.PURPLE, Color.MAROON, InfernoChargePotion.POTION_ID, TheHexaghost.Enums.THE_SPIRIT);
-
         BanSharedContentPatch.registerRunLockedPotion(TheHexaghost.Enums.THE_SPIRIT, SoulburnPotion.POTION_ID);
 
         if (Loader.isModLoaded("widepotions")) {
@@ -296,6 +296,8 @@ public class HexaMod implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         renderFlames = false;
+        ExhaustCardTickPatch.exhaustedLastTurn = false;
+        ExhaustCardTickPatch.exhaustedThisTurn = false;
     }
 
     public static void renderGhostflames(SpriteBatch sb) {
